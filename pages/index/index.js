@@ -14,13 +14,27 @@ Page({
    { url: '../../images/scroll_image.png' },
     { url: '../../images/scroll_image.png' }
    ],
-// 列表数据
+   // 列表数据
    listImage: [{ url: '' }, { url: '' }, { url: '' }, { url: '' },{ url: '' }, { url: '' }]
   },
-  //事件处理函数
-  bindViewTap: function() {
+  //地点选择函数
+  locSelectedTap: function() {
     wx.navigateTo({
-      url: '../recommend/recommend'
+      url: '../location/location'
+    })
+  },
+  swiperTap:function(){
+
+  },
+  sexOrderTap:function(){
+
+  },
+  moneyOrderTap:function(){
+
+  },
+  cellTap:function(){
+    wx.navigateTo({
+      url: '../recomendDetail/recomendDetail',
     })
   },
   onLoad: function () { 

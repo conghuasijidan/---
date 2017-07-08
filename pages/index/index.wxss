@@ -4,6 +4,22 @@
   width: 100%;
   height: 100%;
 }
+.locView{
+  /*background-color: orange;*/
+  width: 100rpx;
+  height: 50rpx;
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+}
+.locLabel{
+  font-size: 24rpx;
+  color: #999999;
+}
+.locImage{
+  width:24rpx;
+  height: 12rpx;
+  margin-left: 10rpx;
+}
 .swiper{
   width: 100%;
   height: 400rpx;

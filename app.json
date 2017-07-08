@@ -2,29 +2,35 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/recommend/recommend",
+    "pages/location/location",
     "pages/message/message",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/recomendDetail/recomendDetail"
   ],
   "tabBar": {
     "backgroundColor": "#ffffff",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "伴伴",
-      "iconPath": "images/choose_normal.png",
-      "selectedIconPath": "images/choose_selected.png"
-    },{
-      "pagePath": "pages/message/message",
-      "text": "消息",
-      "iconPath": "images/message_normal.png",
-      "selectedIconPath": "images/message_selected.png"
-    },{
-      "pagePath": "pages/my/my",
-      "text": "我的",
-      "iconPath": "images/my_normal.png",
-      "selectedIconPath": "images/my_selected.png"
-    }]
-  },"networkTimeout": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "伴伴",
+        "iconPath": "images/choose_normal.png",
+        "selectedIconPath": "images/choose_selected.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "images/message_normal.png",
+        "selectedIconPath": "images/message_selected.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my_normal.png",
+        "selectedIconPath": "images/my_selected.png"
+      }
+    ]
+  },
+  "networkTimeout": {
     "request": 10000,
     "connectSocket": 10000,
     "uploadFile": 10000,
@@ -35,6 +41,5 @@
     "navigationBarBackgroundColor": "#52a3fa",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "white"
-  
   }
 }

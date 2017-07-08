@@ -1,6 +1,14 @@
 <!--index.wxml-->
 
 <view class="main">
+  <view class="recomendView">
+    <view class="blueLine"></view>
+    <label class="recomendLabel">地点推荐:</label>
+    <view class="locView" catchtap="locSelectedTap">
+      <label class="locLabel">杭州</label>
+      <image src="../../images/dropdown_image.png" class="locImage"></image>
+    </view>
+  </view>
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper" circular="{{circular}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{currentIndicatorColor}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
@@ -10,11 +18,11 @@
   </swiper>
   <view class="selectBackView">
     <view class="selectMenu">
-      <view class="backView">
+      <view class="backView" catchtap="sexOrderTap">
           <label class="selectLabel">性别</label>
           <image src="../../images/selectdown_image.png" class="selectImage"></image>
       </view>
-        <view class="backView">
+        <view class="backView" catchtap="moneyOrderTap">
           <label class="selectLabel">金额</label>
           <image src="../../images/selectdown_image.png" class="selectImage"></image>
         </view>
@@ -26,7 +34,7 @@
   </view>
 <view class="scrollView" >
   <view class="cellBackView" wx:for="{{listImage}}"  wx:for-index="index" wx:for-item="item" > 
-  <view class="cellView">
+  <view class="cellView" catchtap="cellTap">
      <image src="../../images/index_cell_pic.png" class="cellImage"> </image>
      <view class="sectionOne">
      <label class="cellName">林更新</label>
