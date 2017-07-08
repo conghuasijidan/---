@@ -1,0 +1,139 @@
+/**index.wxss**/
+.main{
+  background-color: #fafafa;
+  width: 100%;
+  height: 100%;
+}
+.swiper{
+  width: 100%;
+  height: 400rpx;
+  /*background-color: red;*/
+}
+.scrollImage{
+  width: 710rpx;
+  height: 400rpx;
+  margin-left: 20rpx;
+}
+/*.selectBackView{
+  background-color: orange;
+  width:100%;
+  height: 90rpx;
+  padding-top: 30rpx;
+}*/
+.selectMenu{
+  display: flex;
+  justify-content: space-around;
+  background-color: #eeeeee;
+  border-radius: 10rpx;
+  width:690rpx;
+  height: 60rpx;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+}
+
+.backView{
+  /*background-color: red;*/
+  width:15%;
+  height: 100%;
+}
+.selectLabel{
+  font-size: 24rpx;
+  color: #999999;
+  margin-left: 15rpx;
+  position: relative;
+  top: 8rpx;
+
+}
+.selectImage{
+   width:16rpx;
+   height:12rpx;
+   margin-left: 15rpx;
+   position: relative;
+   top: 5rpx;
+}
+.recomendView{
+  display: flex;
+  background-color: #fafafa;
+  width:100%;
+  height: 72rpx;
+}
+.blueLine{
+  background-color: #52a3fa;
+  width:10rpx;
+  height: 32rpx;
+  border-radius: 5rpx;
+  margin-left: 30rpx;
+  margin-top:20rpx;
+}
+.recomendLabel{
+  font-size: 28rpx;
+  color: #333333;
+  margin-left: 20rpx;
+  margin-top:20rpx;
+}
+.scrollView{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 690rpx;
+  margin-left: 30rpx;
+  background-color: #fafafa;
+}
+.cellBackView{
+  background-color: #fafafa;
+  width:330rpx;
+  height: 482rpx;
+}
+.cellView{
+  background-color: white;
+  width:330rpx;
+  height: 452rpx;
+}
+.cellImage{
+  width:330rpx;
+  height: 330rpx;
+}
+.sectionOne{
+  /*background-color: orange;*/
+  width: 100%;
+  height: 48rpx;
+}
+.cellName{
+  color: #333333;
+  font-size: 28rpx;
+  margin-left: 10rpx;
+  position: relative;
+  top: 10rpx;
+}
+.cellPrice{
+  color: #fd3c5a;
+  font-size: 36rpx;
+  margin-left: 20rpx;
+  position: relative;
+  top: 10rpx;
+}
+
+.cellPrice:before{
+    content:"¥";
+    color: #fd3c5a;  
+    font-size: 24rpx;
+}
+
+.cellPrice:after{
+    content:"元/小时";
+    color: #fd3c5a;
+    font-size: 24rpx;
+}
+.sectionTwo{
+  /*background-color: orange;*/
+  width: 100%;
+  height: 60rpx;
+}
+.cellElse{
+  color: #666666;
+  font-size:24rpx;
+  margin-left: 10rpx;
+  position: relative;
+  top: 10rpx;
+}

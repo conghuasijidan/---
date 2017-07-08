@@ -1,0 +1,796 @@
+/**app.wxss**/
+
+/**--------------------------Container--------------------------**/
+.container_main {
+  width: 100%;
+  height: 1334rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: #EEEEEE;
+} 
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+
+.container_row_only{
+  display: flex;
+  flex-direction: row;
+}
+
+.container_row_between{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container_row{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.container_row_center{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.container_row_center_withouttw{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.container_row_bsln{
+  display: flex;
+  flex-direction: row; 
+  align-items: baseline;
+}
+
+.container_row_vcenter_withouthw{
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+}
+
+.container_row_vcenter{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+}
+
+.container_row_hcenter{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+}
+
+
+.container_columnonly{
+  display: flex;
+  flex-direction: column;
+}
+
+.container_column{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container_column_center_withouthw{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} 
+
+.container_column_center {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} 
+
+.container_column_vcenter{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
+.container_column_hcenter{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+}
+/**--------------------------Container--------------------------**/
+
+/**--------------------------Button--------------------------**/
+.button_bot{
+    height: 98rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top right, #FF6380, #F68D76);
+    color: white;
+    position:fixed;
+    bottom: -1rpx;
+}
+/**--------------------------Button--------------------------**/
+
+/**--------------------------Footer--------------------------**/
+.footer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position:fixed;
+  bottom: 0rpx;
+}
+/**--------------------------Footer--------------------------**/
+
+/**--------------------------Font-Size--------------------------**/
+.font_72
+{
+  font-size: 72rpx;
+}
+
+.font_60
+{
+  font-size: 60rpx;
+}
+
+.font_48
+{
+  font-size: 48rpx;
+}
+
+.font_40
+{
+  font-size: 40rpx;
+}
+
+.font_32
+{
+  font-size: 32rpx;
+}
+
+.font_36
+{
+  font-size: 36rpx;
+}
+
+.font_28
+{
+  font-size: 28rpx;
+}
+
+.font_24
+{
+  font-size: 24rpx;
+}
+
+.font_20
+{
+  font-size: 20rpx;
+}
+/**--------------------------Font-Size--------------------------**/
+
+/**--------------------------Font-Color--------------------------**/
+.maincolor{
+  color: #EA173F;
+}
+
+.font_color_333
+{
+  color: #333333;
+}
+
+.font_color_666
+{
+  color: #666666;
+}
+
+.font_color_999
+{
+  color: #999999;
+}
+
+.font_color_FFF
+{
+  color: #FFFFFF;
+}
+
+.font_color_D54
+{
+  color: #D54E39;
+}
+
+.font_color_4BB
+{
+  color: #4BB4AB;
+}
+
+
+/**--------------------------Font-Color--------------------------**/
+
+/**--------------------------Padding--------------------------**/
+.padding_20
+{
+  padding: 20rpx;
+}
+
+.padding_tb_30
+{
+  padding: 30rpx 0rpx;
+}
+
+.padding_tb_40
+{
+  padding: 40rpx 0rpx;
+}
+
+.padding_tb_50
+{
+  padding: 50rpx 0rpx;
+}
+
+.padding_tb_60
+{
+  padding: 60rpx 0rpx;
+}
+
+.padding_lr_30
+{
+  padding: 0rpx 30rpx;
+}
+
+.padding_lr_20
+{
+  padding: 0rpx 20rpx;
+}
+
+.padding_top_20
+{
+  padding-top: 20rpx;
+}
+
+.padding_top_30
+{
+  padding-top: 30rpx;
+}
+
+.padding_top_40
+{
+  padding-top: 40rpx;
+}
+
+.padding_bot_10
+{
+  padding-bottom: 10rpx;
+}
+
+.padding_bot_20
+{
+  padding-bottom: 20rpx;
+}
+
+.padding_bot_30
+{
+  padding-bottom: 30rpx;
+}
+
+.padding_bot_100
+{
+  padding-bottom: 100rpx;
+}
+
+.padding_left_16
+{
+  padding-left: 16rpx;
+}
+
+.padding_left_20
+{
+  padding-left: 20rpx;
+}
+
+.padding_left_28
+{
+  padding-left: 28rpx;
+}
+
+.padding_right_20
+{
+  padding-right: 20rpx;
+}
+
+.padding_top_30_right_20
+{
+  padding: 30rpx 20rpx;
+}
+
+.padding_top_40_right_20
+{
+  padding: 40rpx 20rpx;
+}
+
+.padding_top_60_right_20
+{
+  padding: 60rpx 20rpx;
+}
+
+.padding_top_60_right_40
+{
+  padding: 60rpx 40rpx;
+}
+/**--------------------------Padding--------------------------**/
+
+/**--------------------------Margin--------------------------**/
+.margin_40
+{
+  margin: 40rpx;
+}
+
+.margin_30
+{
+  margin: 30rpx;
+}
+
+.margin_20
+{
+  margin: 20rpx;
+}
+
+.margin_center
+{
+  margin: 0rpx auto;
+}
+
+.margin_top_8
+{
+  margin-top: 8rpx;
+}
+
+.margin_top_10
+{
+  margin-top: 10rpx;
+}
+
+.margin_top_12
+{
+  margin-top: 12rpx;
+}
+
+.margin_right_12
+{
+  margin-right: 12rpx;
+}
+
+.margin_top_20
+{
+  margin-top: 20rpx;
+}
+
+.margin_top_30
+{
+  margin-top: 30rpx;
+}
+
+.margin_top_40
+{
+  margin-top: 40rpx;
+}
+
+
+.margin_top_100
+{
+  margin-top: 100rpx;
+}
+
+.margin_bot_20
+{
+  margin-bottom: 20rpx;
+}
+
+.margin_bot_30
+{
+  margin-bottom: 30rpx;
+}
+
+.margin_bot_40
+{
+  margin-bottom: 40rpx;
+}
+
+.margin_left_10
+{
+  margin-left: 10rpx;
+}
+
+.margin_left_20
+{
+  margin-left: 20rpx;
+}
+
+.margin_left_40
+{
+  margin-left: 40rpx;
+}
+
+.margin_right_20
+{
+  margin-right: 20rpx;
+}
+
+.margin_right_40
+{
+  margin-right: 40rpx;
+}
+
+.margin_rl20
+{
+  margin: 0rpx 20rpx;
+}
+
+.margin_rl30
+{
+  margin: 0rpx 30rpx;
+}
+
+.margin_rl40
+{
+  margin: 0rpx 40rpx;
+}
+
+.margin_rl60
+{
+  margin: 0rpx 60rpx;
+}
+
+.margin_rl48
+{
+  margin: 0rpx 48rpx;
+}
+
+.margin_tb20
+{
+  margin: 20rpx 0rpx;
+}
+
+.margin_tb40
+{
+  margin: 40rpx 0rpx;
+}
+
+.margin_top_40_right_20
+{
+  margin: 40rpx 20rpx;
+}
+
+.margin_top_30_right_20
+{
+  margin: 30rpx 20rpx;
+}
+
+.margin_top_30_right_40
+{
+  margin: 30rpx 40rpx;
+}
+
+.margin_top_4
+{
+  margin-top: 4rpx;
+}
+/**--------------------------Margin--------------------------**/
+
+/**--------------------------HW--------------------------**/
+.h_42{
+  height:42rpx;
+}
+
+.hw_40{
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.hw_56{
+  height: 56rpx;
+  width: 56rpx;
+}
+
+.hw_60{
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.hw_66{
+  height: 66rpx;
+  width: 66rpx;
+}
+
+.hw_80{
+  height: 80rpx;
+  width: 80rpx;
+}
+
+.hw_160{
+  height: 160rpx;
+  width: 160rpx;
+}
+
+.hw_150{
+  height: 150rpx;
+  width: 150rpx;
+}
+
+.hw_180{
+  height: 180rpx;
+  width: 180rpx;
+}
+
+.width_300{
+  width: 300rpx;
+}
+
+.width_330{
+  width:330rpx;
+}
+
+.width_590{
+  width:590rpx;
+}
+
+.width_auto{
+  width:auto;
+}
+
+.width_10{
+  width:10%;
+}
+
+.width_20{
+  width:20%;
+}
+
+.width_30{
+  width:30%;
+}
+
+.width_50{
+  width:50%;
+}
+
+.width_70{
+  width:70%;
+}
+
+.height_auto{
+  height: auto;
+}
+
+.width_658{
+  width:658rpx;
+}
+/**--------------------------HW--------------------------**/
+
+/**--------------------------Border_Radius--------------------------**/
+.border_radius_8
+{
+  border-radius: 8rpx;
+}
+
+.border_radius_10
+{
+  border-radius: 10rpx;
+}
+
+.border_radius
+{
+  border-radius: 50%;
+}
+
+.border_radius_16
+{
+  border-radius: 16rpx;
+}
+/**--------------------------Border_Radius--------------------------**/
+
+/**--------------------------navigator--------------------------**/
+.navigator {
+  padding: 30rpx 20rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navigator_iamge {
+  width: 40rpx; 
+  height: 40rpx;
+  
+}
+
+.navigator_text {
+  flex: 1;
+}
+
+.navigator_arrow {
+  padding-right: 20rpx;
+  position: relative;
+}
+
+.navigator_arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #888888;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -8rpx;
+  right: 20rpx;
+}
+
+.navigator_hover {
+    background-color:#F5F5F5;
+}
+/**--------------------------navigator--------------------------**/
+
+/**--------------------------title--------------------------**/
+.title{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.title:before{
+    content:"-";
+    color: #979797;  
+    opacity: 0.3;
+    margin-right: 10rpx;
+}
+
+.title:after{
+    content:"-";
+    color: #979797;
+    opacity: 0.3;
+    margin-left: 10rpx;
+}
+/**--------------------------title--------------------------**/
+
+/**--------------------------text_align--------------------------**/
+.text_align_center{
+  text-align: center;
+}
+
+.text_align_right{
+  text-align: right;  
+}
+
+.text_align_end{
+  text-align: end;  
+}
+/**--------------------------text_align--------------------------**/
+
+/**--------------------------background_color--------------------------**/
+.background_colorF5
+{
+  background-color: #F5F5F5;
+}
+
+.background_colorEEE
+{
+  background-color: #EEEEEE;
+}
+/**--------------------------background_color--------------------------**/
+
+/**--------------------------border--------------------------**/
+.border_bottom_999
+{
+  border-bottom: 1rpx solid rgba(153, 153, 153, 0.2);
+  
+}
+
+.border_right_999
+{
+  border-right: 1rpx solid rgba(153, 153, 153, 0.2);
+  
+}
+
+.border_bottom_F5
+{
+  border-bottom: 20rpx solid #F5F5F5;
+}
+
+.border_bottom_F5_1
+{
+  border-bottom: 1rpx solid rgba(245, 245, 245, 0.15);
+}
+
+.border_bottom_CCC_1
+{
+  border-bottom: 1rpx solid #CCCCCC;
+}
+/**--------------------------border--------------------------**/
+
+/**--------------------------opacity--------------------------**/
+.opacity_20
+{
+  opacity: 0.2;
+}
+/**--------------------------opacity--------------------------**/
+
+/**--------------------------flex--------------------------**/
+.flex_1{
+  flex: 1;
+}
+
+.flex_50{
+  flex: 0 0 70%;
+}
+/**--------------------------flex--------------------------**/
+
+/**--------------------------other--------------------------**/
+.test_background_color
+{
+  background-color: red;
+}
+
+.default_height{
+  height: 700rpx;
+}
+/**--------------------------other--------------------------**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

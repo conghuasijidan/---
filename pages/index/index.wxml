@@ -1,0 +1,43 @@
+<!--index.wxml-->
+
+<view class="main">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper" circular="{{circular}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{currentIndicatorColor}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+          <image src="{{item.url}}" class="scrollImage"></image>
+    </swiper-item>
+  </block>   
+  </swiper>
+  <view class="selectBackView">
+    <view class="selectMenu">
+      <view class="backView">
+          <label class="selectLabel">性别</label>
+          <image src="../../images/selectdown_image.png" class="selectImage"></image>
+      </view>
+        <view class="backView">
+          <label class="selectLabel">金额</label>
+          <image src="../../images/selectdown_image.png" class="selectImage"></image>
+        </view>
+    </view>
+  </view>
+  <view class="recomendView">
+  <view class="blueLine"></view>
+  <label class="recomendLabel">热点推荐</label>
+  </view>
+<view class="scrollView" >
+  <view class="cellBackView" wx:for="{{listImage}}"  wx:for-index="index" wx:for-item="item" > 
+  <view class="cellView">
+     <image src="../../images/index_cell_pic.png" class="cellImage"> </image>
+     <view class="sectionOne">
+     <label class="cellName">林更新</label>
+     <label class="cellPrice">58</label>
+     </view>
+     <view class="sectionTwo">
+     <label class="cellElse">江干区</label>
+     <label class="cellElse">导游一年</label>
+     </view>
+  </view>
+  </view>
+</view>
+
+</view> 
