@@ -1,2 +1,75 @@
 <!--recomendDetail.wxml-->
-<text>recomendDetail.wxml</text>
+<view>
+  <view class="headerView">
+     <image src="../../images/index_cell_pic.png " class="photo"></image>
+     <view class="background">
+       <view class="topText">
+         <label class="nameLabel">林更新</label>
+         <label class="locLabel">江干区</label>
+       </view>
+       <view class="bottomView">
+         <image src="../../images/man_icon.png" class="iconImage"></image>
+         <image src="../../images/evidence_icon.png" class="iconImage"></image>
+       </view>
+     </view>
+     
+  </view>
+  <view class="lineView"></view>
+  <view class="bodyView">
+    <image src="../../images/index_cell_pic.png" class="bigPhoto"></image>
+    <view class="blockView1">
+    <label class="scenicLabel">雷锋塔景区</label>
+    <label class="priceLabel">58</label>
+    </view>
+    <view class="blockView2">
+      <view class="audioView">
+        
+      </view>
+      <view class="starView">
+       <image src="../../images/comment_star_selected.png" wx:for="{{starCount}}" class="starImage"></image>
+         <image src="../../images/comment_star_normal.png" wx:for="{{5-starCount}}" class="starImage"></image>
+        
+      </view>
+    </view>
+    <view class="blockView3">
+      <image src="../../images/mask_icon.png" class="maskImage"></image>
+      <label class="maskLabel">热情流 时间控 强亲和</label>
+    </view>
+    <view class="blockView4">
+      <image src="../../images/order_icon.png" class="orderImage"></image>
+      <label class="orderLabel">接单20次</label>
+    </view>
+    <view class="separateView"></view>
+  </view>
+  <view class="footerView">
+    <view class="titleView">
+      <label class="titleLabel">全部评论（32次）</label>
+    </view>
+    <view class="specialView" >
+        <view class="specialBackgroundView" wx:for="{{specialLabelList}}" wx:for-index="index" wx:for-item="item">
+          <label class="specialLabel">{{item.key}} </label>
+        </view>
+        <!--<view class="specialBackgroundView">
+          <label class="specialLabel">服务好(50)</label>
+        </view>
+        <view class="specialBackgroundView">
+          <label class="specialLabel">很亲切(50)</label>
+        </view>-->
+    </view>
+    <view class="cellView" wx:for="{{cellList}}" wx:for-index="index" wx:for-item="item">
+        <view class="cellSection1">
+            <image src="../../images/index_cell_pic.png" class="cellPic"></image>
+            <label class="cellNameLabel">小可爱</label>
+            <image src="../../images/comment_star_selected.png" wx:for="{{starCount}}" class="commentStar"></image>
+            <image src="../../images/comment_star_normal.png" wx:for="{{5-starCount}}" class="commentStar"></image>
+            <label class="timeLabel">06-20</label>
+        </view>
+        <view class="contentView">我拿你祭祀富哦建瓯市你of偶奇偶佛山i搜佛极乐世界非农挨饿 数量欧文佛教搜ISO就我偶家搜ISOi
+        </view>
+        <view class="lineView"></view>
+    </view>
+    <view class="footerBottomView">
+       <label class="overLabel">一全部评论加载完毕一</label>
+    </view>
+  </view>
+</view>

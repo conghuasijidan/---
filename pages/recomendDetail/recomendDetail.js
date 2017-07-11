@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+   starCount:3,
+    specialLabelList: [{key:'准时(50)'}, {key:'服务好(20)'},{key:'很亲切(50)'}],
+    cellList: [{ key: '' }, { key: '' }, { key: '' }]
+   
   },
 
   /**
