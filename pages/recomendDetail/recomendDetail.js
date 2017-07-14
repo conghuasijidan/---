@@ -1,4 +1,5 @@
 // recomendDetail.js
+var interval
 Page({
 
   /**
@@ -7,10 +8,71 @@ Page({
   data: {
    starCount:3,
     specialLabelList: [{key:'准时(50)'}, {key:'服务好(20)'},{key:'很亲切(50)'}],
-    cellList: [{ key: '' }, { key: '' }, { key: '' }]
-   
+    cellList: [{ key: '' }, { key: '' }, { key: '' }],
+     j:3,
+     isPlay:false,
+     time:10,
   },
+   voiceAnimation:function(){
+    var that = this;
+     //话筒帧动画  
+     if (this.data.isPlay == false){
+       var i = 1;
+       this.timer = setInterval(function () {
+         i++;
+         i = i % 3;
+         that.setData({
+           j: i + 1,
+         })
+         return
+       }, 300);
+       that.setData({
+         isPlay:true,
+         timer:this.timer
+       });
+       interval = this.timer
+     }else
+     {
+      // 关闭定时器
+      clearInterval(this.timer);
+     
+      that.setData({
+        isPlay: false,
+        j:3,
+      })
+     }
 
+
+   },
+  countDown:function(){
+    var that = this;
+    if(this.data.isPlay ==false)
+    {
+      var _time = this.data.time;
+      this.interval = setInterval(function () {
+        _time--;
+        if(_time <= 0)
+        {
+          clearInterval(interval);
+          that.setData({
+            time: 10,
+            j:3
+          })
+          
+        }else{
+          that.setData({
+            time: _time
+          })
+        }
+        
+      }, 1000)
+    }else{
+      clearInterval(this.interval);
+    }
+    
+
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */

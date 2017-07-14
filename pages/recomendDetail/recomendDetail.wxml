@@ -22,8 +22,14 @@
     <label class="priceLabel">58</label>
     </view>
     <view class="blockView2">
-      <view class="audioView">
-        
+      <view class="audioView" catchtap="voiceAnimation">
+       <view class="countDownView" bindtap="countDown">
+          <image src="../../images/voice/voice_icon1.png" class="voiceImage" wx:if="{{j==1}}"></image>
+          <image src="../../images/voice/voice_icon2.png" class="voiceImage" wx:if="{{j==2}}"></image>
+          <image src="../../images/voice/voice_icon3.png" class="voiceImage" wx:if="{{j==3}}"></image>
+          <label class="voiceLabel" wx:if="{{time >=10}}">{{time}}"</label>
+          <label class="voiceLabel" wx:if="{{time <10}}">0{{time}}"</label>
+        </view>
       </view>
       <view class="starView">
        <image src="../../images/comment_star_selected.png" wx:for="{{starCount}}" class="starImage"></image>
@@ -49,12 +55,6 @@
         <view class="specialBackgroundView" wx:for="{{specialLabelList}}" wx:for-index="index" wx:for-item="item">
           <label class="specialLabel">{{item.key}} </label>
         </view>
-        <!--<view class="specialBackgroundView">
-          <label class="specialLabel">服务好(50)</label>
-        </view>
-        <view class="specialBackgroundView">
-          <label class="specialLabel">很亲切(50)</label>
-        </view>-->
     </view>
     <view class="cellView" wx:for="{{cellList}}" wx:for-index="index" wx:for-item="item">
         <view class="cellSection1">
@@ -72,4 +72,8 @@
        <label class="overLabel">一全部评论加载完毕一</label>
     </view>
   </view>
+</view>
+<view class="tabBarView">
+    <view class="consultView"><label class="consultLabel">咨询</label></view>
+     <view class="makeOrderView"><label class="makeOrderLabel">找Ta接单</label></view> 
 </view>
