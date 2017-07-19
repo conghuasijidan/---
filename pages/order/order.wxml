@@ -1,0 +1,95 @@
+<!--order.wxml-->
+<view  >
+  <view class="cellView">
+   <label class="commonLabel">开始日期</label>
+   <view class="rightView" >
+   
+   <picker mode="date" value="{{dates}}" start="2017-1-1" end="2018-12-30" bindchange="selectDateTap">  
+   <label class="rightCommonLabel">{{dates}}</label> 
+   </picker> 
+   <image src="../../images/rightArrow.png" class="rightArrowImage"></image> 
+  </view>
+  </view>
+  <view class="lineView"></view>
+  <view class="cellView">
+    <label class="commonLabel">开始时间</label>
+    <view class="rightView" catchtap="selectTimeTap">
+      <label class="rightCommonLabel">{{times}}</label>
+      <image src="../../images/rightArrow.png" class="rightArrowImage"></image> 
+    </view>
+  </view>
+  <view class="lineView"></view>
+  <view class="cellView">
+    <label class="commonLabel">游玩地点</label>
+    <view class="rightView" catchtap="selectTimeTap">
+      <label class="rightCommonLabel">请选择地点</label>
+      <image src="../../images/rightArrow.png" class="rightArrowImage"></image> 
+    </view>
+  </view>
+  <view class="lineView"></view>
+  <view class="cellView">
+    <label class="commonLabel">服务费用</label>
+    <view class="rightView">
+      <label class="rightCommonLabel">120元/小时x4</label>
+    </view>
+  </view>
+  <view class="lineView"></view>
+   <view class="cellView">
+    <label class="commonLabel">合计</label>
+    <view class="rightView">
+      <label class="rightCommonLabel">480元</label>
+    </view>
+  </view>
+  <view class="separatelineView"></view>
+  <view class="remarksView">
+   <label class="remarksLabel">备注：</label>
+   <textarea class="remarksInput" hidden="{{isDisabled}}" cursor-spacing="70" type="text" placeholder="有什么想说的，快来备注我吧~" placeholder-style="color:#999;font-size:24rpx" /> 
+    
+  </view>
+  <view class="lineView"></view>
+  <view class="checkBgView">
+      <view class="checkImageBgView" catchtap="checkImageTap">
+      <image src="{{checkImageUrl}}" class="agreeImage" ></image>
+      </view>
+      <label class="agreeLabel">同意</label> 
+      <label class="agreementLabel">《友途服务协议》</label>
+  </view>
+</view>
+<view class="tabBarView">
+  <view class="makeOrderView" catchtap="makeOrder"><label class="makeOrderLabel">提交订单</label></view> 
+</view>
+<!--时间选择器  -->
+<view class="timeMaskView" catchtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="timeView" wx:if="{{showModalStatus}}">
+  <view class="controlBarView">
+    <label class="cancelLabel" catchtap="hideModal">取消</label>
+    <label class="sureLabel" catchtap="timeSureTap">确定</label>
+  </view>
+<label class="contentTitleLabel">时段</label>
+  <view class="contentView">
+    <view class="amView"> 
+      <view class="checkAmView">
+       <image src="{{timeAmImageUrl}}" class="chenckedImage" catchtap="amImageTap" data-am="1"></image>
+       <label class="timeAmLabel"> 上午 08:00-12:00</label> 
+      </view>
+      <view class="checkAmView">
+       <image src="{{timeAmEatImageUrl}}" class="chenckedImage" catchtap="amEatImageTap" data-amEat="2"></image>
+       <label class="eatAmLabel">我请导游吃午餐</label>
+      </view>
+    </view>
+    <view class="amView"> 
+      <view class="checkAmView">
+       <image src="{{timePmImageUrl}}" class="chenckedImage" catchtap="pmImageTap"></image>
+       <label class="timeAmLabel"> 下午 14:00-18:00</label> 
+      </view>
+      <view class="checkAmView">
+       <image src="{{timePmEatImageUrl}}" class="chenckedImage" catchtap="pmEatImageTap"></image>
+       <label class="eatAmLabel">我请导游吃晚餐</label>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 时间选择器 -->
+
+
+

@@ -1,2 +1,15 @@
 <!--message.wxml-->
-<text>message.wxml</text>
+<view wx:for="{{userMessageList}}">
+  <view class="messageView" >
+     <image src="../../images/index_cell_pic.png" class="image"></image>
+    
+  </view>
+  <view class="lineView"></view>
+</view>
+<view wx:for="{{systemMessageList}}">
+  <view class="messageView" >
+     <image src="../../images/index_cell_pic.png" class="image"></image>
+    
+  </view>
+  <view class="lineView"></view>
+</view>

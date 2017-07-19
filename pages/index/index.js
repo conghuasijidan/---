@@ -38,10 +38,10 @@ Page({
     })
   },
   onLoad: function () { 
-    //调用应用实例的方法获取全局数据
-    wx.setNavigationBarTitle({
-      title: '伴伴',
-    })
+    // //调用应用实例的方法获取全局数据
+    // wx.setNavigationBarTitle({
+    //   title: '友途',
+    // })
   // 请求列表数据
 
   }

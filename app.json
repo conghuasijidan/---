@@ -1,18 +1,20 @@
 {
   "pages": [
+    "pages/order/order",
     "pages/index/index",
     "pages/logs/logs",
     "pages/location/location",
     "pages/message/message",
     "pages/my/my",
     "pages/recomendDetail/recomendDetail"
+   
   ],
   "tabBar": {
     "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "伴伴",
+        "text": "友途",
         "iconPath": "images/choose_normal.png",
         "selectedIconPath": "images/choose_selected.png"
       },

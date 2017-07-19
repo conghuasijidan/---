@@ -1,1 +1,29 @@
 /* message.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #fafafa;
+}
+.messageView{
+   background-color: #fafafa;
+   width: 100%;
+   height: 160rpx;
+   margin-top: 30rpx;
+   margin-left: 30rpx;
+}
+.image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+.lineView{
+  width: 100%;
+  height: 2rpx;
+  background-color: #999999;
+  opacity: 0.2;
+}
+.systemMessageView{
+ background-color: orange;
+   width: 100%;
+   height: 160rpx;
+}

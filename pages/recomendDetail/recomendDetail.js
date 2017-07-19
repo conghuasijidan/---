@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+  scroolHeight:0,
    starCount:3,
     specialLabelList: [{key:'准时(50)'}, {key:'服务好(20)'},{key:'很亲切(50)'}],
     cellList: [{ key: '' }, { key: '' }, { key: '' }],
@@ -69,15 +70,30 @@ Page({
     }else{
       clearInterval(this.interval);
     }
-    
-
-
+  },
+  makeOrder:function(){
+    wx.navigateTo({
+      url: '../order/order',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+   wx.getSystemInfo({
+     success: function(res) {
+       that.setData({
+       scroolHeight:res.windowHeight-98
+       })
+
+     },
+   })
+ 
+
   },
 
   /**

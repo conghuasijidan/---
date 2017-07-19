@@ -1,0 +1,217 @@
+/* order.wxss */
+.bgView{
+  background-color:red;
+  z-index:-1;
+  position:fixed;
+}
+.cellView{
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   height: 120rpx;
+}
+.commonLabel{
+  color: #333333;
+  font-size: 34rpx;
+  margin-left: 20rpx;
+  margin-top: 40rpx;
+}
+.rightView{
+   display: flex;
+  justify-content: flex-end;
+  align-items: center; 
+  /* background-color: orange; */
+  width: 50%;
+  height: 100%;
+}
+.rightCommonLabel{
+  color: #999999;
+  font-size: 30rpx;
+   margin-right: 20rpx; 
+  /* margin-top: 40rpx; */
+}
+.rightArrowImage{
+  width: 16rpx;
+  height: 30rpx;
+  margin-right: 20rpx; 
+  /* margin-top: 40rpx; */
+}
+.lineView{
+  background-color: #f5f5f5;
+  width:100%;
+  height: 2rpx;
+}
+.separatelineView{
+  background-color: #f5f5f5;
+  width:100%;
+  height: 20rpx;
+}
+.remarksView{
+  width: 100%;
+  height: 240rpx;
+}
+.remarksLabel{
+  color: #333333;
+  font-size: 32rpx;
+  margin-left: 20rpx;
+  /* position: relative;
+  top: 10rpx; */
+}
+.remarksInput{
+  color: #333333;
+  font-size: 32rpx;
+  width:710rpx;  
+  margin-left: 20rpx; 
+  margin-right: 20rpx; 
+  height: 190rpx;
+  background-color: orange; 
+  padding-top: 10rpx;
+  
+}
+.checkBgView{
+ display: flex;
+ justify-content: flex-end;
+ /* background-color: orange;  */
+ width: 100%;
+ height: 80rpx;
+ margin-top: 40rpx;
+}
+.agreementLabel{
+  color: #52a3fa;
+  font-size: 26rpx;
+  margin-right: 10rpx;
+
+}
+.agreeLabel{
+  color: #999999;
+  font-size: 26rpx;
+}
+.checkImageBgView{
+   display: flex;
+  justify-content: center;
+  align-items: center; 
+  width: 40rpx;
+  height: 40rpx;
+  /* background-color: burlywood; */
+}
+.agreeImage{
+  width: 24rpx;
+  height: 24rpx;
+}
+.tabBarView
+{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 98rpx;
+  background-color: white;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  right: 0;  
+}
+.makeOrderView{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #52a3fa;
+  border-radius: 10rpx;
+  height: 96rpx;
+  width:100%;
+}
+.makeOrderLabel{
+  font-size: 36rpx;
+  color: white;
+}
+.timeMaskView{
+
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background: #000; */
+  background-color: black;
+  opacity: 0.2; 
+  overflow: hidden;
+  z-index: 1000; 
+  /* color: #fff; */
+}
+.timeView{
+  width: 100%;
+  height: 600rpx;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+   z-index: 2000; 
+  /* background: #fff; */
+  background-color: white;
+}
+.controlBarView{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 80rpx
+}
+.cancelLabel{
+  color: #333333;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+
+}
+.sureLabel{
+  color: #333333;
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+.contentTitleLabel{
+  color: #999999;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+}
+.contentView{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: beige; */
+  width: 100%;
+  height: 200rpx;
+}
+.amView{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  /* background-color: orange; */
+  width: 80%;
+  height: 110rpx;
+
+}
+.checkAmView{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46%;
+  height: 30rpx;
+  /* background-color: bisque; */
+}
+.chenckedImage{
+  width: 28rpx;
+  height: 28rpx;
+}
+.timeAmLabel{
+  color: #999999;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+.eatAmLabel{
+  color: #999999;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+.pmView{
+
+}
