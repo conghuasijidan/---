@@ -21,7 +21,7 @@
   <view class="lineView"></view>
   <view class="cellView">
     <label class="commonLabel">游玩地点</label>
-    <view class="rightView" catchtap="selectTimeTap">
+    <view class="rightView" catchtap="selectPlaceTap">
       <label class="rightCommonLabel">请选择地点</label>
       <image src="../../images/rightArrow.png" class="rightArrowImage"></image> 
     </view>
@@ -43,7 +43,7 @@
   <view class="separatelineView"></view>
   <view class="remarksView">
    <label class="remarksLabel">备注：</label>
-   <textarea class="remarksInput" hidden="{{isDisabled}}" cursor-spacing="70" type="text" placeholder="有什么想说的，快来备注我吧~" placeholder-style="color:#999;font-size:24rpx" /> 
+   <textarea  class="remarksInput"  maxlength="100" hidden="{{isDisabled}}" cursor-spacing="70" type="text" placeholder="有什么想说的，快来备注我吧~" placeholder-style="color:#999;font-size:24rpx" /> 
     
   </view>
   <view class="lineView"></view>

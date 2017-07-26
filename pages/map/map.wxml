@@ -1,0 +1,10 @@
+<!--map.wxml-->
+<view class="bgView">
+  <view class="searchBgView">
+    <input class="searchInPut" bindfocus="bindfocusTap" bindconfirm="bindconfirmTap" style="width:{{inputWidth}}rpx" type="text" confirm-type="search" maxlength="20" placeholder="你要去哪里？" placeholder-class="searchPlaceHolder"/>
+    <view class="concelView" hidden="{{showConcel}}">
+      <label class="concelLabel" catchtap="concelTap">取消</label>  
+     </view>
+  </view>
+
+</view>

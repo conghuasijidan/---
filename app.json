@@ -1,13 +1,16 @@
 {
   "pages": [
-    "pages/order/order",
+    "pages/poi/poi",
     "pages/index/index",
+    "pages/map/map",
     "pages/logs/logs",
     "pages/location/location",
     "pages/message/message",
     "pages/my/my",
-    "pages/recomendDetail/recomendDetail"
-   
+    "pages/recomendDetail/recomendDetail",
+    "pages/order/order",
+    "pages/inputtips/input"
+    
   ],
   "tabBar": {
     "backgroundColor": "#ffffff",

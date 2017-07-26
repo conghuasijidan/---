@@ -59,22 +59,24 @@
 }
 .remarksInput{
   color: #333333;
-  font-size: 32rpx;
+  font-size: 28rpx;
   width:710rpx;  
   margin-left: 20rpx; 
   margin-right: 20rpx; 
-  height: 190rpx;
-  background-color: orange; 
-  padding-top: 10rpx;
+  height: 190rpx; 
+  /* background-color: orange;  */
+  /* padding-top: 10rpx; */
+  
   
 }
 .checkBgView{
  display: flex;
  justify-content: flex-end;
- /* background-color: orange;  */
+ align-items: center;
+ /* background-color: orange;   */
  width: 100%;
  height: 80rpx;
- margin-top: 40rpx;
+ /* margin-top: 40rpx; */
 }
 .agreementLabel{
   color: #52a3fa;
@@ -87,7 +89,7 @@
   font-size: 26rpx;
 }
 .checkImageBgView{
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center; 
   width: 40rpx;
@@ -139,7 +141,7 @@
 }
 .timeView{
   width: 100%;
-  height: 600rpx;
+  height: 400rpx;
   overflow: hidden;
   position: fixed;
   bottom: 0;
@@ -211,7 +213,4 @@
   color: #999999;
   font-size: 28rpx;
   margin-left: 20rpx;
-}
-.pmView{
-
 }

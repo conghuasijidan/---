@@ -144,11 +144,7 @@ Page({
        })
 
      }
-
-
-
     this.hideModal();
-
   },
   amImageTap:function(){
     var that = this;
@@ -215,6 +211,14 @@ Page({
         timePmEatImageUrl: "../../images/uncheckedImage.png"
       })
     }
+
+  },
+  selectPlaceTap:function(){
+    
+     wx.navigateTo({
+       url: '../poi/poi',
+     })
+
 
   },
   /**
