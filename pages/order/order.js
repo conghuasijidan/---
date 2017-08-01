@@ -7,6 +7,11 @@ Page({
   data: {
     dates:'请选择日期',
     times:'请选择时段',
+    loc:'请选择地点',
+    locHidden:false,
+    locViewHidden:true,
+    locName:'',
+    locDesc:'',
     isDisabled:false,
     isChecked:false,
     checkImageUrl:"../../images/uncheckedImage.png",
@@ -40,6 +45,12 @@ Page({
         checkImageUrl: "../../images/uncheckedImage.png"
       })
     }
+  },
+  agreementTap:function(){
+    wx.navigateTo({
+      url: '../serviceAgreement/serviceAgreement',
+    })
+
   },
   selectTimeTap:function(){
     // 显示遮罩层
@@ -224,8 +235,9 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad: function (option) {
+   
+
   },
 
   /**
@@ -238,8 +250,10 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
+  onShow: function (option) {
+    // 获取选择的地点
+   
+
   },
 
   /**

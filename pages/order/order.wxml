@@ -22,7 +22,11 @@
   <view class="cellView">
     <label class="commonLabel">游玩地点</label>
     <view class="rightView" catchtap="selectPlaceTap">
-      <label class="rightCommonLabel">请选择地点</label>
+       <label class="rightCommonLabel" hidden="{{locHidden}}">{{loc}}</label> 
+      <view class="locView" hidden="{{locViewHidden}}">
+      <label class="locNameLabel">{{locName}}</label>
+      <label class="locDescLabel">{{locDesc}}</label>
+      </view>
       <image src="../../images/rightArrow.png" class="rightArrowImage"></image> 
     </view>
   </view>
@@ -52,7 +56,7 @@
       <image src="{{checkImageUrl}}" class="agreeImage" ></image>
       </view>
       <label class="agreeLabel">同意</label> 
-      <label class="agreementLabel">《友途服务协议》</label>
+      <label class="agreementLabel" catchtap="agreementTap">《友途服务协议》</label>
   </view>
 </view>
 <view class="tabBarView">

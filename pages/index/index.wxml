@@ -16,7 +16,7 @@
     </swiper-item>
   </block>   
   </swiper>
-  <view class="selectBackView">
+  <!-- <view class="selectBackView">
     <view class="selectMenu">
       <view class="backView" catchtap="sexOrderTap">
           <label class="selectLabel">性别</label>
@@ -27,7 +27,7 @@
           <image src="../../images/selectdown_image.png" class="selectImage"></image>
         </view>
     </view>
-  </view>
+  </view> -->
   <view class="recomendView">
   <view class="blueLine"></view>
   <label class="recomendLabel">热点推荐</label>

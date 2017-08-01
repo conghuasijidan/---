@@ -114,23 +114,28 @@ Page({
     //   url: url
     // })
   },
-  bindfocusTap: function () {
-
-    this.setData({
-      inputWidth: 620,
-      showConcel: false
+  map_textTap: function () {
+    var pages = getCurrentPages();
+    var prePage = pages[pages.length - 2];
+    prePage.setData({
+      locName:this.data.textData.name,
+      locDesc:this.data.textData.desc,
+      locHidden:true,
+      locViewHidden:false,
     })
-
+    wx.navigateBack({
+      
+    })
   },
   bindconfirmTap: function () {
 
   },
-  concelTap: function () {
-    this.setData({
-      inputWidth: 700,
-      showConcel: true
-    })
-  },
+  // concelTap: function () {
+  //   this.setData({
+  //     inputWidth: 700,
+  //     showConcel: true
+  //   })
+  // },
   showMarkerInfo: function(data,i){
     var that = this;
     that.setData({

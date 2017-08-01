@@ -1,0 +1,4 @@
+<!--serviceAgreement.wxml-->
+<view class="backgroundView">
+<image src="../../images/serviceAgreement.png" class="image"></image>
+</view>

@@ -15,3 +15,20 @@
   border-bottom:1px solid #c3c3c3;
   padding-bottom:10px
 }
+.searchPlaceHolder{
+  font-size: 24rpx;
+  color: #999;
+}
+.searchInPut{
+  background-color: white;
+  border:2rpx solid #eee;
+  border-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  height:70rpx;
+  font-size: 24rpx;
+  color: #333333;
+  padding-left: 10rpx;
+  margin-left: 20rpx;
+
+}

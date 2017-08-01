@@ -1,13 +1,13 @@
 <view class="searchBgView">
-    <input class="searchInPut" bindfocus="bindfocusTap" data-city="{{city}}" data-longitude="{{longitude}}" data-latitude="{{latitude}}" bindtouchstart="bindInput" bindconfirm="bindconfirmTap" style="width:{{inputWidth}}rpx" type="text" confirm-type="search" maxlength="20" placeholder="你要去哪里？" placeholder-class="searchPlaceHolder"/>
-    <view class="concelView" hidden="{{showConcel}}">
-      <label class="concelLabel" catchtap="concelTap">取消</label>  
-     </view>
+    <input class="searchInPut"  data-city="{{city}}" data-longitude="{{longitude}}" data-latitude="{{latitude}}" bindtouchstart="bindInput" bindconfirm="bindconfirmTap" style="width:{{inputWidth}}rpx" type="text" confirm-type="search" maxlength="20" placeholder="你要去哪里？" placeholder-class="searchPlaceHolder"/>
+    <!-- <view class="concelView" hidden="{{showConcel}}">
+       <label class="concelLabel" catchtap="concelTap">取消</label>   
+     </view> -->
 </view>
 <view class="map_container">
   <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap"></map>
 </view>
-<view class="map_text">
+<view class="map_text" catchtap="map_textTap">
   <text class="h1">{{textData.name}}</text>
   <text>{{textData.desc}}</text>
 </view>
