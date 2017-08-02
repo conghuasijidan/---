@@ -226,10 +226,21 @@ Page({
   },
   selectPlaceTap:function(){
     
-     wx.navigateTo({
-       url: '../poi/poi',
-     })
+    //  wx.navigateTo({
+    //    url: '../poi/poi',
+    //  })
 
+    var that = this
+    wx.chooseLocation({
+      success: function (res) {
+        that.setData({
+          locHidden: true,
+          locViewHidden: false,
+          locName: res.name,
+          locDesc: res.address,
+        })
+      }
+    })
 
   },
   /**

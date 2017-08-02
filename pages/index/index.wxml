@@ -1,51 +1,84 @@
 <!--index.wxml-->
 
 <view class="main">
-  <view class="recomendView">
-    <view class="blueLine"></view>
-    <label class="recomendLabel">地点推荐:</label>
+  <view class="locBgView">
+    <!-- <view class="blueLine"></view> -->
+    <!-- <label class="recomendLabel">地点推荐:</label> -->
     <view class="locView" catchtap="locSelectedTap">
       <label class="locLabel">杭州</label>
       <image src="../../images/dropdown_image.png" class="locImage"></image>
     </view>
+    <label class="temperatureLabel">37℃</label>
   </view>
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper" circular="{{circular}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{currentIndicatorColor}}">
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-          <image src="{{item.url}}" class="scrollImage"></image>
-    </swiper-item>
-  </block>   
-  </swiper>
-  <!-- <view class="selectBackView">
-    <view class="selectMenu">
-      <view class="backView" catchtap="sexOrderTap">
-          <label class="selectLabel">性别</label>
-          <image src="../../images/selectdown_image.png" class="selectImage"></image>
+  <view class="separateView"></view>
+  <view class="menuBgView">
+     <view class="menu1View" catchtap="munuSelectedTap" data-tag="1" >
+         <view >
+          <label class="{{selected1Menu}}">猜你喜欢</label> 
+          <view class="selectedView" hidden="{{selected1Hidden}}"></view> 
+          </view>
       </view>
-        <view class="backView" catchtap="moneyOrderTap">
-          <label class="selectLabel">金额</label>
-          <image src="../../images/selectdown_image.png" class="selectImage"></image>
+      <view class="menu2View"  catchtap="munuSelectedTap" data-tag="2" >
+        <view >
+           <label class="{{selected2Menu}}">城市体验</label> 
+           <view class="selectedView" hidden="{{selected2Hidden}}"></view>
         </view>
+      </view>
+      <view class="menu3View" catchtap="munuSelectedTap" data-tag="3">
+       <view class="menuitemView">
+           <label class="{{selected3Menu}}">导游服务</label> 
+           <view class="selectedView" hidden="{{selected3Hidden}}"></view>
+        </view>
+      </view>
+  </view>
+  <view class="" id="block1" wx:if="{{selectedTag==1}}">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper" circular="{{circular}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{currentIndicatorColor}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+              <image src="{{item.url}}" class="scrollImage"></image>
+        </swiper-item>
+      </block>   
+    </swiper>
+  
+    <view class="recomendView">
+      <view class="blueLine"></view>
+      <label class="recomendLabel">热点推荐</label>
     </view>
-  </view> -->
-  <view class="recomendView">
-  <view class="blueLine"></view>
-  <label class="recomendLabel">热点推荐</label>
+    <view class="scrollView" >
+      <view class="cellBackView" wx:for="{{listImage}}"  wx:for-index="index" wx:for-item="item" > 
+      <view class="cellView" catchtap="cellTap">
+        <image src="../../images/index_cell_pic.png" class="cellImage"> </image>
+        <view class="sectionOne">
+        <label class="cellName">林更新</label>
+        <label class="cellPrice">58</label>
+        </view>
+        <view class="sectionTwo">
+        <label class="cellElse">江干区</label>
+        <label class="cellElse">导游一年</label>
+        </view>
+      </view>
+      </view>
+    </view>
   </view>
-<view class="scrollView" >
-  <view class="cellBackView" wx:for="{{listImage}}"  wx:for-index="index" wx:for-item="item" > 
-  <view class="cellView" catchtap="cellTap">
-     <image src="../../images/index_cell_pic.png" class="cellImage"> </image>
-     <view class="sectionOne">
-     <label class="cellName">林更新</label>
-     <label class="cellPrice">58</label>
-     </view>
-     <view class="sectionTwo">
-     <label class="cellElse">江干区</label>
-     <label class="cellElse">导游一年</label>
-     </view>
+  <view class="block2View" id="block2" wx:if="{{selectedTag==2}}">
+    <view class="selectBackView">
+      <view class="selectMenu">
+          <view class="backView" catchtap="sexOrderTap">
+              <label class="selectLabel">性别</label>
+              <image src="../../images/selectdown_image.png" class="selectImage"></image>
+          </view>
+          <view class="backView" catchtap="moneyOrderTap">
+            <label class="selectLabel">金额</label>
+            <image src="../../images/selectdown_image.png" class="selectImage"></image>
+          </view>
+      </view>
+    </view> 
+    <view class="bigImageView">
+      <image src="../../images/bgImage.png" class="bigImage" ></image>
+      <!-- <view class="bottomBgView"></view> -->
+    </view>
   </view>
-  </view>
-</view>
+  <view class="block3View" id="block3" wx:if="{{selectedTag==3}}">
 
+  </view>
 </view> 

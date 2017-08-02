@@ -20,8 +20,8 @@
   display: flex;
   justify-content: flex-end;
   align-items: center; 
-  /* background-color: orange;  */
-  width: 70%;
+   /* background-color: orange;   */
+  width: 580rpx;
   height: 100%;
 }
 .rightCommonLabel{
@@ -216,18 +216,30 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  /* background-color: beige; */
+  /* background-color: beige;  */
   height: 100%;
-  width: 89%;
+  width: 520rpx;
   margin-right: 20rpx;
 }
 .locNameLabel{
-  font-size: 30rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 28rpx;
   color: #999;
-  margin-bottom: 10rpx;
+  width: 100%;
+  line-height: 28rpx;
+  /* background-color: wheat; */
+  /* margin-bottom: 10rpx; */
 }
 .locDescLabel{
-  font-size: 24rpx;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 20rpx;
   color: #999;
-  margin-top: 10rpx;
+   margin-top: 10rpx;  
+  width: 100%;
+  /* background-color: chartreuse; */
+  line-height: 20rpx;
+  /* height: 50%; */
 }

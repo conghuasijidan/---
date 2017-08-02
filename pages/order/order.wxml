@@ -24,7 +24,7 @@
     <view class="rightView" catchtap="selectPlaceTap">
        <label class="rightCommonLabel" hidden="{{locHidden}}">{{loc}}</label> 
       <view class="locView" hidden="{{locViewHidden}}">
-      <label class="locNameLabel">{{locName}}</label>
+      <label class="locNameLabel" >{{locName}}</label>
       <label class="locDescLabel">{{locDesc}}</label>
       </view>
       <image src="../../images/rightArrow.png" class="rightArrowImage"></image> 

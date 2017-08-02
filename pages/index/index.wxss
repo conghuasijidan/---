@@ -1,15 +1,24 @@
 /**index.wxss**/
 .main{
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
+  background-color: white;
   width: 100%;
   height: 100%;
 }
+.locBgView{
+  display: flex;
+  /* background-color: #fafafa; */
+  justify-content: space-between;
+  align-items: center; 
+  /* background-color: beige;  */
+  width:100%;
+  height: 72rpx;
+}
 .locView{
-  /*background-color: orange;*/
+  /* background-color: orange; */
   width: 100rpx;
   height: 50rpx;
-  margin-left: 30rpx;
-  margin-top: 10rpx;
+  margin-left: 30rpx; 
 }
 .locLabel{
   font-size: 24rpx;
@@ -19,6 +28,71 @@
   width:24rpx;
   height: 12rpx;
   margin-left: 10rpx;
+}
+.temperatureLabel{
+  font-size: 24rpx;
+  color: #999999;
+  margin-right: 30rpx;
+}
+.menuBgView{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+  align-items: center; 
+  /* background-color: orange; */
+  height: 120rpx;
+  width: 100%;
+}
+.menu1View{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end;  */
+  align-items: center;
+
+  margin-right: 80rpx;  
+   /* background-color: orange;  */
+  width: 140rpx;
+  height: 50rpx;
+}
+.menu2View{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end;  */
+  align-items: center;
+  align-self: center;
+   /* background-color: orange;  */
+  width: 140rpx;
+  height: 50rpx;
+}
+.menu3View{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end;  */
+  align-items: center;
+   margin-left: 80rpx; 
+   /* background-color: orange;  */
+  width: 140rpx;
+  height: 50rpx;
+}
+.menuitemView{
+  /* background-color: beige; */
+  height: 100%;
+}
+.menuNormalLabel{
+   font-size: 24rpx;
+   color: #999999;
+  
+}
+.menuSelectLabel{
+   font-size: 28rpx;
+   color: #52a3fa;
+   margin-top:10rpx;
+}
+.selectedView{
+   background-color: #52a3fa;
+   height: 2rpx;
+   width: 100%;
+   margin-top: 10rpx;
 }
 .swiper{
   width: 100%;
@@ -47,31 +121,19 @@
   margin-top: 20rpx;
 }
 
-.backView{
-  /*background-color: red;*/
-  width:15%;
-  height: 100%;
-}
-.selectLabel{
-  font-size: 24rpx;
-  color: #999999;
-  margin-left: 15rpx;
-  position: relative;
-  top: 8rpx;
-
-}
-.selectImage{
-   width:16rpx;
-   height:12rpx;
-   margin-left: 15rpx;
-   position: relative;
-   top: 5rpx;
-}
 .recomendView{
   display: flex;
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
+  /* background-color: beige;  */
   width:100%;
   height: 72rpx;
+}
+
+.separateView{
+  background-color: #eeeeee;
+  height: 2rpx;
+  width: 690rpx;
+  margin-left: 30rpx;
 }
 .blueLine{
   background-color: #52a3fa;
@@ -152,4 +214,58 @@
   margin-left: 10rpx;
   position: relative;
   top: 10rpx;
+}
+/*城市体验  */
+.block2View{
+  background-color: white;
+  width: 100%;
+  height: 1400rpx;
+}
+.backView{
+  /* background-color: red; */
+  width:15%;
+  height: 100%;
+}
+.selectLabel{
+  font-size: 24rpx;
+  color: #999999;
+  margin-left: 15rpx;
+  position: relative;
+  top: 8rpx;
+
+}
+.selectImage{
+   width:16rpx;
+   height:12rpx;
+   margin-left: 15rpx;
+   position: relative;
+   top: 5rpx;
+}
+.bigImageView{
+ display: flex;
+ background-color: orange;
+ width: 690rpx;
+ height: 690rpx;
+ margin-top: 20rpx;
+ margin-left: 30rpx;
+}
+.bigImage{
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+.bottomBgView{
+  background-color: white;
+  width: 100%;
+  height: 100rpx;
+  z-index: 20;
+}
+
+
+
+/*导游服务  */
+.block3View{
+  background-color: bisque;
+  width: 100%;
+  height: 1400rpx;
 }
