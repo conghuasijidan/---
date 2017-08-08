@@ -22,7 +22,11 @@ Page({
     { url: '../../images/scroll_image.png' }
    ],
    // 列表数据
-   listImage: [{ url: '' }, { url: '' }, { url: '' }, { url: '' },{ url: '' }, { url: '' }]
+   listImage: [{ url: '' }, { url: '' }, { url: '' }, { url: '' },{ url: '' }, { url: '' }],
+
+  //  城市体验
+   cityDataList: [{ imageUrl: '', name: '' }, { imageUrl: '', name: '' }, { imageUrl: '', name: ''}]
+
   },
   munuSelectedTap:function(event){
     var that = this;
@@ -39,6 +43,18 @@ Page({
      })
    } else if (event.currentTarget.dataset.tag == 2)
    {
+    //  照片底部渐变
+    // debugger;
+    //  const ctx = wx.createCanvasContext('gradualView');
+    //  const grd = ctx.createLinearGradient(0,100,0,0);
+    //  grd.addColorStop(0,'black');
+    //  grd.addColorStop(1,'white');
+
+    //  ctx.setFillStyle(grd);
+    //  ctx.fillRect(0,0,690,100);
+    //  ctx.draw();
+
+
      that.setData({
        selected1Menu: "menuNormalLabel",
        selected2Menu: "menuSelectLabel",
@@ -75,14 +91,14 @@ Page({
       url: '../recomendDetail/recomendDetail',
     })
   },
-  // 城市体验
+  // --------------------------------------城市体验
   sexOrderTap: function () {
 
   },
   moneyOrderTap: function () {
 
   },
-  // 导游服务
+  //-------------------------------------- 导游服务
   onLoad: function () { 
     // //调用应用实例的方法获取全局数据
     // wx.setNavigationBarTitle({

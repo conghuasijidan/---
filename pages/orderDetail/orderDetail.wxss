@@ -1,0 +1,174 @@
+/* orderDetail.wxss */
+.personInforView{
+  /* background-color: orange; */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 220rpx;
+}
+.picImage{
+  width: 140rpx;
+  height: 140rpx;
+  margin-left: 40rpx;
+  border-radius: 10rpx;
+}
+.inforView{
+  display: flex;
+  flex-direction: column;
+  /* background-color: bisque;  */
+  height: 140rpx;
+  width: 70%;
+  margin-left: 20rpx;
+}
+.nameView{
+  display: flex;
+  align-items: center;
+  /* background-color: greenyellow;  */
+  height: 70rpx;
+  width: 100%;
+}
+.nameText{
+  font-size: 32rpx;
+  color: #333;
+  margin-top: 10rpx;
+}
+.locText{
+  font-size: 28rpx;
+  color: #666;
+  margin-left: 30rpx;
+  margin-top: 16rpx;
+}
+.evidenceView{
+  display: flex;
+  align-items: center;
+  /* background-color: greenyellow;   */
+  height: 70rpx;
+  width: 100%;
+}
+.iconImage{
+  width:30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+  margin-bottom: 10rpx;
+}
+.lineView{
+  background-color: #fafafa;
+  height: 2rpx;
+  width: 100%;
+}
+.messageView{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
+ height: 100rpx;
+}
+.messageImage{
+ width: 48rpx;
+ height: 48rpx;
+
+}
+.messageText{
+ font-size: 24rpx;
+ color: #999;
+ margin-left: 10rpx;
+}
+.separateView{
+  background-color: #fafafa;
+  height: 20rpx;
+  width: 100%;
+}
+.cellView{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 120rpx;
+  /* background-color: orange; */
+}
+.leftText{
+  font-size: 32rpx;
+  color: #333;
+  margin-left: 30rpx;
+}
+.rightView{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  width: 85%;
+  /* background-color: beige; */
+  margin-left: 17rpx;
+}
+.dateText{
+  font-size: 32rpx;
+  color: #333;
+  margin-right: 30rpx;
+  margin-bottom: 5rpx;
+}
+.eatText{
+ font-size: 32rpx;
+ color: #333;
+ margin-right: 30rpx;
+ margin-top: 5rpx;
+}
+.rightText{
+ font-size: 32rpx;
+ color: #333;
+ margin-right: 30rpx;
+}
+.amountView{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 120rpx;
+  /* background-color: orange; */
+}
+.remarkView{
+  display: flex;
+  height: 140rpx;
+  width: 100%;
+
+}
+.remarkText{
+  font-size: 32rpx;
+  color: #333;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+}
+.statusView{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: orange; */
+  height: 100rpx;
+  width: 100%;
+}
+.statusText{
+  font-size: 28rpx;
+  color: #999;
+}
+.bottomView{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: orange; */
+  width: 100%;
+  height: 80rpx;
+}
+.buttonView{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx solid #52a3fa;
+  width: 360rpx;
+  height: 100%;
+  border-radius: 10rpx;
+  /* background-color: #52a3fa; */
+}
+.buttonText{
+  font-size: 32rpx;
+   color: #52a3fa; 
+  /* color: white; */
+}

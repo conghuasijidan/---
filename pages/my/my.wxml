@@ -1,2 +1,32 @@
-<!--my.wxml-->
-<text>my.wxml</text>
+<view class="container"> 
+
+  <!--头像-->
+  <view class="user_avatar container_row_only ">
+    <image class="hw_100 border_radius_10 " src="{{userInfo.avatarUrl}}"></image>
+    <text class="font_28 font_color_333 padding_left_20">{{userInfo.nickName}}</text>
+  </view>
+
+  <view class="border_bottom_F5"></view>
+
+  <view class="container_row_vcenter_withouthw">
+
+    <view class="container_column_center_withouthw account">
+      <text class="font_color_FD3 font_36">100</text>
+      <text class="font_24 font_color_666 margin_top_20">余额</text>
+    </view>
+
+    <view class="container_column_center_withouthw account border_right_999_2">
+      <image src="../../images/icon_topup.png" class="hw_50"></image>
+      <text class="font_24 font_color_666 margin_top_20">充值</text>
+    </view>
+
+    <view class="container_column_center_withouthw account">
+      <image src="../../images/icon_withdraw.png" class="hw_50"></image>
+      <text class="font_24 font_color_666 margin_top_20">提现</text>
+    </view>
+
+  </view>
+
+  <view class="border_bottom_999_2"></view>
+
+</view>

@@ -2,8 +2,6 @@
 
 <view class="main">
   <view class="locBgView">
-    <!-- <view class="blueLine"></view> -->
-    <!-- <label class="recomendLabel">地点推荐:</label> -->
     <view class="locView" catchtap="locSelectedTap">
       <label class="locLabel">杭州</label>
       <image src="../../images/dropdown_image.png" class="locImage"></image>
@@ -31,7 +29,7 @@
         </view>
       </view>
   </view>
-  <view class="" id="block1" wx:if="{{selectedTag==1}}">
+  <view class=""  id="block1" wx:if="{{selectedTag==1}}">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper" circular="{{circular}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{currentIndicatorColor}}">
       <block wx:for="{{imgUrls}}">
         <swiper-item>
@@ -60,6 +58,7 @@
       </view>
     </view>
   </view>
+ <!--城市体验  -->
   <view class="block2View" id="block2" wx:if="{{selectedTag==2}}">
     <view class="selectBackView">
       <view class="selectMenu">
@@ -73,12 +72,47 @@
           </view>
       </view>
     </view> 
-    <view class="bigImageView">
+    <view class="bigImageView" wx:for="{{cityDataList}}" wx:for-index="index" wx:for-item="item" >
       <image src="../../images/bgImage.png" class="bigImage" ></image>
-      <!-- <view class="bottomBgView"></view> -->
+      <view class="bottomBgView">
+        <image src="../../images/gradualbgimage.png" class="bottomBgImage"></image>
+         <view class="coverBgView" >
+            <view class="leftView">
+              <text class="nameText">小仙女</text>
+              <text class="priceText">城市体验·40元/小时</text>
+            </view>
+            <view class="rightView">
+              <text class="buttonText">下单</text>
+            </view>
+        </view>  
+      </view>
     </view>
   </view>
+  <!--导游服务  -->
   <view class="block3View" id="block3" wx:if="{{selectedTag==3}}">
-
+     <view class="selectBackView">
+      <view class="selectMenu">
+          <view class="backView" catchtap="sexOrderTap">
+              <label class="selectLabel">性别</label>
+              <image src="../../images/selectdown_image.png" class="selectImage"></image>
+          </view>
+          <view class="backView" catchtap="moneyOrderTap">
+            <label class="selectLabel">金额</label>
+            <image src="../../images/selectdown_image.png" class="selectImage"></image>
+          </view>
+      </view>
+    </view> 
+    <view class="bigImageView" wx:for="{{cityDataList}}" wx:for-index="index" wx:for-item="item" >
+      <image src="../../images/bgImage.png" class="bigImage" ></image>
+      <view class="bottomBgView" id="gradualView" >
+        <view class="leftView" >
+          <text class="nameText">小仙女</text>
+          <text class="priceText">导游服务·40元/小时</text>
+        </view>
+        <view class="rightView">
+          <text class="buttonText">下单</text>
+        </view>
+      </view> 
+    </view>
   </view>
 </view> 

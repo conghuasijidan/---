@@ -34,8 +34,7 @@
       </view>
       <view class="starView">
        <image src="../../images/comment_star_selected.png" wx:for="{{starCount}}" class="starImage"></image>
-         <image src="../../images/comment_star_normal.png" wx:for="{{5-starCount}}" class="starImage"></image>
-        
+       <image src="../../images/comment_star_normal.png" wx:for="{{5-starCount}}" class="starImage"></image>
       </view>
     </view>
     <view class="blockView3">

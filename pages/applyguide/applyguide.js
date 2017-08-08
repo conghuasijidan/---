@@ -1,28 +1,22 @@
-// my.js
-var app = getApp()
+// applyguide.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfor:{}
+    imgList: [
+        // { message: 'fool' }, 
+        // { message: 'fool' },
+        // { message: 'fool' }
+      ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function (userInfo) {
-      //更新数据
-     
-      that.setData({
-        userInfo: userInfo
-      })
-    });
+  
   },
 
   /**
@@ -72,5 +66,14 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  toPay:function(event)
+  {
+    // debugger;
+  },
+  formSubmit:function(e)
+  {
+    debugger;
+    console.log('sd',e.detail.value);
   }
 })

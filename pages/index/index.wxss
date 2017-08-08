@@ -110,16 +110,7 @@
   height: 90rpx;
   padding-top: 30rpx;
 }*/
-.selectMenu{
-  display: flex;
-  justify-content: space-around;
-  background-color: #eeeeee;
-  border-radius: 10rpx;
-  width:690rpx;
-  height: 60rpx;
-  margin-left: 30rpx;
-  margin-top: 20rpx;
-}
+
 
 .recomendView{
   display: flex;
@@ -217,15 +208,26 @@
 }
 /*城市体验  */
 .block2View{
-  background-color: white;
+   /* background-color: orange;  */
   width: 100%;
-  height: 1400rpx;
+  /* height: 1400rpx; */
+}
+.selectMenu{
+  display: flex;
+  justify-content: space-around;
+  background-color: #eeeeee;
+  border-radius: 10rpx;
+  width:690rpx;
+  height: 60rpx;
+  margin-left: 30rpx;
+  /* margin-top: 20rpx; */
 }
 .backView{
-  /* background-color: red; */
+   /* background-color: red;  */
   width:15%;
   height: 100%;
 }
+
 .selectLabel{
   font-size: 24rpx;
   color: #999999;
@@ -242,8 +244,8 @@
    top: 5rpx;
 }
 .bigImageView{
- display: flex;
- background-color: orange;
+ /* display: flex; */
+   background-color: orange;  
  width: 690rpx;
  height: 690rpx;
  margin-top: 20rpx;
@@ -252,20 +254,75 @@
 .bigImage{
   width: 100%;
   height: 100%;
-  z-index: 10;
-}
-.bottomBgView{
-  background-color: white;
-  width: 100%;
-  height: 100rpx;
-  z-index: 20;
 }
 
+.bottomBgView{
+  position: relative; 
+  width: 100%;
+  height: 100rpx;
+  left: 0rpx; 
+  right: 0rpx;
+  bottom: 100rpx; 
+  /* z-index: 20； */
+}
+.bottomBgImage
+{
+  width: 100%;
+  height: 100%;
+}
+.coverBgView{
+ display: flex;
+ width: 100%;
+ height: 100%;
+  background-color: blanchedalmond;  
+ position: absolute;
+ top: 0;
+ left: 0;
+
+}
+.leftView{
+  /* background-color: white; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 70%;
+}
+.rightView
+{
+  /* background-color: blanchedalmond; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:2rpx solid #ffffff;
+  width: 160rpx;
+  height: 60rpx;
+  /* margin-left: 15rpx;
+  margin-top: 20rpx; */
+  border-radius: 10rpx;
+}
+.nameText{
+  font-size: 28rpx;
+  color: #ffffff;
+  /* margin-left: 30rpx;
+  margin-top: 20rpx; */
+  
+}
+.priceText{
+  font-size: 28rpx;
+  color: #ffffff;
+  /* margin-left: 30rpx;
+  margin-top: 10rpx; */
+}
+.buttonText{
+  font-size: 28rpx;
+  color: #ffffff;
+}
 
 
 /*导游服务  */
 .block3View{
-  background-color: bisque;
+  /* background-color: bisque; */
   width: 100%;
   height: 1400rpx;
 }

@@ -1,1 +1,9 @@
 /* my.wxss */
+.user_avatar{
+  margin: 30rpx 20rpx 30rpx 30rpx;
+}
+
+.account{
+  width: 33.3%;
+  margin: 40rpx 0 30rpx 0;
+}

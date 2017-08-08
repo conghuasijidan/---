@@ -1,0 +1,39 @@
+/* applyguide.wxss */
+.txt_title{
+  background: #F5F5F5;
+  height: 80rpx;
+}
+
+.img200_style{
+  height: 200rpx;
+  width: 200rpx;
+  padding: 30rpx 0 20rpx 30rpx;
+}
+
+.img20_style{
+  height: 20rpx;
+  width: 30rpx;
+}
+
+.img_voice{
+  height:100rpx;
+  width:426rpx;
+  margin: 30rpx 0  20rpx 0;
+}
+
+.button{
+    height: 100rpx;
+    width: 100%;
+    position:fixed;
+    bottom: -1rpx;
+    background-color: #52a3fa;
+    color: #FFFFFF;
+    align-items: center;
+}
+
+.txt_bottom{
+  margin-bottom: 130rpx;
+}
+
+
+

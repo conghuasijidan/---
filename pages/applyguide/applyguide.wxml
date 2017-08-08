@@ -1,0 +1,71 @@
+<view class="container"> 
+  <view class="txt_title container_row_vcenter_withouthw padding_left_30">
+    <text class="font_24 font_color_666">颜值照</text> 
+    <text class="font_24 font_color_FD3 margin_left_10">(必填喔~)</text>
+  </view>
+
+  <view class="container_row_only">
+    <block wx:for="{{imgList}}">
+      <image src="../../images/my_normal.png" class="img200_style "></image>
+    </block>
+    <image src="../../images/img_addimg.png" class="img200_style "></image>
+  </view>
+
+  <view class="container_row_vcenter_withouthw padding_bot_30">
+    <image src="../../images/icon_example.png " class="img20_style padding_left_30"></image>
+    <text class="font_20 font_color_52A margin_left_10">示例</text>
+    <text class="font_20 font_color_999 margin_left_10">讲真的，我们期待您的颜值很久了呢</text>
+  </view>
+
+  <view class="txt_title container_row_vcenter_withouthw padding_left_30">
+    <text class="font_24 font_color_666">身份证认证</text> 
+    <text class="font_24 font_color_FD3 margin_left_10">(必填喔~)</text>
+  </view>
+
+  <view class="container_row_vcenter_withouthw padding_left_30 h_80 border_bottom_F5">
+    <text class="font_28 font_color_333" >真实姓名：</text>
+    <input class="font_28 font_color_333" placeholder="请您输入真实姓名"></input>
+  </view>
+  
+
+  <view class="container_row_between margin_top_20_right_30 ">
+    <text class="font_28 font_color_333">身份证正面</text>
+    <image src="../../images/img_addimg.png" class="hw_160 "></image>
+  </view>
+
+  <view class="border_bottom_999 margin_rl30"></view>
+
+  <view class="container_row_between margin_top_20_right_30 ">
+    <text class="font_28 font_color_333">身份证反面</text>
+    <image src="../../images/img_addimg.png" class="hw_160 "></image>
+  </view>
+
+  <view class="border_bottom_999 margin_rl30"></view>
+
+  <view class="container_row_vcenter_withouthw margin_tb20">
+    <image src="../../images/icon_example.png " class="img20_style padding_left_30"></image>
+    <text class="font_20 font_color_52A margin_left_10">查看图片示例参考</text>
+  </view>
+
+  <view class="txt_title container_row_vcenter_withouthw padding_left_30">
+    <text class="font_24 font_color_666">语音</text> 
+    <text class="font_24 font_color_FD3 margin_left_10">(选填喔~)</text>
+  </view>
+   
+
+  <view class="container_row_center_withouttw">
+    <image class="img_voice" src="../../images/img_voice_default.png"></image>
+  </view>
+  <text class="font_20 font_color_999 padding_left_30 txt_bottom">录制一段自我语音，增加个人魅力值哦~</text>
+
+  <!--按钮--> 
+ 
+  <view class="button container_row_hcenter font_28" data-hi="wer" bindtap="toPay">
+    <view class="font_36" >立即申请</view>
+    
+  </view>  
+  <!-- <view class="txt_title container_row_vcenter_withouthw padding_left_30">
+    <text class="font_24 font_color_666">颜值照</text> 
+    <text class="font_24 font_color_FD3 margin_left_10">(必填喔~)</text>
+  </view> -->
+</view>

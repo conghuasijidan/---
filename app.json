@@ -1,13 +1,18 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/login/login",
+    "pages/my/my",
+    "pages/orderDetail/orderDetail",
+    "pages/pay/pay",
     "pages/order/order",
+    "pages/my/my",
+    "pages/applyguide/applyguide",
     "pages/poi/poi",
     "pages/map/map",
     "pages/logs/logs",
     "pages/location/location",
     "pages/message/message",
-    "pages/my/my",
     "pages/recomendDetail/recomendDetail",
     "pages/inputtips/input",
     "pages/serviceAgreement/serviceAgreement"

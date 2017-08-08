@@ -1,0 +1,59 @@
+<view class="">
+  <view class="personInforView">
+   <image src="../../images/index_cell_pic.png" class="picImage"></image>
+   <view class="inforView">
+        <view class="nameView">
+          <text class="nameText">球球</text>
+          <text class="locText">杭州</text>
+        </view>
+        <view class="evidenceView">
+         <image src="../../images/man_icon.png" class="iconImage"></image>
+         <image src="../../images/evidence_icon.png" class="iconImage"></image>
+       </view>
+   </view>
+  </view>
+  <view class="lineView"></view>
+  <view class="messageView">
+    <image src="../../images/order_message.png" class="messageImage"></image>
+    <text class="messageText">发送消息</text>
+  </view>
+  <view class="separateView"></view>
+  <view class="cellView">
+    <text class="leftText">时间</text>
+    <view class="rightView">
+        <text class="dateText">2017-07-04 14:00-18:00</text>
+        <text class="eatText">请导游吃午餐</text>
+    </view>
+  </view>
+  <view class="lineView"></view>
+  <view class="cellView">
+    <text class="leftText">地点</text>
+    <view class="rightView">
+        <text class="rightText">西湖风景区</text>
+    </view>
+  </view>
+  <view class="lineView"></view>
+  <view class="cellView">
+    <text class="leftText">费用</text>
+    <view class="rightView">
+        <text class="rightText">40.0元/小时*4小时</text>
+    </view>
+  </view>
+  <view class="lineView"></view>
+  <view class="amountView">
+        <text class="rightText">合计：160.0元</text>
+  </view>
+  <view class="lineView"></view>
+  <view class="remarkView">
+     <text class="remarkText">有啥好说的，往那边估堆估堆......</text>
+  </view>
+  <view class="separateView"></view>
+  <view class="statusView">
+     <text class="statusText">订单未付款</text>
+  </view>
+  <view class="bottomView">
+       <view class="buttonView">
+         <text class="buttonText">继续支付</text>
+       </view>
+  </view>
+</view>

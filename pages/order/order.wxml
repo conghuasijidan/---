@@ -59,8 +59,8 @@
       <label class="agreementLabel" catchtap="agreementTap">《友途服务协议》</label>
   </view>
 </view>
-<view class="tabBarView">
-  <view class="makeOrderView" catchtap="makeOrder"><label class="makeOrderLabel">提交订单</label></view> 
+<view class="tabBarView" >
+  <view class="makeOrderView" catchtap="makeOrderTap"><label class="makeOrderLabel">创建订单</label></view> 
 </view>
 <!--时间选择器  -->
 <view class="timeMaskView" catchtap="hideModal" wx:if="{{showModalStatus}}"></view>

@@ -1,0 +1,33 @@
+<!--pay.wxml-->
+<view class="">
+  <view class="separateView"></view>
+  <view class="cellView">
+    <text class="totalMoneyText">总需金额(元)</text>
+    <text class="moneyText">200</text>
+  </view>
+  <view class="separateView"></view>
+  <view class="payView">
+    <view class="leftView">
+    <image src="../../images/wx_payIcon.png" class="payIconImage" ></image>
+    <text class="payText">微信支付</text>
+    </view>
+    <image src="../../images/pay_checkImage_selected.png" class="checkImage" wx:if="{{isWxPay==true}}"></image>
+    <view class="uncheckView" wx:if="{{isWxPay==false}}" catchtap="checkTap" data-tag="1"></view>
+  </view>
+  <view class="lineView"></view>
+  <view class="payView">
+    <view class="leftView">
+    <image src="../../images/myBalance_icon.png" class="payIconImage" ></image>
+    <text class="payText" >余额支付</text>
+    </view>
+    <image src="../../images/pay_checkImage_selected.png" class="checkImage" wx:if="{{isBalancePay==true}}" ></image>
+    <view class="uncheckView" wx:if="{{isBalancePay==false}}" catchtap="checkTap" data-tag="2"></view>
+  </view>
+  <view class="lineView"></view>
+  <view class="notiView">
+    <text class="notiText">提示：如果您取消订单或订单失败，支付金额会退回到您的钱包</text>
+  </view>
+</view>
+<view class="bottomView">
+  <text class="bottomText">提交订单</text>
+</view>

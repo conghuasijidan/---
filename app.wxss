@@ -236,6 +236,21 @@
   color: #4BB4AB;
 }
 
+.font_color_FD3
+{
+  color: #FD3C5A;
+}
+
+.font_color_FD3
+{
+  color: #FD3C5A;
+}
+
+.font_color_52A
+{
+  color: #52a3fa;
+}
+
 
 /**--------------------------Font-Color--------------------------**/
 
@@ -323,6 +338,11 @@
 .padding_left_28
 {
   padding-left: 28rpx;
+}
+
+.padding_left_30
+{
+  padding-left: 30rpx;
 }
 
 .padding_right_20
@@ -438,6 +458,7 @@
   margin-left: 20rpx;
 }
 
+
 .margin_left_40
 {
   margin-left: 40rpx;
@@ -498,6 +519,11 @@
   margin: 30rpx 20rpx;
 }
 
+.margin_top_20_right_30
+{
+  margin: 20rpx 30rpx;
+}
+
 .margin_top_30_right_40
 {
   margin: 30rpx 40rpx;
@@ -513,10 +539,18 @@
 .h_42{
   height:42rpx;
 }
+.h_80{
+  height:80rpx;
+}
 
 .hw_40{
   height: 40rpx;
   width: 40rpx;
+}
+
+.hw_50{
+  height: 50rpx;
+  width: 50rpx;
 }
 
 .hw_56{
@@ -537,6 +571,11 @@
 .hw_80{
   height: 80rpx;
   width: 80rpx;
+}
+
+.hw_100{
+  height: 100rpx;
+  width: 100rpx;
 }
 
 .hw_160{
@@ -726,6 +765,12 @@
   
 }
 
+.border_right_999_2
+{
+  border-right: 2rpx solid rgba(153, 153, 153, 0.2);
+  
+}
+
 .border_bottom_F5
 {
   border-bottom: 20rpx solid #F5F5F5;
@@ -734,6 +779,10 @@
 .border_bottom_F5_1
 {
   border-bottom: 1rpx solid rgba(245, 245, 245, 0.15);
+}
+.border_bottom_999_2
+{
+  border-bottom: 2rpx solid rgba(153,153,153,0.2);
 }
 
 .border_bottom_CCC_1
