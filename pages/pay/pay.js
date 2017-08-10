@@ -6,7 +6,9 @@ Page({
    */
   data: {
      isWxPay:true,
-     isBalancePay:false
+     isBalancePay:false,
+     totalMoney:''
+     
   },
   checkTap:function(event){
     var that = this;
@@ -23,11 +25,25 @@ Page({
       })
     }
   },
+  commitOrderTap:function(){
+     wx.redirectTo({
+       url: '',
+       success: function(res) {},
+       fail: function(res) {},
+       complete: function(res) {},
+     })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    // debugger;
+    var that = this
+    that.setData({
+      totalMoney:options.totalMoney
+    })
+
+
   },
 
   /**

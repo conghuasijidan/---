@@ -1,8 +1,16 @@
 //index.js
+var strophe = require('../../utils/strophe.js')
+var WebIM = require('../../utils/WebIM.js')
+var WebIM = WebIM.default
 //获取应用实例
 var app = getApp()
 Page({
   data: {
+  name: 'zhulong',
+  psd: '123',
+  member: [],
+  grant_type: "password",
+  //上面的是登录时变量
   selected1Menu:"menuSelectLabel",
   selected1Hidden:false,
   selected2Menu: "menuNormalLabel",
@@ -100,11 +108,46 @@ Page({
   },
   //-------------------------------------- 导游服务
   onLoad: function () { 
-    // //调用应用实例的方法获取全局数据
-    // wx.setNavigationBarTitle({
-    //   title: '友途',
-    // })
-  // 请求列表数据
+    var that = this
+    var options = {
+      apiUrl: WebIM.config.apiURL,
+      user: that.data.name,
+      pwd: that.data.psd,
+      grant_type: that.data.grant_type,
+      appKey: WebIM.config.appkey
+    }
+    wx.setStorage({
+      key: "myUsername",
+      data: that.data.name
+    })
+    //console.log('open')
+    WebIM.conn.open(options)
 
-  }
+  },
+  onShow:function(){
+    var that = this
+    // debugger;
+    // //console.log(WebIM.conn)
+    var rosters = {
+      success: function (roster) {
+        var member = []
+        for (var i = 0; i < roster.length; i++) {
+          if (roster[i].subscription == "both") {
+            member.push(roster[i])
+          }
+        }
+        that.setData({
+          member: member
+        })
+        wx.setStorage({
+          key: 'member',
+          data: that.data.member
+        })
+      }
+    }
+
+    //WebIM.conn.setPresence()
+    WebIM.conn.getRoster(rosters)
+
+  },
 })

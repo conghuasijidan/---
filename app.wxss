@@ -60,6 +60,13 @@
   align-items: baseline;
 }
 
+.container_row_vcenter_between_withouthw{
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: space-between;
+}
+
 .container_row_vcenter_withouthw{
   display: flex;
   flex-direction: row; 
@@ -350,6 +357,11 @@
   padding-right: 20rpx;
 }
 
+.padding_right_30
+{
+  padding-right: 30rpx;
+}
+
 .padding_top_30_right_20
 {
   padding: 30rpx 20rpx;
@@ -536,6 +548,11 @@
 /**--------------------------Margin--------------------------**/
 
 /**--------------------------HW--------------------------**/
+.hw_20{
+  height: 20rpx;
+  width: 20rpx;
+}
+
 .h_42{
   height:42rpx;
 }
@@ -749,6 +766,16 @@
 .background_colorEEE
 {
   background-color: #EEEEEE;
+}
+
+.background_color999
+{
+  background-color: #999999;
+}
+
+.background_color52A
+{
+  background-color: #52a3fa;
 }
 /**--------------------------background_color--------------------------**/
 

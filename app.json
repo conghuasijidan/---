@@ -1,11 +1,16 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/login/login",
-    "pages/my/my",
-    "pages/orderDetail/orderDetail",
-    "pages/pay/pay",
     "pages/order/order",
+    
+    "pages/payFail/payFail",
+    "pages/orderDetail/orderDetail",
+    "pages/chat/chat",
+    "pages/chatroom/chatroom",
+    "pages/paySuccess/paySuccess",
+    "pages/login/login",
+    "pages/pay/pay",
+    
     "pages/my/my",
     "pages/applyguide/applyguide",
     "pages/poi/poi",
@@ -16,6 +21,7 @@
     "pages/recomendDetail/recomendDetail",
     "pages/inputtips/input",
     "pages/serviceAgreement/serviceAgreement"
+    
     
   ],
   "tabBar": {
@@ -28,7 +34,7 @@
         "selectedIconPath": "images/choose_selected.png"
       },
       {
-        "pagePath": "pages/message/message",
+        "pagePath": "pages/chat/chat",
         "text": "消息",
         "iconPath": "images/message_normal.png",
         "selectedIconPath": "images/message_selected.png"

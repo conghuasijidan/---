@@ -1,0 +1,13 @@
+<!--payFail.wxml-->
+<view class="">
+     <view class="sucessView">
+         <icon type="warn" size="70" />
+          <text class="successText">支付失败</text>
+     </view>
+</view>
+
+<form report-submit="true">
+    <view class="tabBarView" >
+      <button class="continuePay" form-type="submit" catchtap="">继续支付</button>
+    </view>
+</form>

@@ -125,6 +125,7 @@
   height: 2rpx;
   width: 690rpx;
   margin-left: 30rpx;
+  margin-bottom: 10rpx;
 }
 .blueLine{
   background-color: #52a3fa;
@@ -140,17 +141,23 @@
   margin-left: 20rpx;
   margin-top:20rpx;
 }
+.bgview{
+  background-color: white;
+  width: 100%;
+}
 .scrollView{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 690rpx;
-  margin-left: 30rpx;
+   width: 690rpx;
+  margin-left: 30rpx; 
+  /* width: 100%; */
+
   background-color: #fafafa;
 }
 .cellBackView{
-  background-color: #fafafa;
+  background-color: #fafafa; 
   width:330rpx;
   height: 482rpx;
 }
@@ -262,31 +269,53 @@
   height: 100rpx;
   left: 0rpx; 
   right: 0rpx;
-  bottom: 100rpx; 
-  /* z-index: 20； */
+  bottom: 106rpx; 
+  /* background-color: blanchedalmond; */
 }
 .bottomBgImage
 {
-  width: 100%;
-  height: 100%;
+  position: relative;
+  left: 0rpx; 
+  right: 0rpx;
+  /* top: 100rpx;   */
+  bottom: 100rpx;
+  width: 690rpx;
+  height: 100rpx;
 }
 .coverBgView{
  display: flex;
- width: 100%;
- height: 100%;
-  background-color: blanchedalmond;  
- position: absolute;
- top: 0;
- left: 0;
+ justify-content: center;
+ align-items: center;
+ /* width: 100%;
+ height: 100%; */
+ /* background-color: blanchedalmond;   */
+  position: relative; 
+  width: 690rpx;
+  height: 100rpx;
+  left: 0rpx; 
+  right: 0rpx;
+  bottom: 206rpx; 
 
 }
 .leftView{
-  /* background-color: white; */
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  height: 100%;
-  width: 70%;
+  background-color: orange;  
+  height: 70%;
+  width: 500rpx;
+}
+
+.nameText{
+  font-size: 28rpx;
+  color: #ffffff;
+  /* margin-left: 30rpx; */
+  /* margin-bottom: 5rpx;   */
+  
+}
+.priceText{
+  font-size: 28rpx;
+  color: #ffffff;
+  
 }
 .rightView
 {
@@ -297,26 +326,12 @@
   border:2rpx solid #ffffff;
   width: 160rpx;
   height: 60rpx;
-  /* margin-left: 15rpx;
-  margin-top: 20rpx; */
   border-radius: 10rpx;
-}
-.nameText{
-  font-size: 28rpx;
-  color: #ffffff;
-  /* margin-left: 30rpx;
-  margin-top: 20rpx; */
-  
-}
-.priceText{
-  font-size: 28rpx;
-  color: #ffffff;
-  /* margin-left: 30rpx;
-  margin-top: 10rpx; */
 }
 .buttonText{
   font-size: 28rpx;
   color: #ffffff;
+  
 }
 
 

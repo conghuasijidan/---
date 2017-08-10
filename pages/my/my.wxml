@@ -10,7 +10,7 @@
 
   <view class="container_row_vcenter_withouthw">
 
-    <view class="container_column_center_withouthw account">
+    <view class="container_column_center_withouthw account border_right_999_2">
       <text class="font_color_FD3 font_36">100</text>
       <text class="font_24 font_color_666 margin_top_20">余额</text>
     </view>
@@ -28,5 +28,52 @@
   </view>
 
   <view class="border_bottom_999_2"></view>
+
+  <view class="container_row_vcenter_withouthw list">
+    <image class="navigator_iamge margin_right_20"  src="../../images/icon_applyguide.png" ></image>
+    <view class="navigator_text font_color_333 font_28">申请乐友</view>
+    <view class="navigator_arrow"></view>
+  </view>
+
+  <view class="container_row_vcenter_withouthw">
+
+    <view class="container_column_center_withouthw account border_right_999_2">
+      <image src="../../images/icon_apply.png" class="hw_50"></image>
+      <text class="font_24 font_color_666 margin_top_20">申请乐友</text>
+    </view>
+
+    <view class="container_column_center_withouthw account border_right_999_2">
+      <image src="../../images/icon_guideorder.png" class="hw_50"></image>
+      <text class="font_24 font_color_666 margin_top_20">乐友订单</text>
+    </view>
+
+    <view class="container_column_center_withouthw account">
+      <image src="../../images/icon_ordersetting.png" class="hw_50"></image>
+      <text class="font_24 font_color_666 margin_top_20">接单设置</text>
+    </view>
+
+  </view>
+
+  <view class="border_bottom_999_2"></view>
+
+  <view class="container_row_vcenter_withouthw list_order ">
+    <image class="navigator_iamge margin_right_20"  src="../../images/icon_order.png" ></image>
+    <view class="navigator_text font_color_333 font_28">我的订单</view>
+    <view class="navigator_arrow"></view>
+  </view>
+
+  <view class="border_bottom_999_2"></view>
+
+  <view class="container_row_vcenter_withouthw list_order ">
+    <image class="navigator_iamge margin_right_20"  src="../../images/icon_customerservice.png" ></image>
+    <view class="navigator_text font_color_333 font_28">人工客服</view>
+    <view class="navigator_arrow"></view>
+  </view>
+  <view class="border_bottom_999_2"></view>
+
+  <form report-submit="true" bindsubmit="formSubmit" class="form_style">
+    <button formType="submit" plain="true">退出账号</button>
+  </form>
+
 
 </view>

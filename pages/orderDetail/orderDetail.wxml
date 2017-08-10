@@ -51,9 +51,9 @@
   <view class="statusView">
      <text class="statusText">订单未付款</text>
   </view>
-  <view class="bottomView">
-       <view class="buttonView">
-         <text class="buttonText">继续支付</text>
-       </view>
-  </view>
+  <form report-submit="true">
+    <view class="tabBarView" >
+    <button class="makeOrderButton" form-type="submit" catchtap="makeOrderTap">继续支付</button>
+    </view>
+  </form>
 </view>

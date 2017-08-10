@@ -24,6 +24,7 @@ Page({
     timePmIsChecked: false,
     timePmEatImageUrl: "../../images/uncheckedImage.png",
     timePmEatIsChecked: false, 
+    totalMoney:'480'
   },
   selectDateTap:function(e){
     var that = this;
@@ -244,9 +245,32 @@ Page({
 
   },
   makeOrderTap:function(){
-     wx.navigateTo({
-       url: '../pay/pay',
-     })
+    // debugger;
+    var totalMoney = this.data.totalMoney;
+    wx.navigateTo({
+      url: '../pay/pay?totalMoney='+totalMoney,
+    })
+    // if (this.data.dates == "请选择日期" || this.data.times == "请选择时段" || this.data.locName == "" )
+    // {
+    //   wx.showModal({
+    //     title: '提示',
+    //     content: '亲，请选择好时间地点哦',
+    //     showCancel:false,
+    //   })
+    // } else if (this.data.isChecked == false ){
+    //   wx.showModal({
+    //     title: '提示',
+    //     content: '请先仔细阅读友途服务协议，并勾选同意友途服务',
+    //     showCancel: false,
+    //   })
+
+    // }else
+    // {
+    //   wx.navigateTo({
+    //         url: '../pay/pay?totalMoney='+totalMoney,
+    //       })
+    // }
+    
   },
   /**
    * 生命周期函数--监听页面加载

@@ -1,2 +1,35 @@
-<!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+
+<view class="container">
+  <view class="container_row_vcenter_between_withouthw mobile_view padding_left_30 border_bottom_999">
+    <view class="container_row_vcenter_withouthw font_color_999 font_32">手机号
+      <input class="padding_left_30 font_color_333 font_32 " type="number" maxlength="11" bindinput="inputMobileChanged" value="{{mobileTxt}}"/>
+    </view>
+    <block wx:if="{{moibleIsCancel}}">
+      <image class="hw_20 padding_right_30" src="../../images/icon_cancle.png" bindtap="mobileCancle" ></image>
+    </block>
+  </view>
+
+  <view class="container_row_vcenter_between_withouthw mobile_view padding_left_30 border_bottom_999">
+    <view class="container_row_vcenter_withouthw font_color_999 font_32">验证码
+      <input class="padding_left_30 font_color_333 font_32 " password="true" maxlength="6" bindinput="inputAuthCodeChanged" value="{{authcodeTxt}}"/>
+      <block wx:if="{{authcodeIsCancel}}">
+        <image class="hw_20  " src="../../images/icon_cancle.png" bindtap="authcodeCancle"></image>
+      </block>
+    </view>
+    
+    <view wx:if="{{code_sended}}" class="container_row_center_withouttw auth_code font_24 font_color_FFF  border_radius_10 background_color52A " >{{second}}秒</view>
+    <view wx:else class="container_row_center_withouttw auth_code font_24 font_color_FFF  border_radius_10 background_color52A " bindtap="sendMessage">获取验证码</view>
+  </view>
+
+  <form report-submit="true" bindsubmit="formSubmit" class="form_style">
+    <button class="button font_36" formType="submit" plain="true" bindtap="toIndex">登录</button>
+  </form>
+  
+  <view class="container_row_center_withouttw">
+    <image class="hw_20" src="../../images/icon_agreement.png"></image>
+    <text class="font_20 padding_left_20">同意</text>
+    <text class="font_20 font_color_52A">《友途用户协议》</text>
+  </view>
+
+</view>
+

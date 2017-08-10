@@ -18,22 +18,23 @@
   height: 100%;
   margin-left: 20rpx;
 }
-.topText{
+.topView{
  display: flex;
- /*background-color: red;*/
+ align-items: flex-end;
+ /* background-color: red; */
  width: 100%;
  height: 50%;
 }
 .nameLabel{
   color: #333333;
   font-size: 36rpx;
-  margin-top:40rpx;
+  /* margin-top:40rpx; */
 }
 .locLabel{
   color: #666666;
   font-size: 24rpx;
-   margin-top:50rpx;
-   margin-left: 20rpx;
+  margin-bottom:2rpx; 
+  margin-left: 20rpx;
 }
 .bottomView{
  /*background-color: green;*/
@@ -108,26 +109,27 @@ height: 1026rpx;
   margin-top: 10rpx;
 }
 .countDownView{
-  /* background-color: orange; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: orange;  */
   width: 100%;
   height: 100%;
 }
 .voiceImage{
-  position: relative;
+  /* position: relative; */
   width: 18rpx;
   height: 24rpx;
   left: 20rpx;
 }
 .voiceLabel{
-  /* background-color: orange; */
+  /* background-color: beige;  */
   font-size: 24rpx;
   color: #fd3c5a;
-   width: 50rpx;
-  height: 44rpx; 
-  margin-left: 40rpx;
+  /* width: 50rpx;
+  height: 44rpx;  */
+   margin-left: 20rpx; 
 }
-
-
 
 .starView{
   /*background-color: orange;*/
@@ -163,22 +165,31 @@ height: 1026rpx;
  
 }
 .blockView4{
-  display: flex;
-  /*background-color: blanchedalmond;*/
+  /* display: flex; */
+  /* background-color: blanchedalmond; */
   width: 100%;
   height: 96rpx;
+}
+.orderbgview{
+  display: flex;
+  align-items: center;
+  /* background-color: orange; */
+  margin-left: 30rpx;
+  margin-top: 20rpx;
 }
 .orderImage{
   width: 24rpx;
   height: 24rpx;
-  margin-left: 30rpx;
-  margin-top: 20rpx;
+  /* margin-left: 30rpx;
+  margin-top: 20rpx; */
 }
+
 .orderLabel{
   color: #666666;
   font-size: 24rpx;
-  margin-left: 20rpx;
-  margin-top: 20rpx;
+   margin-left: 20rpx; 
+  /* margin-top: 10rpx; */
+  /* background-color: orange; */
 }
 .separateView{
   background-color: #f5f5f5;
@@ -211,21 +222,25 @@ height: 1026rpx;
 .specialBackgroundView{
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: #52a3fa;
   height: 40rpx;
-  width:150rpx;
-  /*margin-right:20rpx;*/
+  /* width:150rpx; */
+  margin-right:20rpx;
   margin-left: 30rpx;
-  margin-top: 30rpx;
+  margin-top: 30rpx;  
   border-radius: 10rpx;
 }
 .specialLabel{
-  /*background-color: #52a3fa;*/
+  /* background-color: orange; */
   opacity: 0.7;
   color: white;
   font-size: 24rpx;
-  height: 24rpx;
-   margin-top: 10rpx;
+  /* height: 24rpx; */
+    /* margin-top: 10rpx; 
+    margin-bottom: 10rpx; */
+   margin-left: 20rpx;
+   margin-right: 20rpx;
 }
 .cellView{
   /*background-color: orange;*/
@@ -312,21 +327,31 @@ height: 1026rpx;
   height: 94rpx;
   width: 290rpx;
 }
-.consultLabel{
+.consultButton{
+  border:1px solid #52a3fa;
+  border-radius: 10rpx;
   font-size: 36rpx;
   color: #52a3fa;
+  /* width: 100%;
+  height: 100%; */
+  background-color: white;
+  height: 94rpx;
+  width: 290rpx;
   
 }
 .makeOrderView{
   display: flex;
   justify-content: center;
    align-items: center;
-  background-color: #52a3fa;
+  
+  
+  
+}
+.makeOrderButton{
   border-radius: 10rpx;
+  background-color: #52a3fa;
   height: 96rpx;
   width:380rpx;
-}
-.makeOrderLabel{
   font-size: 36rpx;
   color: white;
 }

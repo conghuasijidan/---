@@ -1,19 +1,50 @@
 // message.js
+var strophe = require('../../utils/strophe.js')
+var WebIM = require('../../utils/WebIM.js')
+var WebIM = WebIM.default
 Page({
-
+  
   /**
    * 页面的初始数据
    */
   data: {
      systemMessageList:[{},{},{}],
-     userMessageList:[{},{},{}]
+     userMessageList:[{},{},{}],
+     member: []
+  },
+  navToTap:function(){
+     wx.navigateTo({
+       url: '../chat/chat',
+     })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    // var that = this
+    // // //console.log(WebIM.conn)
+    // var rosters = {
+    //   success: function (roster) {
+    //     var member = []
+    //     for (var i = 0; i < roster.length; i++) {
+    //       if (roster[i].subscription == "both") {
+    //         member.push(roster[i])
+    //       }
+    //     }
+    //     that.setData({
+    //       member: member
+    //     })
+    //     debugger;
+    //     wx.setStorage({
+    //       key: 'member',
+    //       data: that.data.member
+    //     })
+    //   }
+    // }
+
+    // //WebIM.conn.setPresence()
+    // WebIM.conn.getRoster(rosters)
   },
 
   /**

@@ -72,5 +72,9 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  formSubmit:function(e)
+  {
+    debugger;
   }
 })

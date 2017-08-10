@@ -1,15 +1,15 @@
 <!--message.wxml-->
 <view wx:for="{{userMessageList}}">
-  <view class="messageView" >
+  <view class="messageView" catchtap="navToTap">
      <image src="../../images/index_cell_pic.png" class="image"></image>
     
   </view>
   <view class="lineView"></view>
 </view>
-<view wx:for="{{systemMessageList}}">
+<!-- <view wx:for="{{systemMessageList}}">
   <view class="messageView" >
      <image src="../../images/index_cell_pic.png" class="image"></image>
     
   </view>
   <view class="lineView"></view>
-</view>
+</view> -->

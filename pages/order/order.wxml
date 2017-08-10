@@ -41,7 +41,7 @@
    <view class="cellView">
     <label class="commonLabel">合计</label>
     <view class="rightView">
-      <label class="rightCommonLabel">480元</label>
+      <label class="rightCommonLabel">{{totalMoney}}元</label>
     </view>
   </view>
   <view class="separatelineView"></view>
@@ -59,9 +59,12 @@
       <label class="agreementLabel" catchtap="agreementTap">《友途服务协议》</label>
   </view>
 </view>
+<form report-submit="true">
 <view class="tabBarView" >
-  <view class="makeOrderView" catchtap="makeOrderTap"><label class="makeOrderLabel">创建订单</label></view> 
+  <!-- <view class="makeOrderView" catchtap="makeOrderTap"><label class="makeOrderLabel">创建订单</label></view>  -->
+  <button class="makeOrderButton" form-type="submit" catchtap="makeOrderTap">创建订单</button>
 </view>
+</form>
 <!--时间选择器  -->
 <view class="timeMaskView" catchtap="hideModal" wx:if="{{showModalStatus}}"></view>
 <view animation="{{animationData}}" class="timeView" wx:if="{{showModalStatus}}">

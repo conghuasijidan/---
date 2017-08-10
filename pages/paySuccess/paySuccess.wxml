@@ -1,0 +1,26 @@
+<!--paySucess.wxml-->
+<view class="">
+     <view class="sucessView">
+         <icon type="success" size="70" />
+          <text class="successText">支付成功</text>
+     </view>
+     <view class="orderView">
+        <view class="topView">
+          <image src="../../images/index_cell_pic.png" class="orderImage"></image>
+          <view class="descView">
+            <text class="totalMoneyText">总金额（元）：328</text>
+            <text class="timeText">时间：2017-05-20</text>
+          </view>
+        </view>
+        <view class="bottomView">
+            <text class="detailText">查看详情</text>
+            <image src="../../images/arrow.png" class="arrowImage"></image>
+            
+        </view>
+     </view>
+</view>
+<form report-submit="true">
+    <view class="tabBarView" >
+    <button class="backToIndex" form-type="submit" catchtap="">返回首页</button>
+    </view>
+</form>

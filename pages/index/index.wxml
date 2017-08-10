@@ -9,7 +9,7 @@
     <label class="temperatureLabel">37℃</label>
   </view>
   <view class="separateView"></view>
-  <view class="menuBgView">
+  <!-- <view class="menuBgView">
      <view class="menu1View" catchtap="munuSelectedTap" data-tag="1" >
          <view >
           <label class="{{selected1Menu}}">猜你喜欢</label> 
@@ -28,7 +28,7 @@
            <view class="selectedView" hidden="{{selected3Hidden}}"></view>
         </view>
       </view>
-  </view>
+  </view> -->
   <view class=""  id="block1" wx:if="{{selectedTag==1}}">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper" circular="{{circular}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{currentIndicatorColor}}">
       <block wx:for="{{imgUrls}}">
@@ -42,19 +42,21 @@
       <view class="blueLine"></view>
       <label class="recomendLabel">热点推荐</label>
     </view>
-    <view class="scrollView" >
-      <view class="cellBackView" wx:for="{{listImage}}"  wx:for-index="index" wx:for-item="item" > 
-      <view class="cellView" catchtap="cellTap">
-        <image src="../../images/index_cell_pic.png" class="cellImage"> </image>
-        <view class="sectionOne">
-        <label class="cellName">林更新</label>
-        <label class="cellPrice">58</label>
+    <view class="bgview">
+      <view class="scrollView" >
+        <view class="cellBackView" wx:for="{{listImage}}"  wx:for-index="index" wx:for-item="item" > 
+        <view class="cellView" catchtap="cellTap">
+          <image src="../../images/index_cell_pic.png" class="cellImage"> </image>
+          <view class="sectionOne">
+          <label class="cellName">林更新</label>
+          <label class="cellPrice">58</label>
+          </view>
+          <view class="sectionTwo">
+          <label class="cellElse">江干区</label>
+          <label class="cellElse">导游一年</label>
+          </view>
         </view>
-        <view class="sectionTwo">
-        <label class="cellElse">江干区</label>
-        <label class="cellElse">导游一年</label>
         </view>
-      </view>
       </view>
     </view>
   </view>
@@ -74,9 +76,9 @@
     </view> 
     <view class="bigImageView" wx:for="{{cityDataList}}" wx:for-index="index" wx:for-item="item" >
       <image src="../../images/bgImage.png" class="bigImage" ></image>
-      <view class="bottomBgView">
-        <image src="../../images/gradualbgimage.png" class="bottomBgImage"></image>
-         <view class="coverBgView" >
+      <image src="../../images/gradualbgimage.png" class="bottomBgImage"></image>  
+      
+       <view class="coverBgView" >
             <view class="leftView">
               <text class="nameText">小仙女</text>
               <text class="priceText">城市体验·40元/小时</text>
@@ -84,8 +86,7 @@
             <view class="rightView">
               <text class="buttonText">下单</text>
             </view>
-        </view>  
-      </view>
+      </view>   
     </view>
   </view>
   <!--导游服务  -->

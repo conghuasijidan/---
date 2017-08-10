@@ -95,7 +95,18 @@ Page({
  
 
   },
-
+  consultTap:function(){
+    var that = this
+    //console.log(event)
+    var nameList = {
+      myName: 'zhulong',
+      your: 'zhengdejie'
+    }
+    wx.navigateTo({
+      url: '../chatroom/chatroom?username=' + JSON.stringify(nameList)
+    })
+    
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -4,7 +4,7 @@
   <view class="headerView">
      <image src="../../images/index_cell_pic.png " class="photo"></image>
      <view class="background">
-       <view class="topText">
+       <view class="topView">
          <label class="nameLabel">林更新</label>
          <label class="locLabel">江干区</label>
        </view>
@@ -42,8 +42,10 @@
       <label class="maskLabel">热情流 时间控 强亲和</label>
     </view>
     <view class="blockView4">
+      <view class="orderbgview">
       <image src="../../images/order_icon.png" class="orderImage"></image>
       <label class="orderLabel">接单20次</label>
+      </view>
     </view>
     <view class="separateView"></view>
   </view>
@@ -74,7 +76,9 @@
   </view>
 </view>
 <!-- </scroll-view> -->
-<view class="tabBarView">
-    <view class="consultView"><label class="consultLabel">咨询</label></view>
-     <view class="makeOrderView" catchtap="makeOrder"><label class="makeOrderLabel">找Ta接单</label></view> 
-</view>
+<form report-submit="true" >
+ <view class="tabBarView"> 
+    <button class="consultButton" form-type="submit" catchtap="consultTap">咨询</button>
+    <button class="makeOrderButton" catchtap="makeOrder">找Ta接单</button>
+ </view> 
+</form>
