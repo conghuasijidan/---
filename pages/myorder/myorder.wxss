@@ -1,0 +1,29 @@
+
+/* myorder.wxss */
+.view_status{
+  width: 33.33%;
+  height: 80rpx;
+  border-bottom: 6rpx solid #52a3fa;
+  margin: 0 72rpx 0 72rpx;
+  color: #52a3fa;
+}
+
+.view_status_unchecked{
+  width: 33.33%;
+  height: 80rpx;
+  margin: 0 72rpx 0 72rpx;
+  color: #333333;
+}
+
+.order_top{
+  height: 60rpx;
+}
+
+.order_center{
+  height: 220rpx;
+}
+
+.order_time{
+  padding: 0 30rpx 30rpx 30rpx;
+}
+

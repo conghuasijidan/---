@@ -4,6 +4,7 @@
   background-color: white;
   width: 100%;
   height: 100%;
+  
 }
 .locBgView{
   display: flex;
@@ -15,8 +16,8 @@
   height: 72rpx;
 }
 .locView{
-  /* background-color: orange; */
-  width: 100rpx;
+  /* background-color: orange;  */
+  width: 150rpx;
   height: 50rpx;
   margin-left: 30rpx; 
 }
@@ -39,8 +40,8 @@
   flex-direction: row;
   justify-content: center;  
   align-items: center; 
-  /* background-color: orange; */
-  height: 120rpx;
+  /* background-color: orange;  */
+  height: 100rpx;
   width: 100%;
 }
 .menu1View{
@@ -125,7 +126,7 @@
   height: 2rpx;
   width: 690rpx;
   margin-left: 30rpx;
-  margin-bottom: 10rpx;
+  /* margin-bottom: 10rpx; */
 }
 .blueLine{
   background-color: #52a3fa;
@@ -213,7 +214,7 @@
   position: relative;
   top: 10rpx;
 }
-/*城市体验  */
+/*导游服务  */
 .block2View{
    /* background-color: orange;  */
   width: 100%;
@@ -230,7 +231,7 @@
   /* margin-top: 20rpx; */
 }
 .backView{
-   /* background-color: red;  */
+   /* background-color: orange;    */
   width:15%;
   height: 100%;
 }
@@ -252,15 +253,15 @@
 }
 .bigImageView{
  /* display: flex; */
-   background-color: orange;  
+   /* background-color: orange;   */
  width: 690rpx;
  height: 690rpx;
  margin-top: 20rpx;
  margin-left: 30rpx;
 }
 .bigImage{
-  width: 100%;
-  height: 100%;
+  width: 690rpx;
+  height: 690rpx;
 }
 
 .bottomBgView{
@@ -274,48 +275,57 @@
 }
 .bottomBgImage
 {
-  position: relative;
+  /* position: relative;
   left: 0rpx; 
   right: 0rpx;
   /* top: 100rpx;   */
-  bottom: 100rpx;
-  width: 690rpx;
-  height: 100rpx;
+  /* bottom: 100rpx; */
+  /* width: 690rpx;
+  height: 100rpx; */ 
+  width: 100%;
+  height: 100%;
+
 }
 .coverBgView{
  display: flex;
- justify-content: center;
- align-items: center;
+ /* justify-content: center;
+ align-items: center; */
  /* width: 100%;
  height: 100%; */
- /* background-color: blanchedalmond;   */
+  /* background-color: blanchedalmond;    */
   position: relative; 
   width: 690rpx;
   height: 100rpx;
   left: 0rpx; 
   right: 0rpx;
-  bottom: 206rpx; 
+  bottom: 110rpx; 
+  /* opacity: 0.7; */
 
 }
 .leftView{
   display: flex;
   flex-direction: column;
-  background-color: orange;  
-  height: 70%;
-  width: 500rpx;
+  justify-content: center;
+  /* background-color: orange;   */
+  /* height: 100%; */
+  width: 500rpx; 
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
 }
 
 .nameText{
   font-size: 28rpx;
   color: #ffffff;
-  /* margin-left: 30rpx; */
+  margin-left: 20rpx; 
   /* margin-bottom: 5rpx;   */
   
 }
 .priceText{
   font-size: 28rpx;
   color: #ffffff;
-  
+  margin-left: 20rpx; 
 }
 .rightView
 {
@@ -327,6 +337,10 @@
   width: 160rpx;
   height: 60rpx;
   border-radius: 10rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  
 }
 .buttonText{
   font-size: 28rpx;
@@ -334,10 +348,122 @@
   
 }
 
-
-/*导游服务  */
-.block3View{
-  /* background-color: bisque; */
+.siftMenuView{
+  position: fixed;
+  left: 0rpx;
+  top:236rpx;
+  height: 875rpx;
   width: 100%;
-  height: 1400rpx;
+  background-color: orange; 
+  z-index: 20000;
+}
+
+
+.timeMaskView{
+
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background: #000; */
+  background-color: black;
+  opacity: 0.2; 
+  overflow: hidden;
+  z-index: 1000; 
+  /* color: #fff; */
+ 
+}
+.timeView{
+  width: 100%;
+  height: 290rpx;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+   z-index: 2000; 
+  /* background: #fff; */
+  background-color: white;
+  
+}
+
+/*总菜单容器*/
+.menu {
+    display: block;
+    height: 30px;
+    position: relative;
+    width: 745rpx;
+     left: 0rpx; 
+    /* border-left: 1px solid #d2d2d2;
+    border-right: 1px solid #d2d2d2; */
+    border:2rpx solid #d2d2d2;
+    border-radius: 15rpx;
+}
+
+/*一级菜单*/
+.menu dt {
+    font-size: 15px;
+    float: left;
+    /*hack*/
+    width: 372.5rpx;
+    height: 30px;
+     /* border-top: 1px solid #d2d2d2;  */
+    /* border-bottom: 1px solid #d2d2d2; */
+    text-align: center;
+    background-color: #eee;
+    color: #5a5a5a;
+    line-height: 38px;
+    z-index: 1000;
+    
+}
+
+/*二级菜单外部容器样式*/
+.menu dd{
+    position: absolute;
+    width: 710rpx;
+    /*hack*/
+    /*top:-170px;*/
+   top:38px;
+    /* bottom: 0; */
+    left:20rpx;
+   
+    z-index:2000;
+}
+
+/*二级菜单普通样式*/
+.menu li{
+    font-size: 14px;
+    line-height: 34px;
+    color: #575757;
+    height: 34px;
+    display: block;
+    padding-left: 8px;
+    background-color: #fff;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+/*二级菜单高亮样式*/
+.menu li.highlight{
+    /* background-color: #f4f4f4; */
+    color: #52a3fa;
+}
+
+/* 显示与隐藏 */
+.show {
+    /*display: block;*/
+    visibility: visible;
+}
+
+.hidden {
+    /*display: none;*/
+    visibility:hidden;
+}
+.siftBgView{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150rpx;
+  height: 100%;
+  /* background-color: orange; */
+  margin-left: 70rpx;
 }

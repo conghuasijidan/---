@@ -1,0 +1,19 @@
+
+<!--topup.wxml-->
+<view class="container"> 
+  <view class="border_bottom_F5"></view>
+  <view class="container_row_vcenter_withouthw padding_left_30 margin_tb40">
+    <text class="font_28 font_color_666">充值（元）</text>
+    <input class="font_28 font_color_333 padding_left_20" placeholder="请输入充值金额" />
+  </view>
+  <view class="border_bottom_F5"></view>
+  <view class="container_row_vcenter_withouthw margin_top_30">
+    <image class="hw_30 padding_left_30" src="../../images/icon_payby_wx.png"></image>
+    <text class="padding_left_20 font_28 font_color_999">微信充值</text>
+  </view>
+
+  <form report-submit="true" bindsubmit="formSubmit" class="form_style">
+    <button class="button_bot_52a margin_rl30" formType="submit"  bindtap="">去充值</button>
+  </form>
+</view>
+

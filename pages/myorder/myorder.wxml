@@ -1,0 +1,34 @@
+
+<!--myorder.wxml-->
+<view class="container">
+  <view class="container_row_vcenter_withouthw">
+    <block wx:for="{{order_status}}">
+      <view class="container_column_center_withouthw font_32 {{item.checked ? 'view_status'  : 'view_status_unchecked' }}" bindtap="{{item.tap}}">
+        {{item.txt}}
+      </view>
+    </block>
+  </view>
+
+
+  <view class="container_columnonly" bindtap="toOrderDetails">
+    <view class="border_bottom_F5_10"></view>
+    <view class="container_row_vcenter_withouthw order_top padding_left_30 border_bottom_F5_2 font_24 font_color_999">已付款</view>
+    <view class="order_center padding_lr_30  container_row_vcenter_between_withouthw border_bottom_F5_2">
+      <view class="container_row_only">
+        <image class="hw_140 border_radius_10" src="../../images/bgImage.png"></image>
+        <view class="container_column_hcenter_withouthw">
+          <text class="font_32 font_color_666 order_time">07月05日 8:00-12:00</text>
+          <text class="font_32 font_color_999 padding_lr_30">西湖</text>
+        </view>
+        
+      </view>
+      
+      
+      <image class="hw_40" src="../../images/arrow.png"></image>
+    </view>
+    <view class="container_row_vcenter_withouthw order_top padding_left_30 font_24 font_color_999">已支付：160.00元</view>
+    <view class="border_bottom_F5_10"></view>
+  </view>
+
+</view>
+

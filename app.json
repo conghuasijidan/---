@@ -1,17 +1,33 @@
 {
   "pages": [
+
+
+
     "pages/index/index",
-    "pages/order/order",
-    
     "pages/payFail/payFail",
-    "pages/orderDetail/orderDetail",
+
     "pages/chat/chat",
     "pages/chatroom/chatroom",
     "pages/paySuccess/paySuccess",
-    "pages/login/login",
-    "pages/pay/pay",
-    
+
+
+
+    "pages/myorder/myorder",
+    "pages/index/index",
+    "pages/ordersetting/ordersetting",
     "pages/my/my",
+    "pages/topup/topup",
+    "pages/withdraw/withdraw",
+    "pages/login/login",
+    "pages/orderDetail/orderDetail",
+    "pages/pay/pay",
+
+    "pages/order/order",
+
+
+    "pages/switchcity/switchcity",
+    "pages/my/my",
+
     "pages/applyguide/applyguide",
     "pages/poi/poi",
     "pages/map/map",

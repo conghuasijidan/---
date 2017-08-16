@@ -60,10 +60,10 @@
                 <input wx:if="{{!showRecordHandler}}" class="f news" type="text" value="{{ inputMessage }}"
                        placeholder="输入新消息" placeholder-style="color:#CFCFCF;padding-left:5px;" bindinput="bindMessage"
                        bindtap="focus" bindfocus="focus"/>
-                <button wx:else class="f btn-recording" catchtouchstart="handleRecording"
+                 <button wx:else class="f btn-recording" catchtouchstart="handleRecording"
                         catchtouchend="handleRecordingCancel" catchtouchcancel="handleRecordingCancel">按住 说话
-                </button>
-                <button class="send_btn" bindtap="sendMessage" formType="reset">发送</button>
+                </button> 
+                <button class="send_btn" bindtap="sendMessage" formType="reset">发送</button> 
             </view>
         </form>
         <view class="other_func">

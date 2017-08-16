@@ -524,7 +524,7 @@ Page({
                     lng: respData.longitude,
                     lat: respData.latitude,
                     addr: respData.address,
-                    success: function (id, serverMsg,Id) {
+                    success: function (id, serverMsgId) {
                         //console.log('success')
                     }
                 });

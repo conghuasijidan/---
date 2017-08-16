@@ -1,0 +1,10 @@
+
+<!--ordersetting.wxml-->
+<view class="container"> 
+  <view class="container_row_vcenter_between_withouthw margin_30">
+    <text class="font_28 font_color_333">接单设置</text>
+    <switch color="#52a3fa" checked="true" bindchange="switch1Change"/>
+  </view>
+  <view class="border_bottom_999_2"></view>
+</view>
+

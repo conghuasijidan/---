@@ -1,15 +1,15 @@
 <!--index.wxml-->
-
-<view class="main">
+<scroll-view scroll-y="true" style="height:1110rpx"> 
+<view class="main"  >
   <view class="locBgView">
     <view class="locView" catchtap="locSelectedTap">
-      <label class="locLabel">杭州</label>
+      <label class="locLabel">{{citySelected}}</label>
       <image src="../../images/dropdown_image.png" class="locImage"></image>
     </view>
-    <label class="temperatureLabel">37℃</label>
+    <label class="temperatureLabel">{{temperature}}℃</label>
   </view>
   <view class="separateView"></view>
-  <!-- <view class="menuBgView">
+   <view class="menuBgView">
      <view class="menu1View" catchtap="munuSelectedTap" data-tag="1" >
          <view >
           <label class="{{selected1Menu}}">猜你喜欢</label> 
@@ -18,17 +18,17 @@
       </view>
       <view class="menu2View"  catchtap="munuSelectedTap" data-tag="2" >
         <view >
-           <label class="{{selected2Menu}}">城市体验</label> 
+           <label class="{{selected2Menu}}">导游服务</label> 
            <view class="selectedView" hidden="{{selected2Hidden}}"></view>
         </view>
       </view>
-      <view class="menu3View" catchtap="munuSelectedTap" data-tag="3">
+      <!-- <view class="menu3View" catchtap="munuSelectedTap" data-tag="3">
        <view class="menuitemView">
            <label class="{{selected3Menu}}">导游服务</label> 
            <view class="selectedView" hidden="{{selected3Hidden}}"></view>
         </view>
-      </view>
-  </view> -->
+      </view> -->
+  </view> 
   <view class=""  id="block1" wx:if="{{selectedTag==1}}">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper" circular="{{circular}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{currentIndicatorColor}}">
       <block wx:for="{{imgUrls}}">
@@ -62,58 +62,80 @@
   </view>
  <!--城市体验  -->
   <view class="block2View" id="block2" wx:if="{{selectedTag==2}}">
-    <view class="selectBackView">
-      <view class="selectMenu">
-          <view class="backView" catchtap="sexOrderTap">
-              <label class="selectLabel">性别</label>
-              <image src="../../images/selectdown_image.png" class="selectImage"></image>
-          </view>
-          <view class="backView" catchtap="moneyOrderTap">
-            <label class="selectLabel">金额</label>
-            <image src="../../images/selectdown_image.png" class="selectImage"></image>
-          </view>
-      </view>
-    </view> 
-    <view class="bigImageView" wx:for="{{cityDataList}}" wx:for-index="index" wx:for-item="item" >
-      <image src="../../images/bgImage.png" class="bigImage" ></image>
-      <image src="../../images/gradualbgimage.png" class="bottomBgImage"></image>  
-      
-       <view class="coverBgView" >
-            <view class="leftView">
-              <text class="nameText">小仙女</text>
-              <text class="priceText">城市体验·40元/小时</text>
-            </view>
-            <view class="rightView">
-              <text class="buttonText">下单</text>
-            </view>
-      </view>   
-    </view>
-  </view>
-  <!--导游服务  -->
-  <view class="block3View" id="block3" wx:if="{{selectedTag==3}}">
      <view class="selectBackView">
       <view class="selectMenu">
           <view class="backView" catchtap="sexOrderTap">
               <label class="selectLabel">性别</label>
-              <image src="../../images/selectdown_image.png" class="selectImage"></image>
+              <image src="../../images/selectdown_image.png" class="selectImage" ></image>
+              
           </view>
           <view class="backView" catchtap="moneyOrderTap">
             <label class="selectLabel">金额</label>
             <image src="../../images/selectdown_image.png" class="selectImage"></image>
           </view>
       </view>
-    </view> 
-    <view class="bigImageView" wx:for="{{cityDataList}}" wx:for-index="index" wx:for-item="item" >
+    </view>  
+      <view class="bigImageView" wx:for="{{cityDataList}}" wx:for-index="index" wx:for-item="item" >
       <image src="../../images/bgImage.png" class="bigImage" ></image>
-      <view class="bottomBgView" id="gradualView" >
-        <view class="leftView" >
-          <text class="nameText">小仙女</text>
-          <text class="priceText">导游服务·40元/小时</text>
+       <view class="coverBgView" >
+         <image src="../../images/gradualbgimage.png" class="bottomBgImage"></image>   
+              <view class="leftView">
+              <text class="nameText">小仙女</text>
+              <text class="priceText">城市体验·40元/小时</text>
+            </view> 
+             <view class="rightView" catchtap="makeOrderTap">
+              <text class="buttonText">下单</text>
+            </view>  
+      </view>   
+    </view> 
+  </view> 
+</view>
+
+<!-- </scroll-view> -->
+<!--筛选二级菜单  -->
+<view class="timeMaskView" catchtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="timeView" wx:if="{{showModalStatus}}">
+    <dl class="menu">
+    <dt data-index="0" bindtap="tapMainMenu">
+       <view class="siftBgView">
+              <label class="selectLabel" wx:if="{{isSexHidden == false}}">性别</label>
+              <label class="selectLabel" style="color:#52a3fa" wx:else>性别</label>
+              <image src="../../images/selectdown_image.png" class="selectImage" wx:if="{{isSexHidden == false}}"></image>
+              <image src="../../images/selectdowm_image_selected.png" class="selectImage" wx:else></image>
         </view>
-        <view class="rightView">
-          <text class="buttonText">下单</text>
-        </view>
-      </view> 
-    </view>
-  </view>
-</view> 
+    </dt>
+    <dd class="{{subMenuDisplay[0]}}" animation="{{animationData[0]}}" >
+        <ul>
+            <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">性别</li>
+            <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">男</li>
+            <li class="{{subMenuHighLight[0][2]}}" data-index="0-2" bindtap="tapSubMenu">女</li>
+            
+        </ul>
+    </dd>
+    <dt data-index="1" bindtap="tapMainMenu">
+          <view  class="siftBgView">
+            <label class="selectLabel" wx:if="{{isMoneyHidden == false}}">金额</label>
+            <label class="selectLabel" style="color:#52a3fa" wx:else>金额</label>
+            <image src="../../images/selectdown_image.png" class="selectImage" wx:if="{{isMoneyHidden == false }}"></image>
+            <image src="../../images/selectdowm_image_selected.png" class="selectImage" wx:else></image>
+          </view>
+    </dt>
+    <dd class="{{subMenuDisplay[1]}}" animation="{{animationData[1]}}">
+        <ul>
+            <li class="{{subMenuHighLight[1][0]}}" data-index="1-0" bindtap="tapSubMenu">金额</li>
+            <li class="{{subMenuHighLight[1][1]}}" data-index="1-1" bindtap="tapSubMenu">从大到小</li>
+            <li class="{{subMenuHighLight[1][2]}}" data-index="1-2" bindtap="tapSubMenu">从小到大</li>
+        </ul>
+    </dd>
+</dl>
+</view>
+</scroll-view>
+
+<!-- <view class="siftMenuView" hidden="{{isHidden}}" catchtouchmove="catchtouchmove">
+      <ul>
+            <li class=".li" data-index="0-0" bindtap="tapSubMenu">100以内</li>
+            <li class=".li" data-index="0-1" bindtap="tapSubMenu">100-500</li>
+            <li class=".li" data-index="0-2" bindtap="tapSubMenu">500-1000</li>
+        </ul>
+
+</view> -->
