@@ -25,6 +25,7 @@
     <view class="blockView2">
       <view class="audioView" catchtap="voiceAnimation">
        <view class="countDownView" bindtap="countDown">
+          <audio  src="http://qqma.tingge123.com:823/mp3/2015-06-13/1434188181.mp3" id="myAudio" ></audio>
           <image src="../../images/voice/voice_icon1.png" class="voiceImage" wx:if="{{j==1}}"></image>
           <image src="../../images/voice/voice_icon2.png" class="voiceImage" wx:if="{{j==2}}"></image>
           <image src="../../images/voice/voice_icon3.png" class="voiceImage" wx:if="{{j==3}}"></image>

@@ -4,16 +4,21 @@
     <text class="font_24 font_color_FD3 margin_left_10">(必填喔~)</text>
   </view>
 
-  <view class="container_row_only">
+  <view class="container_row_only_wrap">
     <block wx:for="{{imgList}}">
-      <image src="../../images/my_normal.png" class="img200_style "></image>
+      <view class="img200_style"> 
+        <image src="{{item}}" class="hw_200 border_radius_10" bindtap="previewImage" data-src="{{item}}"></image>
+        <image src="../../images/icon_img_del.png" class="hw_40 img_del_mul " data-src="{{item}}" bindtap="img_del_multi"></image>
+      </view>
     </block>
-    <image src="../../images/img_addimg.png" class="img200_style "></image>
+    <block wx:if="{{imgList.length <= 2}}"> 
+      <image src="../../images/img_addimg.png " class="img200_style border_radius_10" bindtap="addImg"></image>
+    </block>
   </view>
 
   <view class="container_row_vcenter_withouthw padding_bot_30">
-    <image src="../../images/icon_example.png " class="img20_style padding_left_30"></image>
-    <text class="font_20 font_color_52A margin_left_10">示例</text>
+    <image src="../../images/icon_example.png " class="img20_style padding_left_30 " bindtap="openMask_example_avatar"></image>
+    <text class="font_20 font_color_52A margin_left_10" bindtap="openMask_example_avatar">示例</text>
     <text class="font_20 font_color_999 margin_left_10">讲真的，我们期待您的颜值很久了呢</text>
   </view>
 
@@ -28,24 +33,70 @@
   </view>
   
 
-  <view class="container_row_between margin_top_20_right_30 ">
+  <view class="container_row_between margin_top_20_right_30">
     <text class="font_28 font_color_333">身份证正面</text>
-    <image src="../../images/img_addimg.png" class="hw_160 "></image>
+    <block wx:if="{{imgPositive.length > 0 }}"> 
+      <view class="hw_160"> 
+        <image src="{{imgPositive}}" class="hw_160 border_radius_10" bindtap="previewImage_positive"></image>
+        <image src="../../images/icon_img_del.png" class="hw_40 img_del " bindtap="img_del_positive"></image>
+      </view> 
+    </block>
+    <block wx:else>
+      <image src="../../images/img_addimg.png" class="hw_160 border_radius_10" bindtap="addImg_positive"></image>   
+    </block>
   </view>
 
   <view class="border_bottom_999 margin_rl30"></view>
 
-  <view class="container_row_between margin_top_20_right_30 ">
+  <view class="container_row_between margin_top_20_right_30">
     <text class="font_28 font_color_333">身份证反面</text>
-    <image src="../../images/img_addimg.png" class="hw_160 "></image>
+    <block wx:if="{{imgReverse.length > 0 }}"> 
+      <view class="hw_160"> 
+        <image src="{{imgReverse}}" class="hw_160 border_radius_10" bindtap="previewImage_reverse"></image>
+        <image src="../../images/icon_img_del.png" class="hw_40 img_del " bindtap="img_del_reverse"></image>
+      </view> 
+    </block>
+    <block wx:else>
+      <image src="../../images/img_addimg.png" class="hw_160 border_radius_10" bindtap="addImg_reverse"></image>   
+    </block>
   </view>
+  
 
   <view class="border_bottom_999 margin_rl30"></view>
 
   <view class="container_row_vcenter_withouthw margin_tb20">
-    <image src="../../images/icon_example.png " class="img20_style padding_left_30"></image>
-    <text class="font_20 font_color_52A margin_left_10">查看图片示例参考</text>
+    <image src="../../images/icon_example.png " class="img20_style padding_left_30" bindtap="openMask_example_id"></image>
+    <text class="font_20 font_color_52A margin_left_10" bindtap="openMask_example_id">查看图片示例参考</text>
   </view>
+
+  <view class="txt_title container_row_vcenter_withouthw padding_left_30">
+    <text class="font_24 font_color_666">证件认证</text> 
+    <text class="font_24 font_color_FD3 margin_left_10">(选填喔~)</text>
+  </view>
+
+  <view class="container_row_only_wrap">
+    <block wx:for="{{idimgList}}">
+      <view class="img200_style"> 
+        <image src="{{item}}" class="hw_200 border_radius_10" bindtap="previewImage_id" data-src="{{item}}"></image>
+        <image src="../../images/icon_img_del.png" class="hw_40 img_del_mul " data-src="{{item}}" bindtap="img_del_multi_id"></image>
+      </view>
+    </block>
+    <block wx:if="{{idimgList.length <= 2}}"> 
+      <image src="../../images/img_addimg.png " class="img200_style border_radius_10" bindtap="addImg_id"></image>
+    </block>
+  </view>
+
+  <view class="container_row_vcenter_withouthw padding_bot_20">
+    <image src="../../images/icon_example.png " class="img20_style padding_left_30 " bindtap="openMask_example_guideid"></image>
+    <text class="font_20 font_color_52A margin_left_10" bindtap="openMask_example_guideid">示例</text>
+    <text class="font_20 font_color_999 margin_left_10">例如国语导游证、英语导游证或其他旅游类语种证件</text>
+  </view>
+
+  <view class="container_row_vcenter_withouthw padding_bot_30">
+    <image src="../../images/icon_warning.png " class="hw_24 padding_left_30 "></image>
+    <text class="font_20 font_color_999 margin_left_10">请确保以上所提供证件的真实性，同时我们会保护您的隐私</text>
+  </view>
+  
 
   <view class="txt_title container_row_vcenter_withouthw padding_left_30">
     <text class="font_24 font_color_666">语音</text> 
@@ -54,18 +105,92 @@
    
 
   <view class="container_row_center_withouttw">
-    <image class="img_voice" src="../../images/img_voice_default.png"></image>
+    <image class="img_voice" src="{{hasRecordConfirm ? '../../images/img_voice_clicked.png' : '../../images/img_voice_default.png'}}" bindtap="openRecord"></image>
+    <!-- <image class="img_voice" src="../../images/img_voice_default.png" bindtap="openRecord"></image> -->
   </view>
   <text class="font_20 font_color_999 padding_left_30 txt_bottom">录制一段自我语音，增加个人魅力值哦~</text>
 
   <!--按钮--> 
  
-  <view class="button container_row_hcenter font_28" data-hi="wer" bindtap="toPay">
-    <view class="font_36" >立即申请</view>
-    
-  </view>  
+
+  <form report-submit="true" bindsubmit="formSubmit" class="form_style">
+    <button class="button_bot_52a margin_rl30" formType="submit"  bindtap="">立即申请</button>
+  </form>
+
+  <block wx:if = "{{mask}}">
+    <view  class="mask" bindtap="hiddenMask"></view>
+    <view class="popup border_radius_10">
+       <block wx:if="{{recording === false && playing === false && hasRecord === false}}"> 
+        <view class="container_column_center_withouthw">
+          <view class="font_72 font_color_52A margin_bot_30">{{formatedRecordTime}}</view>
+          <view class="container_row_center_withouttw">
+            <text class="font_28 font_color_FFF restart_recode container_row_center_withouttw " ></text>
+            <image src="../../images/icon_voice_recode.png" class="hw_200 " bindtap="startRecord"></image>
+            <text class="font_28 font_color_FFF done_recode container_row_center_withouttw " ></text>
+          </view>
+        </view>
+       </block>
+      <block wx:if="{{recording === true}}">
+        <view class="container_column_center_withouthw">
+          <view class="font_72 font_color_52A margin_bot_30">{{formatedRecordTime}}</view>
+          <view class="container_row_center_withouttw">
+            <text class="font_28 font_color_FFF restart_recode container_row_center_withouttw " ></text>
+            <image src="../../images/icon_voice_stoprecode.png" class="hw_200 " bindtap="stopRecord"></image>
+            <text class="font_28 font_color_FFF done_recode container_row_center_withouttw " ></text>
+          </view>
+        </view>
+      </block> 
+      <block wx:if="{{hasRecord === true && playing === false}}">
+        <view class="container_column_center_withouthw">
+          <view class="font_72 font_color_52A margin_bot_30">{{formatedPlayTime}}</view>
+          <view class="font_28 font_color_999 margin_bot_30" >时长{{recordTime}}秒</view> 
+          <view class="container_row_center_withouttw">
+            <text class="font_28 font_color_FFF restart_recode container_row_center_withouttw background_color21D" bindtap="clear">重录</text>
+            <image src="../../images/icon_voice_playrecode.png" class="hw_200 " bindtap="playVoice"></image>
+            <text class="font_28 font_color_FFF done_recode container_row_center_withouttw background_color52A" bindtap="confirmRecord">完成</text>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{hasRecord === true && playing === true}}">
+        <view class="container_column_center_withouthw">
+          <view class="font_72 font_color_52A margin_bot_30">{{formatedPlayTime}}</view>
+          <view class="font_28 font_color_999 margin_bot_30" >时长{{recordTime}}秒</view> 
+          <view class="container_row_center_withouttw">
+            <text class="font_28 font_color_FFF restart_recode container_row_center_withouttw background_color21D" bindtap="clear">重录</text>
+            <image src="../../images/icon_voice_pauserecode.png" class="hw_200 " bindtap="pauseVoice"></image>
+            <text class="font_28 font_color_FFF done_recode container_row_center_withouttw background_color52A" bindtap="confirmRecord">完成</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
   <!-- <view class="txt_title container_row_vcenter_withouthw padding_left_30">
     <text class="font_24 font_color_666">颜值照</text> 
     <text class="font_24 font_color_FD3 margin_left_10">(必填喔~)</text>
   </view> -->
+  <block wx:if = "{{mask_example_avatar}}">  
+    <view  class="mask" bindtap="hiddenMask"></view>
+    <view class="popup_example">
+      <image src="../../images/img_example_avatar.png" class="example_avatar" bindtap="hiddenMask"></image> 
+      <text class="border_radius_10 font_28 font_color_FFF margin_top_20">请选择正面阳光的颜值照哦</text>
+    </view>
+  </block>  
+
+  <block wx:if = "{{mask_example_id}}">  
+    <view  class="mask" bindtap="hiddenMask"></view>
+    <view class="popup_example">
+      <image src="../../images/img_example_id_p.png" class="example_id" bindtap="hiddenMask"></image> 
+      <text class="border_radius_10 font_28 font_color_FFF margin_top_20">拍摄身份正面，保持清晰</text>
+      <image src="../../images/img_example_id_r.png" class="example_id margin_top_80" bindtap="hiddenMask"></image> 
+      <text class="border_radius_10 font_28 font_color_FFF margin_top_20">拍摄身份反面，保持清晰</text>
+    </view>
+  </block>  
+
+  <block wx:if = "{{mask_example_guideid}}">  
+    <view  class="mask" bindtap="hiddenMask"></view>
+    <view class="popup_example">
+      <image src="../../images/img_example_guideid.png" class="example_guide" bindtap="hiddenMask"></image> 
+      <text class="border_radius_10 font_28 font_color_FFF margin_top_20">请选择旅游局颁发的证据哦</text>
+    </view>
+  </block>  
 </view>

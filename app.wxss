@@ -25,6 +25,12 @@
   flex-direction: row;
 }
 
+.container_row_only_wrap{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .container_row_between{
   display: flex;
   flex-direction: row;
@@ -126,9 +132,21 @@
   align-items: center;
 }
 
+.container_column_vcenter_withouthw{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
 .container_column_hcenter{
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+}
+
+.container_column_hcenter_withouthw{
   display: flex;
   flex-direction: column; 
   justify-content: center;
@@ -146,6 +164,17 @@
     color: white;
     position:fixed;
     bottom: -1rpx;
+}
+
+.button_bot_52a{
+    height: 100rpx;
+    width: 690rpx;
+    position:fixed;
+    bottom: -1rpx;
+    background-color: #52a3fa;
+    color: #FFFFFF;
+    align-items: center;
+    padding: 0 30rpx 0 30rpx;
 }
 /**--------------------------Button--------------------------**/
 
@@ -267,6 +296,11 @@
   padding: 20rpx;
 }
 
+.padding_30
+{
+  padding: 30rpx;
+}
+
 .padding_tb_30
 {
   padding: 30rpx 0rpx;
@@ -367,6 +401,11 @@
   padding: 30rpx 20rpx;
 }
 
+.padding_top_40_right_30
+{
+  padding: 40rpx 30rpx;
+}
+
 .padding_top_40_right_20
 {
   padding: 40rpx 20rpx;
@@ -439,6 +478,10 @@
   margin-top: 40rpx;
 }
 
+.margin_top_80
+{
+  margin-top: 80rpx;
+}
 
 .margin_top_100
 {
@@ -553,11 +596,21 @@
   width: 20rpx;
 }
 
+.hw_24{
+  height: 24rpx;
+  width: 24rpx;
+}
+
 .h_42{
   height:42rpx;
 }
 .h_80{
   height:80rpx;
+}
+
+.hw_30{
+  height: 30rpx;
+  width: 30rpx;
 }
 
 .hw_40{
@@ -600,6 +653,12 @@
   width: 160rpx;
 }
 
+.hw_140{
+  height: 140rpx;
+  width: 140rpx;
+}
+
+
 .hw_150{
   height: 150rpx;
   width: 150rpx;
@@ -608,6 +667,11 @@
 .hw_180{
   height: 180rpx;
   width: 180rpx;
+}
+
+.hw_200{
+  height: 200rpx;
+  width: 200rpx;
 }
 
 .width_300{
@@ -777,6 +841,11 @@
 {
   background-color: #52a3fa;
 }
+
+.background_color21D
+{
+  background-color: #21D3B2;
+}
 /**--------------------------background_color--------------------------**/
 
 /**--------------------------border--------------------------**/
@@ -801,6 +870,16 @@
 .border_bottom_F5
 {
   border-bottom: 20rpx solid #F5F5F5;
+}
+
+.border_bottom_F5_2
+{
+  border-bottom: 2rpx solid #F5F5F5;
+}
+
+.border_bottom_F5_10
+{
+  border-bottom: 10rpx solid #F5F5F5;
 }
 
 .border_bottom_F5_1

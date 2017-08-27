@@ -1,0 +1,23 @@
+.estimate_title{
+  height: 110rpx;
+}
+
+.star{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 20rpx 0 20rpx;
+}
+
+.textarea_wh{
+  width: 90%;
+  height: 120rpx;
+}
+
+.button_topup{
+    height: 100rpx;
+    width: 690rpx;
+    background-color: #52a3fa;
+    color: #FFFFFF;
+    align-items: center;
+    margin: 60rpx 30rpx 0 30rpx;
+}

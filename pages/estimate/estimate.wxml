@@ -1,0 +1,40 @@
+<view class="container"> 
+  <view class="order_center padding_top_40_right_30  container_row_vcenter_withouthw border_bottom_F5_2">
+      <view class="container_row_only">
+        <image class="hw_140 border_radius_10" src="../../images/bgImage.png"></image>
+        <view class="container_column_hcenter_withouthw padding_left_30">
+          <view class="container_row_only ">
+            <text class="font_32 font_color_333 order_time">小皇帝James</text>
+            <text class="font_28 font_color_666 order_time padding_left_20">西湖区</text>
+          </view>
+          <view class="container_row_only padding_top_30">
+            <image src="../../images/man_icon.png" class="hw_30"></image>
+            <image src="../../images/evidence_icon.png" class="hw_30 padding_left_20"></image>
+          </view>
+        </view>        
+      </view>   
+  </view>
+
+  <view class="container_row_vcenter_withouthw estimate_title border_bottom_F5_2">
+    <text class="font_32 font_color_333 padding_left_30">评分</text>
+    <block wx:for="{{star}}" wx:key="id"> 
+      <!-- <image src="../../images/comment_star_selected.png "  data-tag="{{item.id}}" class="star padding_left_30" bindtap="star_selected"></image> -->
+      <block wx:if="{{item.selected}}">
+        <image src="../../images/comment_star_selected.png "  data-tag="{{item.id}}" class="star  " bindtap="star_selected"></image> 
+      </block>
+      <block wx:else>
+        <image src="../../images/comment_star_normal.png "  data-tag="{{item.id}}" class="star  " bindtap="star_selected"></image> 
+      </block>
+    </block> 
+  </view>
+
+  <view class="container_columnonly border_bottom_F5_2 padding_30">
+    <textarea placeholder="本次流程感觉如何？快说说乐友的服务，游玩感想给其他游客吧" maxlength="200" class="textarea_wh  font_24" bindinput="bindinput"></textarea>
+    <text class="font_color_666 font_24  text_align_right">{{inputnumber}}/200</text>
+  </view>
+
+  <form report-submit="true" bindsubmit="formSubmit" class="form_style">
+    <button class="button_topup " formType="submit"  bindtap="requestPayment">提交</button>
+  </form>
+
+</view>

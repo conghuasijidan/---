@@ -1,6 +1,6 @@
 <!--index.wxml-->
-<scroll-view scroll-y="true" style="height:1110rpx"> 
-<view class="main"  >
+ <!-- <scroll-view scroll-y="true" style="height:1110rpx" bindscrolltoupper="refresh">   -->
+<view class="main" >
   <view class="locBgView">
     <view class="locView" catchtap="locSelectedTap">
       <label class="locLabel">{{citySelected}}</label>
@@ -31,9 +31,9 @@
   </view> 
   <view class=""  id="block1" wx:if="{{selectedTag==1}}">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper" circular="{{circular}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{currentIndicatorColor}}">
-      <block wx:for="{{imgUrls}}">
+      <block wx:for="{{scrollImgUrls}}">
         <swiper-item>
-              <image src="{{item.url}}" class="scrollImage"></image>
+              <image src="{{item.photo}}" class="scrollImage"></image>
         </swiper-item>
       </block>   
     </swiper>
@@ -44,16 +44,16 @@
     </view>
     <view class="bgview">
       <view class="scrollView" >
-        <view class="cellBackView" wx:for="{{listImage}}"  wx:for-index="index" wx:for-item="item" > 
-        <view class="cellView" catchtap="cellTap">
+        <view class="cellBackView" wx:for="{{recommendlist}}"  wx:for-index="index" wx:for-item="item" > 
+        <view class="cellView" catchtap="cellTap" data-index="{{index}}">
           <image src="../../images/index_cell_pic.png" class="cellImage"> </image>
           <view class="sectionOne">
-          <label class="cellName">林更新</label>
-          <label class="cellPrice">58</label>
+            <label class="cellName">林更新</label>
+            <label class="cellPrice">58</label>
           </view>
           <view class="sectionTwo">
-          <label class="cellElse">江干区</label>
-          <label class="cellElse">导游一年</label>
+            <label class="cellElse">江干区</label>
+            <label class="cellElse">导游一年</label>
           </view>
         </view>
         </view>
@@ -65,18 +65,18 @@
      <view class="selectBackView">
       <view class="selectMenu">
           <view class="backView" catchtap="sexOrderTap">
-              <label class="selectLabel">性别</label>
+              <label class="selectLabel">{{sexSift}}</label>
               <image src="../../images/selectdown_image.png" class="selectImage" ></image>
               
           </view>
           <view class="backView" catchtap="moneyOrderTap">
-            <label class="selectLabel">金额</label>
+            <label class="selectLabel">{{moneySift}}</label>
             <image src="../../images/selectdown_image.png" class="selectImage"></image>
           </view>
       </view>
     </view>  
-      <view class="bigImageView" wx:for="{{cityDataList}}" wx:for-index="index" wx:for-item="item" >
-      <image src="../../images/bgImage.png" class="bigImage" ></image>
+      <view class="bigImageView" wx:for="{{guideList}}" wx:for-index="index" wx:for-item="item" catchtap="cellTap" >
+      <image src="../../images/index_cell_pic.png" class="bigImage" ></image>
        <view class="coverBgView" >
          <image src="../../images/gradualbgimage.png" class="bottomBgImage"></image>   
               <view class="leftView">
@@ -96,46 +96,49 @@
 <view class="timeMaskView" catchtap="hideModal" wx:if="{{showModalStatus}}"></view>
 <view animation="{{animationData}}" class="timeView" wx:if="{{showModalStatus}}">
     <dl class="menu">
-    <dt data-index="0" bindtap="tapMainMenu">
-       <view class="siftBgView">
-              <label class="selectLabel" wx:if="{{isSexHidden == false}}">性别</label>
-              <label class="selectLabel" style="color:#52a3fa" wx:else>性别</label>
-              <image src="../../images/selectdown_image.png" class="selectImage" wx:if="{{isSexHidden == false}}"></image>
-              <image src="../../images/selectdowm_image_selected.png" class="selectImage" wx:else></image>
-        </view>
-    </dt>
-    <dd class="{{subMenuDisplay[0]}}" animation="{{animationData[0]}}" >
-        <ul>
-            <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">性别</li>
-            <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">男</li>
-            <li class="{{subMenuHighLight[0][2]}}" data-index="0-2" bindtap="tapSubMenu">女</li>
-            
-        </ul>
-    </dd>
-    <dt data-index="1" bindtap="tapMainMenu">
-          <view  class="siftBgView">
-            <label class="selectLabel" wx:if="{{isMoneyHidden == false}}">金额</label>
-            <label class="selectLabel" style="color:#52a3fa" wx:else>金额</label>
-            <image src="../../images/selectdown_image.png" class="selectImage" wx:if="{{isMoneyHidden == false }}"></image>
-            <image src="../../images/selectdowm_image_selected.png" class="selectImage" wx:else></image>
+      <dt data-index="0" bindtap="tapMainMenu">
+        <view class="siftBgView">
+                <label class="selectLabel" wx:if="{{isSexHidden == false}}">性别</label>
+                <label class="selectLabel" style="color:#52a3fa" wx:else>性别</label>
+                <image src="../../images/selectdown_image.png" class="selectImage" wx:if="{{isSexHidden == false}}"></image>
+                <image src="../../images/selectdowm_image_selected.png" class="selectImage" wx:else></image>
           </view>
-    </dt>
-    <dd class="{{subMenuDisplay[1]}}" animation="{{animationData[1]}}">
-        <ul>
-            <li class="{{subMenuHighLight[1][0]}}" data-index="1-0" bindtap="tapSubMenu">金额</li>
-            <li class="{{subMenuHighLight[1][1]}}" data-index="1-1" bindtap="tapSubMenu">从大到小</li>
-            <li class="{{subMenuHighLight[1][2]}}" data-index="1-2" bindtap="tapSubMenu">从小到大</li>
-        </ul>
-    </dd>
-</dl>
+      </dt>
+      <dd class="{{subMenuDisplay[0]}}" animation="{{animationData[0]}}" >
+          <ul>
+              <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">性别</li>
+              <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">男</li>
+              <li class="{{subMenuHighLight[0][2]}}" data-index="0-2" bindtap="tapSubMenu">女</li>
+              
+          </ul>
+      </dd>
+      <dt data-index="1" bindtap="tapMainMenu">
+            <view  class="siftBgView">
+              <label class="selectLabel" wx:if="{{isMoneyHidden == false}}">金额</label>
+              <label class="selectLabel" style="color:#52a3fa" wx:else>金额</label>
+              <image src="../../images/selectdown_image.png" class="selectImage" wx:if="{{isMoneyHidden == false }}"></image>
+              <image src="../../images/selectdowm_image_selected.png" class="selectImage" wx:else></image>
+            </view>
+      </dt>
+      <dd class="{{subMenuDisplay[1]}}" animation="{{animationData[1]}}">
+          <ul>
+              <li class="{{subMenuHighLight[1][0]}}" data-index="1-0" bindtap="tapSubMenu">金额</li>
+              <li class="{{subMenuHighLight[1][1]}}" data-index="1-1" bindtap="tapSubMenu">从大到小</li>
+              <li class="{{subMenuHighLight[1][2]}}" data-index="1-2" bindtap="tapSubMenu">从小到大</li>
+          </ul>
+      </dd>
+    </dl>
 </view>
-</scroll-view>
+ <!-- </scroll-view>  -->
 
-<!-- <view class="siftMenuView" hidden="{{isHidden}}" catchtouchmove="catchtouchmove">
-      <ul>
-            <li class=".li" data-index="0-0" bindtap="tapSubMenu">100以内</li>
-            <li class=".li" data-index="0-1" bindtap="tapSubMenu">100-500</li>
-            <li class=".li" data-index="0-2" bindtap="tapSubMenu">500-1000</li>
-        </ul>
-
-</view> -->
+ <view class="chatRoom_tab">
+    <view class="homeView">
+        <image src="../../images/choose_selected.png"></image>
+    </view>
+    <view class="messageView" bindtap="tab_message">
+        <image src="../../images/message_normal.png" ></image>
+    </view>
+    <view class="myView" bindtap="tab_my">
+        <image src="../../images/my_normal.png"></image>
+    </view>
+  </view>  

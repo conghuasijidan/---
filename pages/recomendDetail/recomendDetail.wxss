@@ -53,7 +53,7 @@
   height: 2rpx;
 }
 .bodyView{
-background-color: white;
+/* background-color: orange; */
 width: 100%;
 height: 1026rpx;
 }
@@ -83,7 +83,7 @@ height: 1026rpx;
   margin-top: 35rpx;
 }
 .priceLabel:before{
-  content: "¥";
+   content: "¥";
    color: #fd3c5a;
    font-size: 24rpx;
 }
@@ -94,9 +94,10 @@ height: 1026rpx;
 }
 .blockView2{
   display: flex;
-  /*background-color: white;*/
+  align-items: center;
+  /* background-color: blanchedalmond; */
   width:100%;
-  height: 60rpx;
+  height: 80rpx;
 }
 .audioView{
  
@@ -106,7 +107,7 @@ height: 1026rpx;
   height: 44rpx;
   border-radius: 10rpx;
   margin-left: 30rpx;
-  margin-top: 10rpx;
+  /* margin-top: 10rpx; */
 }
 .countDownView{
   display: flex;
@@ -137,7 +138,7 @@ height: 1026rpx;
    height: 44rpx;
    border-radius: 10rpx;
    margin-left: 390rpx;
-   margin-top: 10rpx;
+   /* margin-top: 10rpx; */
 }
 .starImage{
   width: 30rpx;
@@ -148,7 +149,7 @@ height: 1026rpx;
   display: flex; 
   flex-direction: row;
   align-items: center;
-  /* background-color: springgreen; */
+   /* background-color: springgreen;  */
   width: 100%;
   height: 44rpx;
 }
@@ -166,9 +167,9 @@ height: 1026rpx;
 }
 .blockView4{
   /* display: flex; */
-  /* background-color: blanchedalmond; */
+  /* background-color: blanchedalmond;  */
   width: 100%;
-  height: 96rpx;
+  height: 80rpx;
 }
 .orderbgview{
   display: flex;
@@ -203,15 +204,17 @@ height: 1026rpx;
 }
 .titleView{
   display: flex;
-  /*background-color: springgreen;*/
+  /* background-color: springgreen; */
   width: 100%;
-  height: 60rpx;
+  height: 30rpx;
+  margin-bottom: 30rpx;
 }
 .titleLabel{
   color: #333333;
   font-size: 24rpx;
-  margin-top: 30rpx;
-  margin-left: 30rpx;
+  margin-top: 40rpx;
+  margin-left: 30rpx; 
+ 
 }
 .specialView{
   display: flex;
@@ -251,7 +254,8 @@ height: 1026rpx;
 }
 .cellSection1{
   display: flex;
-  /*background-color: springgreen;*/
+  align-items: center;
+  /* background-color: springgreen; */
   width: 100%;
   height: 100rpx;
  
@@ -260,26 +264,26 @@ height: 1026rpx;
   width: 60rpx;
   height: 60rpx;
   border-radius: 40rpx;
-  margin-top: 30rpx;
+  /* margin-top: 30rpx; */
   margin-left: 30rpx;
 }
 .cellNameLabel{
   font-size: 28rpx;
   color: #333333;
   margin-left: 20rpx;
-  margin-top: 45rpx;
+  /* margin-top: 45rpx; */
   margin-right: 20rpx;
 }
 .commentStar{
   width: 30rpx;
   height: 28rpx;
-  margin-top: 45rpx;
+  /* margin-top: 45rpx; */
 }
 .timeLabel{
   font-size: 20rpx;
   color: #999999;
   margin-left: 298rpx;
-  margin-top: 45rpx;
+  /* margin-top: 45rpx; */
 }
 .contentView{
   /*background-color: red;*/
@@ -310,7 +314,7 @@ height: 1026rpx;
   display: flex;
   justify-content: space-around;
   width: 100%;
-  height: 98rpx;
+  height: 108rpx;
   background-color: white;
   position: fixed;
   bottom:0;
@@ -325,7 +329,7 @@ height: 1026rpx;
   background-color: white;
   border-radius: 10rpx;
   height: 94rpx;
-  width: 290rpx;
+  /* width: 300rpx; */
 }
 .consultButton{
   border:1px solid #52a3fa;
@@ -337,12 +341,13 @@ height: 1026rpx;
   background-color: white;
   height: 94rpx;
   width: 290rpx;
+  margin-left: 30rpx;
   
 }
 .makeOrderView{
   display: flex;
   justify-content: center;
-   align-items: center;
+  align-items: center;
   
   
   
@@ -354,4 +359,5 @@ height: 1026rpx;
   width:380rpx;
   font-size: 36rpx;
   color: white;
+  margin-right: 30rpx;
 }

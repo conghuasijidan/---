@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+
     order_status:[
       {
         tap: 'changeToapply',
@@ -79,6 +80,7 @@ Page({
    */
   onShareAppMessage: function () {
   
+
   },
   toOrderDetails:function(){
     wx.navigateTo({
@@ -109,5 +111,6 @@ Page({
     })
 
   },
+
 
 })

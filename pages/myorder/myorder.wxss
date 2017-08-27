@@ -4,14 +4,14 @@
   width: 33.33%;
   height: 80rpx;
   border-bottom: 6rpx solid #52a3fa;
-  margin: 0 72rpx 0 72rpx;
+  margin: 0 70rpx 0 70rpx;
   color: #52a3fa;
 }
 
 .view_status_unchecked{
   width: 33.33%;
   height: 80rpx;
-  margin: 0 72rpx 0 72rpx;
+  margin: 0 70rpx 0 70rpx;
   color: #333333;
 }
 

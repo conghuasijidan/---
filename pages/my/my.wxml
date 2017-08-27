@@ -11,16 +11,16 @@
   <view class="container_row_vcenter_withouthw">
 
     <view class="container_column_center_withouthw account border_right_999_2">
-      <text class="font_color_FD3 font_36">100</text>
+      <text class="font_color_FD3 font_36">{{balance}}</text>
       <text class="font_24 font_color_666 margin_top_20">余额</text>
     </view>
 
-    <view class="container_column_center_withouthw account border_right_999_2">
+    <view class="container_column_center_withouthw account border_right_999_2" bindtap="toTopup">
       <image src="../../images/icon_topup.png" class="hw_50"></image>
       <text class="font_24 font_color_666 margin_top_20">充值</text>
     </view>
 
-    <view class="container_column_center_withouthw account">
+    <view class="container_column_center_withouthw account" bindtap="toWithdraw">
       <image src="../../images/icon_withdraw.png" class="hw_50"></image>
       <text class="font_24 font_color_666 margin_top_20">提现</text>
     </view>
@@ -29,7 +29,7 @@
 
   <view class="border_bottom_999_2"></view>
 
-  <view class="container_row_vcenter_withouthw list">
+  <view class="container_row_vcenter_withouthw list" bindtap="toApplyGuide">
     <image class="navigator_iamge margin_right_20"  src="../../images/icon_applyguide.png" ></image>
     <view class="navigator_text font_color_333 font_28">申请乐友</view>
     <view class="navigator_arrow"></view>
@@ -37,7 +37,7 @@
 
   <view class="container_row_vcenter_withouthw">
 
-    <view class="container_column_center_withouthw account border_right_999_2">
+    <view class="container_column_center_withouthw account border_right_999_2" bindtap="toApplyGuide">
       <image src="../../images/icon_apply.png" class="hw_50"></image>
       <text class="font_24 font_color_666 margin_top_20">申请乐友</text>
     </view>
@@ -47,7 +47,7 @@
       <text class="font_24 font_color_666 margin_top_20">乐友订单</text>
     </view>
 
-    <view class="container_column_center_withouthw account">
+    <view class="container_column_center_withouthw account" bindtap="toOrderSetting">
       <image src="../../images/icon_ordersetting.png" class="hw_50"></image>
       <text class="font_24 font_color_666 margin_top_20">接单设置</text>
     </view>
@@ -58,7 +58,7 @@
 
   <view class="container_row_vcenter_withouthw list_order ">
     <image class="navigator_iamge margin_right_20"  src="../../images/icon_order.png" ></image>
-    <view class="navigator_text font_color_333 font_28">我的订单</view>
+    <view class="navigator_text font_color_333 font_28" bindtap="toMyorder">我的订单</view>
     <view class="navigator_arrow"></view>
   </view>
 
@@ -72,8 +72,19 @@
   <view class="border_bottom_999_2"></view>
 
   <form report-submit="true" bindsubmit="formSubmit" class="form_style">
-    <button formType="submit" plain="true">退出账号</button>
+    <button class=" btn_exit font_color_52A font_36" formType="submit"  bindtap="toIndex">退出账号</button>
   </form>
 
 
 </view>
+ <view class="chatRoom_tab">
+    <view class="homeView" bindtap="tab_home">
+        <image src="../../images/choose_normal.png"></image>
+    </view>
+    <view class="messageView" bindtap="tab_message">
+        <image src="../../images/message_normal.png"></image>
+    </view>
+    <view class="myView" >
+        <image src="../../images/my_selected.png"></image>
+    </view>
+  </view>  

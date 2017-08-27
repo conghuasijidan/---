@@ -1,4 +1,9 @@
 //index.js
+//  var gloabData = {
+//    isSucess:false
+//  }
+// module.exports = gloabData
+
 //高德
 var amapFile = require('../../libs/amap-wx.js')
 //IM
@@ -11,17 +16,25 @@ var app = getApp()
 function initSubMenuDisplay() {
   return ['hidden', 'hidden'];
 }
-
 //定义初始化数据，用于运行时保存
 var initSubMenuHighLight = [
   ['', '', ''],
   ['', '',''],
 ];
-
+var config = require('../../config.js')
 
 Page({
+  getRoomPage: function () {
+    return this.getPage("pages/chatroom/chatroom")
+  },
+  getPage: function (pageName) {
+    var pages = getCurrentPages()
+    return pages.find(function (page) {
+      return page.__route__ == pageName
+    })},
+  messageNotiIcon: '../../images/index_cell_pic.png',
   data: {
-  name: 'zhulong',
+  name: 'd2',
   psd: '123',
   member: [],
   grant_type: "password",
@@ -37,6 +50,8 @@ Page({
   selectedIndex:'0',
   disabelScroll:false,
   showModalStatus: false,
+  sexSift:'性别',
+  moneySift:'金额',
   selected1Menu:"menuSelectLabel",
   selected1Hidden:false,
   selected2Menu: "menuNormalLabel",
@@ -51,15 +66,15 @@ Page({
   circular:true,
   indicatorColor:"#ffffff",
   currentIndicatorColor:"#52A3FA",
-  imgUrls: [{ url: '../../images/scroll_image.png' }, 
+  scrollImgUrls: [{ url: '../../images/scroll_image.png' }, 
   { url: '../../images/scroll_image.png' },
   { url: '../../images/scroll_image.png' }
   ],
   // 列表数据
-  listImage: [{ url: '' }, { url: '' }, { url: '' }, { url: '' },{ url: '' }, { url: '' }],
+  recommendlist: [{ url: '' ,name:'lisan',age:''}, { url: '' }, { url: '' }, { url: '' },{ url: '' }, { url: '' }],
 
-//  城市体验
-  cityDataList: [{ imageUrl: '', name: '' }, { imageUrl: '', name: '' }, { imageUrl: '', name: ''}]
+  //  导游服务
+  guideList: [{ imageUrl: '', name: '' }, { imageUrl: '', name: '' }, { imageUrl: '', name: ''}]
 
   },
   munuSelectedTap:function(event){
@@ -77,18 +92,6 @@ Page({
      })
    } else if (event.currentTarget.dataset.tag == 2)
    {
-    //  照片底部渐变
-    // debugger;
-    //  const ctx = wx.createCanvasContext('gradualView');
-    //  const grd = ctx.createLinearGradient(0,100,0,0);
-    //  grd.addColorStop(0,'black');
-    //  grd.addColorStop(1,'white');
-
-    //  ctx.setFillStyle(grd);
-    //  ctx.fillRect(0,0,690,100);
-    //  ctx.draw();
-
-
      that.setData({
        selected1Menu: "menuNormalLabel",
        selected2Menu: "menuSelectLabel",
@@ -125,9 +128,14 @@ Page({
   swiperTap:function(){
 
   },
-  cellTap:function(){
+  cellTap:function(event){
+    
+    var index = event.currentTarget.dataset.index
+    var guideInfo = this.data.recommendlist[index]
+    // debugger;
+    console.log("导游页的导游详情"+guideInfo)
     wx.navigateTo({
-      url: '../recomendDetail/recomendDetail',
+      url: '../recomendDetail/recomendDetail?guideInfo=' + JSON.stringify(guideInfo),
     })
   },
   // --------------------------------------导游服务---筛选-------------
@@ -138,7 +146,7 @@ Page({
       selectedIndex:'0'
     })
     this.tapMainMenu();
-
+   
   },
   moneyOrderTap: function () {
     this.maskTap();
@@ -157,7 +165,12 @@ Page({
   },
   
   onLoad: function () { 
-    var that = this
+    var that = this;
+    // that.openConnection()
+    // console.log("siofsosofosfjs");
+  //  请求数据
+    this.loadData()
+
     // 城市定位
     var myAmapFun = new amapFile.AMapWX({ key: 'b4ff5a29e4e62ce28226d0dda832bbc2' });
     myAmapFun.getRegeo({
@@ -191,7 +204,6 @@ Page({
       }
     })
    
-
     // 聊天登录接口
     var options = {
       apiUrl: WebIM.config.apiURL,
@@ -208,31 +220,76 @@ Page({
     WebIM.conn.open(options)
 
   },
-  onShow:function(){
-    //  缓存本地聊天
-    var that = this
-    // debugger;
-    // //console.log(WebIM.conn)
-    var rosters = {
-      success: function (roster) {
-        var member = []
-        for (var i = 0; i < roster.length; i++) {
-          if (roster[i].subscription == "both") {
-            member.push(roster[i])
-          }
+  // 开启长连接
+  onPullDownRefresh: function () {
+     wx.stopPullDownRefresh()
+     this.data.loadData()
+     wx.showLoading({
+       title: '刷新中',
+     })
+  },
+  loadData:function(){
+   var that = this
+   var scrollImageUrl = config.scrollImageUrl
+   var guideUrl = config.guideUrl
+    wx.request({
+      url: scrollImageUrl,
+      success:function(res){
+        if (res.data.promotions){
+          that.setData({
+            scrollImgUrls: res.data.promotions
+          })
         }
-        that.setData({
-          member: member
-        })
-        wx.setStorage({
-          key: 'member',
-          data: that.data.member
-        })
+      }
+    })
+   
+    wx.request({
+      url: guideUrl,
+      success: function (res) {
+        if (res.data.guides) {
+          // 停止刷新
+          wx.stopPullDownRefresh()
+          wx.hideLoading()
+          that.setData({
+            // recommendlist: res.data.guides
+          })
+        }
+      }
+    })
+  },
+  onShow: function () {
+    
+  },
+//  处理好友请求
+  handleFriendMsg: function (message) {
+    var that = this
+    //console.log(message)
+    // debugger
+    WebIM.conn.subscribed({
+      to: message.from,
+      message: "[resp:true]"
+    })
+    WebIM.conn.subscribe({
+      to: message.from,
+      message: "[resp:true]"
+    })
+
+  },
+
+// 分享设置
+  onShareAppMessage:function(res){
+    return{
+      title: '我在友途等你',
+      path: '/pages/index/index',
+      success: function (res) {
+        // 转发成功
+        // console.log('分享成功');
+      },
+      fail: function (res) {
+        // 转发失败
+        // console.log('分享失败');
       }
     }
-
-    //WebIM.conn.setPresence()
-    WebIM.conn.getRoster(rosters)
 
   },
 
@@ -251,7 +308,7 @@ Page({
       isDisabled: true
     })
     setTimeout(function () {
-      animation.translateY(-410).step()
+      animation.translateY(-460).step()
       this.setData({
         animationData: animation.export()
       })
@@ -265,7 +322,7 @@ Page({
       delay: 0
     })
     this.animation = animation
-    animation.translateY(-410).step()
+    animation.translateY(-460).step()
     this.setData({
       animationData: animation.export(),
       isDisabled: false
@@ -317,23 +374,27 @@ Page({
     } else {
       newSubMenuDisplay[index] = 'hidden';
       if (index == 0) {
+
         this.setData({
           isSexHidden: false,
           isMoneyHidden: false
         })
+        
       } else {
         this.setData({
           isSexHidden: false,
           isMoneyHidden: false
         })
       }
+      // 设置动画
+      this.hideModal();
     }
     // 设置为新的数组
     this.setData({
       subMenuDisplay: newSubMenuDisplay
     });
     // 设置动画
-    this.animation(index);
+    // this.animation(index);
     console.log(this.data.subMenuDisplay);
   },
   tapSubMenu: function (event) {
@@ -343,6 +404,42 @@ Page({
     });
     // 处理二级菜单，首先获取当前显示的二级菜单标识
     var indexArray = event.currentTarget.dataset.index.split('-');
+    // debugger
+    if(indexArray[0]=='0')
+    {  
+       if(indexArray[1]=='0')
+       {
+         this.setData({
+           sexSift:'性别'
+         })
+       }else if (indexArray[1]=='1')
+       {
+         this.setData({
+           sexSift: '男'
+         }) 
+       }else{
+         this.setData({
+           sexSift: '女'
+         }) 
+       }
+
+    }else{
+      if (indexArray[1] == '0') {
+        this.setData({
+          moneySift: '金额'
+        })
+      } else if (indexArray[1] == '1') {
+        this.setData({
+          moneySift: '从大到小'
+        })
+      } else {
+        this.setData({
+          moneySift: '从小到大'
+        })
+      }
+
+    }
+
     // 初始化状态
     // var newSubMenuHighLight = initSubMenuHighLight;
     for (var i = 0; i < initSubMenuHighLight.length; i++) {
@@ -388,7 +485,19 @@ Page({
       animationData: animationData
     });
    
+  },
+
+  tab_message: function () {
+    wx.redirectTo({
+      url: '../chat/chat',
+    })
+  },
+  tab_my: function () {
+    wx.redirectTo({
+      url: '../my/my',
+    })
+
   }
 
-
 })
+

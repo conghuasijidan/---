@@ -1,8 +1,10 @@
 require('./utils/strophe.js')
-var WebIM = require('./utils/WebIM.js').default
 
+var WebIM = require('./utils/WebIM.js').default
+// var gloabData = require('../../pages/index/index.js')
 //app.js   
 App({
+
     getRoomPage: function () {
         return this.getPage("pages/chatroom/chatroom")
     },
@@ -14,7 +16,10 @@ App({
     },
     onLaunch: function () {
         //调用API从本地缓存中获取数据
+  
         var that = this
+        var yourArr = []
+        var isSameKey = false
         var logs = wx.getStorageSync('logs') || []
         logs.unshift(Date.now())
         wx.setStorageSync('logs', logs)
@@ -24,16 +29,32 @@ App({
                 WebIM.conn.setPresence()
             },
             onPresence: function (message) {
+              debugger;
                 switch(message.type){
                     case "unsubscribe":
                         pages[0].moveFriend(message);
                         break;
                     case "subscribe":
+                    debugger
                         if (message.status === '[resp:true]') {
+                          WebIM.conn.subscribe({
+                            to: message.from,
+                            message: "[resp:true]"
+                          })
+                          WebIM.conn.subscribed({
+                            to: message.from,
+                            message: "[resp:true]"
+                          })
+                          yourArr.push(message.from)
+                          wx.setStorage({
+                            key: 'fromName',
+                            data: yourArr,
+                          })
                             return
                         } else {
                             pages[0].handleFriendMsg(message)
                         }
+                        
                         break;
                     case "joinChatRoomSuccess":
                         wx.showToast({
@@ -57,6 +78,7 @@ App({
             onVideoMessage: function(message){
                 console.log('onVideoMessage: ', message);
                 var page = that.getRoomPage()
+                that.handleMessage(message)
                 if (message) {
                     if (page) {
                         page.receiveVideo(message, 'video')
@@ -95,6 +117,7 @@ App({
             onAudioMessage: function (message) {
                 console.log('onAudioMessage', message)
                 var page = that.getRoomPage()
+                that.handleMessage()
                 console.log(page)
                 if (message) {
                     if (page) {
@@ -137,8 +160,13 @@ App({
             },
 
             onTextMessage: function (message) {
-                var page = that.getRoomPage()
-                console.log(page)
+                var page = that.getRoomPage();
+                // var gloabData = gloabData;
+                debugger;
+                that.globalData.observerControl.notify();
+
+                that.handleMessage(message)
+
                 if (message) {
                     if (page) {
                         page.receiveMsg(message, 'txt')
@@ -176,6 +204,7 @@ App({
             onEmojiMessage: function (message) {
                 //console.log('onEmojiMessage',message)
                 var page = that.getRoomPage()
+                that.handleMessage()
                 //console.log(pages)
                 if (message) {
                     if (page) {
@@ -215,6 +244,7 @@ App({
             onPictureMessage: function (message) {
                 //console.log('Picture',message);
                 var page = that.getRoomPage()
+                that.handleMessage()
                 if (message) {
                     if (page) {
                         //console.log("wdawdawdawdqwd")
@@ -285,6 +315,34 @@ App({
         
     }
     ,
+    //  接收消息处理
+    handleMessage:function(message){
+      var yourArr = []
+      var isSameKey = false
+      yourArr = wx.getStorageSync('fromName')
+      for (var i = 0; i < yourArr.length; i++) {
+        if (message.from == yourArr[i]) {
+          isSameKey = true
+        }
+      }
+      // 更换手机用户，本地没有好友列表
+      if (isSameKey == false) {
+        WebIM.conn.subscribe({
+          to: message.from,
+          message: "[resp:true]"
+        })
+        WebIM.conn.subscribed({
+          to: message.from,
+          message: "[resp:true]"
+        })
+        yourArr.push(message.from)
+        wx.setStorage({
+          key: 'fromName',
+          data: yourArr,
+        })
+      }
+
+    },
     getUserInfo: function (cb) {
         var that = this
         if (this.globalData.userInfo) {
@@ -304,8 +362,55 @@ App({
         }
     }
     ,
+    getobserverController:function(cb){
+      
+      var that = this;
+      that.globalData.observerControl = new observerController();
+      typeof cb == "function" && cb(that.globalData.observerControl)
+    },
     globalData: {
         userInfo: null,
-        chatMsg: []
+        chatMsg: [],
+        test:'0',
+        observerControl:null
     }
 })
+
+
+function observerController() {
+
+  // 保存所有观察者  
+  var observers = [];
+
+  this.notify = function () {
+    
+    // console.log("f1 do something one!");
+    var datas = ["unReadMessage"];
+    // 通知所有观察者  
+    this.notifyObservers(datas);
+
+  }
+
+  this.addObserver = function (observer) {
+    
+    observers.push(observer)
+  }
+  
+  // this.removeObserver = function (observer){
+  //   observer.pop(observer)
+  // }
+
+  this.callback = function () {
+    // console.log("f1 callback invoke!");
+  }
+
+  this.notifyObservers = function (arg) {
+    
+    if (observers.length == 0) {
+      return;
+    };
+    for (var i = 0, len = observers.length; i < len; i++) {
+      observers[i].update(this, arg);
+    }
+  }  
+}

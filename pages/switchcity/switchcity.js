@@ -86,6 +86,9 @@ Page({
       citySelected:e.currentTarget.dataset.city
     })
     this.setData({ city: e.currentTarget.dataset.city })
+    wx.navigateBack({
+      
+    })
   },
   //选择热门城市
   bindHotCity: function (e) {
@@ -97,6 +100,9 @@ Page({
     })
     this.setData({
       city: e.currentTarget.dataset.city
+    })
+    wx.navigateBack({
+
     })
   },
   //点击热门城市回到顶部

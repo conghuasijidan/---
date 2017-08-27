@@ -2,9 +2,9 @@
 .main{
   /* background-color: #fafafa; */
   background-color: white;
-  width: 100%;
-  height: 100%;
-  
+  /* width: 100%;
+  height: 100%; */
+  padding-bottom: 70rpx;
 }
 .locBgView{
   display: flex;
@@ -219,6 +219,7 @@
    /* background-color: orange;  */
   width: 100%;
   /* height: 1400rpx; */
+  padding-bottom: 40rpx;
 }
 .selectMenu{
   display: flex;
@@ -231,25 +232,28 @@
   /* margin-top: 20rpx; */
 }
 .backView{
-   /* background-color: orange;    */
-  width:15%;
+  /* background-color: orange;     */
+  width:30%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .selectLabel{
   font-size: 24rpx;
   color: #999999;
-  margin-left: 15rpx;
+  /* margin-left: 15rpx;
   position: relative;
-  top: 8rpx;
+  top: 8rpx; */
 
 }
 .selectImage{
    width:16rpx;
    height:12rpx;
    margin-left: 15rpx;
-   position: relative;
-   top: 5rpx;
+   /* position: relative;
+   top: 5rpx; */
 }
 .bigImageView{
  /* display: flex; */
@@ -270,8 +274,8 @@
   height: 100rpx;
   left: 0rpx; 
   right: 0rpx;
-  bottom: 106rpx; 
-  /* background-color: blanchedalmond; */
+  bottom: 106rpx;  
+   /* background-color: blanchedalmond;  */
 }
 .bottomBgImage
 {
@@ -292,13 +296,13 @@
  align-items: center; */
  /* width: 100%;
  height: 100%; */
-  /* background-color: blanchedalmond;    */
+   /* background-color: blanchedalmond;     */
   position: relative; 
   width: 690rpx;
   height: 100rpx;
   left: 0rpx; 
   right: 0rpx;
-  bottom: 110rpx; 
+  bottom: 108rpx; 
   /* opacity: 0.7; */
 
 }
@@ -467,3 +471,42 @@
   /* background-color: orange; */
   margin-left: 70rpx;
 }
+
+.chatRoom_tab {
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border-top: 1px solid rgba(173,185,193,0.5);
+    display: flex;
+    justify-content: space-around;
+}
+ .homeView {
+    width: 31px;
+    height: 37px;
+    margin-top: 8px;
+    background-color: #ffffff;
+}
+.messageView{
+  width: 31px;
+  height: 37px;
+  margin-top: 8px;
+  /* background-color: beige; */
+}
+.myView {
+    width: 31px;
+    height: 37px;
+    margin-top: 8px; 
+    /* background-color: beige; */
+}
+.homeView image,.messageView image {
+    width: 100%;
+    height: 100%;
+}
+.myView image {
+     width: 100%;
+    height: 100%; 
+} 
+

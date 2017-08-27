@@ -1,34 +1,27 @@
+
 {
   "pages": [
-
-
-
     "pages/index/index",
-    "pages/payFail/payFail",
 
+    "pages/complain/complain",
+    "pages/estimate/estimate",
+
+    "pages/applyguide/applyguide",
+    "pages/orderDetail/orderDetail",
+    "pages/myorder/myorder",
+    "pages/payFail/payFail",
     "pages/chat/chat",
     "pages/chatroom/chatroom",
     "pages/paySuccess/paySuccess",
-
-
-
-    "pages/myorder/myorder",
-    "pages/index/index",
     "pages/ordersetting/ordersetting",
-    "pages/my/my",
     "pages/topup/topup",
     "pages/withdraw/withdraw",
     "pages/login/login",
-    "pages/orderDetail/orderDetail",
+    
     "pages/pay/pay",
-
     "pages/order/order",
-
-
     "pages/switchcity/switchcity",
     "pages/my/my",
-
-    "pages/applyguide/applyguide",
     "pages/poi/poi",
     "pages/map/map",
     "pages/logs/logs",
@@ -38,31 +31,7 @@
     "pages/inputtips/input",
     "pages/serviceAgreement/serviceAgreement"
     
-    
   ],
-  "tabBar": {
-    "backgroundColor": "#ffffff",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "友途",
-        "iconPath": "images/choose_normal.png",
-        "selectedIconPath": "images/choose_selected.png"
-      },
-      {
-        "pagePath": "pages/chat/chat",
-        "text": "消息",
-        "iconPath": "images/message_normal.png",
-        "selectedIconPath": "images/message_selected.png"
-      },
-      {
-        "pagePath": "pages/my/my",
-        "text": "我的",
-        "iconPath": "images/my_normal.png",
-        "selectedIconPath": "images/my_selected.png"
-      }
-    ]
-  },
   "networkTimeout": {
     "request": 10000,
     "connectSocket": 10000,

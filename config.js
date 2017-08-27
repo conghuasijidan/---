@@ -47,6 +47,17 @@ var config = {
 
     //充值
     topUpUrl: `https://${host}/user_asset/deposit`,
-};
 
+
+    // ------------------- 凯 ----------------------
+    //  轮播图
+    scrollImageUrl: `https://${host}/1.0/promotion`,
+    //   导游列表
+    guideUrl: `https://${host}/1.0/guide`,
+    //   导游评论
+    guideCommentsUrl: `https://${host}/1.0/guide/{0}/comment`
+
+
+};
 module.exports = config
+

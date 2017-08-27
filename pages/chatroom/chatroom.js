@@ -327,12 +327,15 @@ Page({
             }
             that.data.chatMsg.push(msgData)
             // console.log(that.data.chatMsg)
-
+          // debugger
             wx.setStorage({
+              
                 key: that.data.yourname + myName,
                 data: that.data.chatMsg,
                 success: function () {
                     //console.log('success', that.data)
+                  // debugger
+                    
                     that.setData({
                         chatMsg: that.data.chatMsg,
                         emojiList: [],

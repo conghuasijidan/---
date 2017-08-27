@@ -1,1 +1,3 @@
-{"navigationBarTitleText": "友途"}
+{"navigationBarTitleText": "友途",
+ "enablePullDownRefresh": true
+}

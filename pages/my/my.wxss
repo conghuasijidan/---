@@ -19,3 +19,45 @@
 .form_style{
   margin:100rpx 30rpx 0 30rpx;
 }
+
+.btn_exit{
+  background-color: white;
+  border: 1rpx solid #52a3fa;
+}
+.chatRoom_tab {
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border-top: 1px solid rgba(173,185,193,0.5);
+    display: flex;
+    justify-content: space-around;
+}
+.homeView {
+    width: 31px;
+    height: 37px;
+    margin-top: 8px;
+    
+}
+.messageView{
+  width: 31px;
+  height: 37px;
+  margin-top: 8px;
+  /* background-color: beige; */
+}
+.myView {
+    width: 31px;
+    height: 37px;
+    margin-top: 8px;
+    /* background-color: beige; */
+}
+.homeView image,.messageView image {
+    width: 100%;
+    height: 100%;
+}
+.myView image {
+    width: 100%;
+    height: 100%;
+}

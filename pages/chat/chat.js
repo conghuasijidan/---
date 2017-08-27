@@ -1,3 +1,6 @@
+var strophe = require('../../utils/strophe.js')
+var WebIM = require('../../utils/WebIM.js')
+var WebIM = WebIM.default
 Page({
     data: {
         search_btn: true,
@@ -6,18 +9,36 @@ Page({
         yourname: '',
         arr: []
     },
+    onLoad:function(){
+      //  重置未读消息
+        // var haveMessage = wx.getStorageSync('haveMessage')
+        // haveMessage = false
+        // wx.setStorage({
+        //   key: 'haveMessage',
+        //   data: 'haveMessage',
+        // })
+
+    },
     onShow: function () {
         var that = this
+        var yourArr = wx.getStorageSync('fromName')
+
         var member = wx.getStorageSync('member')
         var myName = wx.getStorageSync('myUsername')
         // debugger;
         var array = []
-        for (var i = 0; i < member.length; i++) {
-            if (wx.getStorageSync(member[i].name + myName) != '') {
-                array.push(wx.getStorageSync(member[i].name + myName)[wx.getStorageSync(member[i].name + myName).length - 1])
-            }
+        // for (var i = 0; i < member.length; i++) {
+        //     console.log(member[i].name)
+        //     if (wx.getStorageSync(member[i].name + myName) != '') {
+        //         array.push(wx.getStorageSync(member[i].name + myName)[wx.getStorageSync(member[i].name + myName).length - 1])
+        //     }
+        // }
+       
+        // debugger
+        for (var i = 0; i < yourArr.length; i++) {
+          array.push(wx.getStorageSync(yourArr[i] + myName)[wx.getStorageSync(yourArr[i] + myName).length - 1]) 
         }
-        //console.log(array，'1')
+       
         that.setData({
             arr: array
         })
@@ -36,9 +57,9 @@ Page({
             show_mask: false
         })
     },
-    tab_contacts: function () {
+    tab_home: function () {
         wx.redirectTo({
-            url: '../main/main'
+            url: '../index/index'
         })
     },
     close_mask: function () {
@@ -48,9 +69,9 @@ Page({
             show_mask: false
         })
     },
-    tab_setting: function () {
+    tab_my: function () {
         wx.redirectTo({
-            url: '../settings/settings'
+            url: '../my/my'
         })
     },
     into_chatRoom: function (event) {

@@ -13,7 +13,7 @@
   </view>
 
   <form report-submit="true" bindsubmit="formSubmit" class="form_style">
-    <button class="button_bot_52a margin_rl30" formType="submit"  bindtap="">去充值</button>
+    <button class="button_bot_52a margin_rl30" formType="submit"  bindtap="requestPayment">去充值</button>
   </form>
 </view>
 

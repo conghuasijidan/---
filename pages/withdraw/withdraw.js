@@ -1,4 +1,6 @@
 
+// withdraw.js
+
 Page({
 
   /**
@@ -8,7 +10,9 @@ Page({
 
     withdrawMoney:'（可用余额100元）',
     balance:100,
-    withdrawPercent:0.3
+    withdrawPercent:0.3,
+
+
 
   },
 

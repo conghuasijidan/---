@@ -7,7 +7,7 @@
 .img200_style{
   height: 200rpx;
   width: 200rpx;
-  padding: 30rpx 0 20rpx 30rpx;
+  padding: 30rpx 0 20rpx 30rpx; 
 }
 
 .img20_style{
@@ -19,6 +19,20 @@
   height:100rpx;
   width:426rpx;
   margin: 30rpx 0  20rpx 0;
+}
+
+.img_del{
+  
+  position: relative;
+  bottom: 160rpx;
+  left: 110rpx;  
+}
+
+.img_del_mul{
+  
+  position: relative;
+  bottom: 200rpx;
+  left: 150rpx;  
 }
 
 .button{
@@ -35,5 +49,97 @@
   margin-bottom: 130rpx;
 }
 
+.mask{
+  position: fixed;
+  top: 0;left: 0;
+  z-index: 3; 
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  background-color: black; 
+}
 
+.popup{
+  /* height: 98rpx; */
+    /* width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    color: black;
+    position:fixed;
+    bottom: -1rpx; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 500rpx;
+    height: 500rpx;
+    position:fixed;
+    bottom: 150rpx;
+    left:125rpx;
+    z-index: 5;
+}
 
+.popup_example{
+  /* height: 98rpx; */
+    /* width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    color: black;
+    position:fixed;
+    bottom: -1rpx; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500rpx;
+    /* height: 500rpx; */
+    position:fixed;
+    top: 200rpx;
+    left:125rpx;
+    z-index: 5;
+}
+
+.example_avatar{
+  width: 500rpx;
+  height: 500rpx;
+}
+
+.example_id{
+  width: 460rpx;
+  height: 290rpx;
+}
+
+.example_guide{
+  width: 500rpx;
+  height: 700rpx;
+}
+
+.restart_recode{
+
+  border-radius: 50%; 
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 30rpx;
+}
+
+.done_recode{
+
+  border-radius: 50%; 
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 30rpx;
+}
+
+/* 停止录音 */
+.button-stop-record {
+  width: 110rpx;
+  height: 110rpx;
+  border: 20rpx solid #fff;
+  background-color: #f55c23;
+  border-radius: 130rpx;
+  margin: 0 auto;
+}

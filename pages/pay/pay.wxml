@@ -30,6 +30,6 @@
 </view>
 <form report-submit="true">
     <view class="tabBarView" >
-    <button class="makeOrderButton" form-type="submit" catchtap="makeOrderTap">创建订单</button>
+    <button class="makeOrderButton" form-type="submit" catchtap="makeOrderTap">提交订单</button>
     </view>
 </form>
