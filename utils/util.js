@@ -1,4 +1,3 @@
-var index = require('../pages/index/index.js')
 
 function formatTime(time) {
   if (typeof time !== 'number' || time < 0) {
@@ -38,6 +37,5 @@ function formatLocation(longitude, latitude) {
 
 module.exports = {
   formatTime: formatTime,
-  formatLocation: formatLocation,
-  index: index.test
+  formatLocation: formatLocation
 }

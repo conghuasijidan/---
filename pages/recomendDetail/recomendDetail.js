@@ -11,6 +11,10 @@ Page({
    */
   data: {
     guideInfo:'',
+    photoImgUrls: [{ url: '../../images/scroll_image.png' },
+    { url: '../../images/scroll_image.png' },
+    { url: '../../images/scroll_image.png' }
+    ],
     scroolHeight:0,
     starCount:3,
     specialLabelList: [{key:'准时(50)'}, {key:'服务好(20)'},{key:'很亲切(50)'}],
@@ -107,32 +111,29 @@ Page({
     var guideInfo = JSON.parse(options.guideInfo)
     // console.log("导游详情"+) 
     var guideId = guideInfo.id
-    // var url = "https://piaogood.com/1.0/guide/" + guideId +"/comment"
+    var url = guideCommentsUrl+ "0" +"/comment"
    wx.request({
-     url: guideCommentsUrl,
+     url: url,
      success: function (res) {
 
        if (res.data.guide_comments) {
          that.setData({
-           scrollImgUrls: res.data.promotions
+           
          })
        }
      }
    })
 
-
-
-
-
     this.setData({
       guideInfo: guideInfo
     })
 
-    // debugger
-    WebIM.conn.subscribe({
-      to: 'd1',
-      message: "[resp:true]"                
-    })
+    // 添加好友
+    // WebIM.conn.subscribe({
+    //   to: 't2',
+    //   message: "[resp:true]"                
+    // })
+   console.log("添加好友")
 
     var that = this;
     wx.getSystemInfo({
@@ -153,8 +154,8 @@ Page({
     //console.log(event)
 
     var nameList = {
-      myName: 'd2',
-      your: 'd1'
+      myName: 'h2',
+      your: 'h1'
     }
     wx.navigateTo({
       url: '../chatroom/chatroom?username=' + JSON.stringify(nameList)

@@ -170,7 +170,7 @@
     height: 100rpx;
     width: 690rpx;
     position:fixed;
-    bottom: -1rpx;
+    bottom: 10rpx;
     background-color: #52a3fa;
     color: #FFFFFF;
     align-items: center;

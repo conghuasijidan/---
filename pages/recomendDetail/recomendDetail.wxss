@@ -6,6 +6,7 @@
   width:100%;
   background-color: white;
 }
+
 .photo{
   width: 100rpx;
   height: 100rpx;
@@ -57,11 +58,16 @@
 width: 100%;
 height: 1026rpx;
 }
+.swiper{
+  width: 100%;
+  height: 720rpx;
+  /* background-color: orange; */
+}
 .bigPhoto{
   width:690rpx;
   height: 690rpx;
   border-radius: 10rpx;
-  margin-top:30rpx;
+  margin-top:30rpx; 
   margin-left: 30rpx;
 }
 .blockView1{

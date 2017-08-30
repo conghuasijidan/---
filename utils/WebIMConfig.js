@@ -42,7 +42,7 @@ let config = {
      */
     isMultiLoginSessions: false,
     /**
-     * Whether to use window.doQuery()
+     * Whether to use window.doQueriy()
      * @parameter {Boolean} true or false
      */
     isWindowSDK: false,
@@ -61,12 +61,12 @@ let config = {
      * will auto connect the xmpp server autoReconnectNumMax times in background when client is offline.
      * won't auto connect if autoReconnectNumMax=0.
      */
-    autoReconnectNumMax: 2,
+    autoReconnectNumMax: 5,
     /**
      * the interval secons between each atuo reconnectting.
      * works only if autoReconnectMaxNum >= 2.
      */
-    autoReconnectInterval: 2,
+    autoReconnectInterval: 1,
     /**
      * webrtc supports WebKit and https only
      */

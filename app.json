@@ -1,14 +1,16 @@
-
 {
   "pages": [
     "pages/index/index",
-
+    "pages/my/my",
+    
+    "pages/login/login",
     "pages/complain/complain",
+    
     "pages/estimate/estimate",
-
     "pages/applyguide/applyguide",
     "pages/orderDetail/orderDetail",
     "pages/myorder/myorder",
+    "pages/guideorder/guideorder",
     "pages/payFail/payFail",
     "pages/chat/chat",
     "pages/chatroom/chatroom",
@@ -16,12 +18,10 @@
     "pages/ordersetting/ordersetting",
     "pages/topup/topup",
     "pages/withdraw/withdraw",
-    "pages/login/login",
-    
     "pages/pay/pay",
     "pages/order/order",
     "pages/switchcity/switchcity",
-    "pages/my/my",
+    
     "pages/poi/poi",
     "pages/map/map",
     "pages/logs/logs",
@@ -29,8 +29,8 @@
     "pages/message/message",
     "pages/recomendDetail/recomendDetail",
     "pages/inputtips/input",
-    "pages/serviceAgreement/serviceAgreement"
-    
+    "pages/serviceAgreement/serviceAgreement",
+    "pages/userrgstagreenment/userrgstagreenment"
   ],
   "networkTimeout": {
     "request": 10000,

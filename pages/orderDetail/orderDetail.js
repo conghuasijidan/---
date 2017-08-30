@@ -1,4 +1,5 @@
 // orderDetail.js
+var config = require('../../config.js')
 Page({
 
   /**
@@ -13,7 +14,72 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    if(options.from === "myorder")
+    {
+      wx.request({
+        url: config.getUserOrderDetailsByUserID,
+        // data: {
+        //   x: '',
+        //   y: ''
+        // },
+        header: {
+          'content-type': 'application/json'
+        },
+        success: function (res) {
+
+          if (res.data.status === "success") {
+
+            // var user = res.data.user;
+            // that.setData({
+            //   wallet_balance: user.wallet_balance
+            // })
+          }
+          else {
+
+          }
+          // if(res.data.)
+          // console.log(res.data)
+        },
+        fail: function () {
+
+        }
+      });
+    }
+    else if (options.from === "guideorder")
+    {
+      wx.request({
+        url: config.getLYOrderDetailsByUserID,
+        // data: {
+        //   x: '',
+        //   y: ''
+        // },
+        header: {
+          'content-type': 'application/json'
+        },
+        success: function (res) {
+
+          if (res.data.status === "success") {
+
+            // var user = res.data.user;
+            // that.setData({
+            //   wallet_balance: user.wallet_balance
+            // })
+          }
+          else {
+
+          }
+          // if(res.data.)
+          // console.log(res.data)
+        },
+        fail: function () {
+
+        }
+      });
+    }
+    else{
+
+    }
+    
   },
 
   /**

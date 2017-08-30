@@ -17,7 +17,11 @@
   </view>
   <view class="lineView"></view>
   <view class="bodyView">
-    <image src="../../images/index_cell_pic.png" class="bigPhoto"></image>
+    <swiper  class="swiper" indicator-dots="true" indicator-color="#ffffff" indicator-active-color="#52a3fa"> 
+         <swiper-item  wx:for="{{photoImgUrls}}" >
+            <image src="../../images/index_cell_pic.png" class="bigPhoto"></image>
+         </swiper-item>
+    </swiper>
     <view class="blockView1">
     <label class="scenicLabel">雷锋塔景区</label>
     <label class="priceLabel">58</label>
@@ -80,6 +84,6 @@
 <form report-submit="true" >
  <view class="tabBarView"> 
     <button class="consultButton" form-type="submit" catchtap="consultTap">咨询</button>
-    <button class="makeOrderButton" catchtap="makeOrder">找Ta接单</button>
+    <button class="makeOrderButton" form-type="submit" catchtap="makeOrder">找Ta接单</button>
  </view> 
 </form>

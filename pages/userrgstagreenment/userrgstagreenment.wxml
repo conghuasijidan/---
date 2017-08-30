@@ -1,0 +1,4 @@
+<!--serviceAgreement.wxml-->
+<view class="container">
+<image src="../../images/userrgstAgreenment.png" class="image"></image>
+</view>

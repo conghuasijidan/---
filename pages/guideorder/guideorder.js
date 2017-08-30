@@ -31,7 +31,7 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: config.getUserOrderByUserID,
+      url: config.getLYOrderByUserID,
       // data: {
       //   x: '',
       //   y: ''
@@ -110,7 +110,7 @@ Page({
   },
   toOrderDetails:function(){
     wx.navigateTo({
-      url: '../orderDetail/orderDetail?from=myorder'
+      url: '../orderDetail/orderDetail?from=guideorder'
     })
   },
   changeToapply:function(e){

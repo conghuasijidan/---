@@ -5,18 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    items: [
-      { value: 'USA', name: '美国', checked: 'false' },
-      { value: 'CHN', name: '中国', checked: 'false' },
-      { value: 'BRA', name: '巴西', checked: 'false' },
-      { value: 'JPN', name: '日本', checked: 'false' },
-      { value: 'ENG', name: '英国', checked: 'false' },
-      { value: 'FRA', name: '法国', checked: 'false' }
+    complainreasons: [
+      { value: 'LSJJ', name: '临时加价', checked: false },
+      { value: 'CD', name: '迟到', checked: false },
+      { value: 'TDEL', name: '态度恶劣', checked: false },
+      { value: 'SL', name: '骚扰', checked: false },
+      { value: 'LSGHJD', name: '临时更换景点', checked: false },
+      { value: 'WJYXTJGWD', name: '未经允许添加购物点', checked: false },
+      { value: 'OTHER', name: '其他问题', checked: false }
     ]
   },
   checkboxChange: function (e) {
 
-    var items = this.data.items, values = e.detail.value;
+    var items = this.data.complainreasons, values = e.detail.value;
     for (var i = 0, lenI = items.length; i < lenI; ++i) {
       items[i].checked = false;
 
@@ -29,7 +30,7 @@ Page({
     }
 
     this.setData({
-      items: items
+      complainreasons: items
     })
   },
 
@@ -87,5 +88,9 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  formSubmit:function(e){
+    var items = this.data.complainreasons;
+    
   }
 })

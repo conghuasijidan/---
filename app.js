@@ -29,13 +29,13 @@ App({
                 WebIM.conn.setPresence()
             },
             onPresence: function (message) {
-              debugger;
+              // debugger;
                 switch(message.type){
                     case "unsubscribe":
                         pages[0].moveFriend(message);
                         break;
                     case "subscribe":
-                    debugger
+                    // debugger
                         if (message.status === '[resp:true]') {
                           WebIM.conn.subscribe({
                             to: message.from,
@@ -78,6 +78,7 @@ App({
             onVideoMessage: function(message){
                 console.log('onVideoMessage: ', message);
                 var page = that.getRoomPage()
+                that.globalData.observerControl.notify();
                 that.handleMessage(message)
                 if (message) {
                     if (page) {
@@ -117,6 +118,7 @@ App({
             onAudioMessage: function (message) {
                 console.log('onAudioMessage', message)
                 var page = that.getRoomPage()
+                that.globalData.observerControl.notify();
                 that.handleMessage()
                 console.log(page)
                 if (message) {
@@ -156,13 +158,14 @@ App({
             },
 
             onLocationMessage: function (message) {
+              that.globalData.observerControl.notify();
                 console.log("Location message: ", message);
             },
 
             onTextMessage: function (message) {
                 var page = that.getRoomPage();
                 // var gloabData = gloabData;
-                debugger;
+                
                 that.globalData.observerControl.notify();
 
                 that.handleMessage(message)
@@ -191,6 +194,7 @@ App({
                         }
                         chatMsg = wx.getStorageSync(msgData.yourname + message.to) || []
                         chatMsg.push(msgData)
+                        debugger;
                         wx.setStorage({
                             key: msgData.yourname + message.to,
                             data: chatMsg,
@@ -204,6 +208,7 @@ App({
             onEmojiMessage: function (message) {
                 //console.log('onEmojiMessage',message)
                 var page = that.getRoomPage()
+                that.globalData.observerControl.notify();
                 that.handleMessage()
                 //console.log(pages)
                 if (message) {
@@ -244,6 +249,7 @@ App({
             onPictureMessage: function (message) {
                 //console.log('Picture',message);
                 var page = that.getRoomPage()
+                that.globalData.observerControl.notify();
                 that.handleMessage()
                 if (message) {
                     if (page) {
@@ -318,30 +324,20 @@ App({
     //  接收消息处理
     handleMessage:function(message){
       var yourArr = []
-      var isSameKey = false
-      yourArr = wx.getStorageSync('fromName')
-      for (var i = 0; i < yourArr.length; i++) {
-        if (message.from == yourArr[i]) {
-          isSameKey = true
-        }
+      var temp = wx.getStorageSync('fromName')
+      if (temp != "") {
+        yourArr = temp
       }
-      // 更换手机用户，本地没有好友列表
-      if (isSameKey == false) {
-        WebIM.conn.subscribe({
-          to: message.from,
-          message: "[resp:true]"
-        })
-        WebIM.conn.subscribed({
-          to: message.from,
-          message: "[resp:true]"
-        })
+      var isExist = yourArr.indexOf(message.from)
+      if (isExist == -1) {
+        // 加好友功能无法实现
         yourArr.push(message.from)
         wx.setStorage({
           key: 'fromName',
           data: yourArr,
         })
       }
-
+        
     },
     getUserInfo: function (cb) {
         var that = this
@@ -381,11 +377,14 @@ function observerController() {
 
   // 保存所有观察者  
   var observers = [];
-
+  // debugger
   this.notify = function () {
     
     // console.log("f1 do something one!");
-    var datas = ["unReadMessage"];
+    // messgae url
+    // var messageUrl = "../../images/message_noti.png";
+    var datas = ["../../images/message_noti.png"];
+    // var data = ""
     // 通知所有观察者  
     this.notifyObservers(datas);
 
@@ -399,13 +398,15 @@ function observerController() {
   // this.removeObserver = function (observer){
   //   observer.pop(observer)
   // }
-
+  // 通知回调
   this.callback = function () {
     // console.log("f1 callback invoke!");
+
+
   }
 
   this.notifyObservers = function (arg) {
-    
+    // debugger
     if (observers.length == 0) {
       return;
     };

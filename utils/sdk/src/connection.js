@@ -784,11 +784,11 @@ connection.prototype.open = function (options) {
                     duration: 1000
                 });
 
-                setTimeout(function () {
-                    wx.redirectTo({
-                        url: '../index/index?myName=' + userId
-                    })
-                }, 1000);
+                // setTimeout(function () {
+                //     wx.redirectTo({
+                //         url: '../index/index?myName=' + userId
+                //     })
+                // }, 1000);
             }
             _login(data.data, conn);
         };

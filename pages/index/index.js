@@ -14,12 +14,13 @@ var WebIM = WebIM.default
 var app = getApp()
   // 使用function初始化array，相比var initSubMenuDisplay = [] 既避免的引用复制的，同时方式更灵活，将来可以是多种方式实现，个数也不定的
 function initSubMenuDisplay() {
-  return ['hidden', 'hidden'];
+  return ['hidden', 'hidden','hidden'];
 }
 //定义初始化数据，用于运行时保存
 var initSubMenuHighLight = [
   ['', '', ''],
   ['', '',''],
+  ['', '', ''],
 ];
 var config = require('../../config.js')
 
@@ -32,49 +33,45 @@ Page({
     return pages.find(function (page) {
       return page.__route__ == pageName
     })},
-  messageNotiIcon: '../../images/index_cell_pic.png',
+  observerController: {},
   data: {
-  name: 'd2',
-  psd: '123',
-  member: [],
-  grant_type: "password",
-  // ------
-  subMenuDisplay: initSubMenuDisplay(),
-  subMenuHighLight: initSubMenuHighLight,
-  animationData: ['', '', ''],
-  //上面的是登录时变量
-  citySelected:'定位中...',
-  temperature:'0',
-  isSexHidden:false,
-  isMoneyHidden:false,
-  selectedIndex:'0',
-  disabelScroll:false,
-  showModalStatus: false,
-  sexSift:'性别',
-  moneySift:'金额',
-  selected1Menu:"menuSelectLabel",
-  selected1Hidden:false,
-  selected2Menu: "menuNormalLabel",
-  selected2Hidden: true,
-  selected3Menu: "menuNormalLabel",
-  selected3Hidden: true,
-  selectedTag:'1',
-  indicatorDots:true,
-  autoplay:true,
-  interval:3000,
-  duration:1000,
-  circular:true,
-  indicatorColor:"#ffffff",
-  currentIndicatorColor:"#52A3FA",
-  scrollImgUrls: [{ url: '../../images/scroll_image.png' }, 
-  { url: '../../images/scroll_image.png' },
-  { url: '../../images/scroll_image.png' }
-  ],
-  // 列表数据
-  recommendlist: [{ url: '' ,name:'lisan',age:''}, { url: '' }, { url: '' }, { url: '' },{ url: '' }, { url: '' }],
+      messageUrl: '../../images/message_normal.png',
+      name: 'h2',
+      psd: '123',
+      member: [],
+      grant_type: "password",
+      // ------
+      subMenuDisplay: initSubMenuDisplay(),
+      subMenuHighLight: initSubMenuHighLight,
+      animationData: ['', '', ''],
+      //上面的是登录时变量
+      citySelected:'定位中...',
+      temperature:'0',
+      isSexHidden:false,
+      isMoneyHidden:false,
+      isOnlineHidden:false,
+      selectedIndex:'0',
+      disabelScroll:false,
+      showModalStatus: false,
+      sexSift:'性别',
+      moneySift:'金额',
+      onlineSift:'全部',
+      selected1Menu:"menuSelectLabel",
+      selected1Hidden:false,
+      selected2Menu: "menuNormalLabel",
+      selected2Hidden: true,
+      selected3Menu: "menuNormalLabel",
+      selected3Hidden: true,
+      selectedTag:'1',
+      scrollImgUrls: [{ url: '../../images/scroll_image.png' }, 
+      { url: '../../images/scroll_image.png' },
+      { url: '../../images/scroll_image.png' }
+      ],
+      // 列表数据
+      recommendlist: [{ url: '' ,name:'lisan',age:''}, { url: '' }, { url: '' }, { url: '' },{ url: '' }, { url: '' }],
 
-  //  导游服务
-  guideList: [{ imageUrl: '', name: '' }, { imageUrl: '', name: '' }, { imageUrl: '', name: ''}]
+      //  导游服务
+      guideList: [{ imageUrl: '', name: '' }, { imageUrl: '', name: '' }, { imageUrl: '', name: ''}]
 
   },
   munuSelectedTap:function(event){
@@ -140,7 +137,7 @@ Page({
   },
   // --------------------------------------导游服务---筛选-------------
   
-  sexOrderTap: function () {
+  sexSiftTap: function () {
     this.maskTap();
     this.setData({
       selectedIndex:'0'
@@ -148,10 +145,17 @@ Page({
     this.tapMainMenu();
    
   },
-  moneyOrderTap: function () {
+  moneySiftTap: function () {
     this.maskTap();
     this.setData({
       selectedIndex: '1'
+    })
+    this.tapMainMenu();
+  },
+  onlineSiftTap: function () {
+    this.maskTap();
+    this.setData({
+      selectedIndex: '2'
     })
     this.tapMainMenu();
   },
@@ -167,18 +171,56 @@ Page({
   onLoad: function () { 
     var that = this;
     // that.openConnection()
-    // console.log("siofsosofosfjs");
-  //  请求数据
-    this.loadData()
+    // 添加通知
+    app.getobserverController(function (observerController) {
+      //更新数据
+      that.setData({
+        observerController: observerController
+      });
+      var observerindex = new observerIndex(that);
+      that.data.observerController.addObserver(observerindex);
 
-    // 城市定位
+    });
+    
+  
+   // 登录环信
+    this.hxLogin()
+    // 调用数据接口
+    //  请求数据
+    this.loadScrollImageData()
+    // 热点推荐
+    var parameter1 = {
+      'popular':true, 
+      'location':'杭州',
+      'gender':'男',
+      'amount_sort':true,
+      'page':1,
+      'size':10
+    }
+    this.loadRecomendData(parameter1)
+    // 导游服务
+    var parameter2 = {
+      'popular': false,
+      'location': '杭州',
+      'gender': '男',
+      'amount_sort': true,
+      'page': 1,
+      'size': 10
+    }
+    this.loadGuideData(parameter2)
+
+  },
+  // 城市定位和天气预报
+  locationAndWeather:function(){
+    var that = this
     var myAmapFun = new amapFile.AMapWX({ key: 'b4ff5a29e4e62ce28226d0dda832bbc2' });
     myAmapFun.getRegeo({
       success: function (data) {
         //成功回调
         var currentCity = data[0].regeocodeData.addressComponent.city
+        // 定位成功后请求数据
         that.setData({
-          citySelected:currentCity
+          citySelected: currentCity
         })
       },
       fail: function (info) {
@@ -189,67 +231,82 @@ Page({
         })
       }
     })
-  // 天气获取
+    // 天气获取
     myAmapFun.getWeather({
       success: function (data) {
         //成功回调
-       var currentTemperature = data.temperature.data
-       that.setData({
-         temperature: currentTemperature
-       })
+        var currentTemperature = data.temperature.data
+        that.setData({
+          temperature: currentTemperature
+        })
       },
       fail: function (info) {
         //失败回调
         console.log(info)
       }
     })
-   
-    // 聊天登录接口
-    var options = {
-      apiUrl: WebIM.config.apiURL,
-      user: that.data.name,
-      pwd: that.data.psd,
-      grant_type: that.data.grant_type,
-      appKey: WebIM.config.appkey
-    }
-    wx.setStorage({
-      key: "myUsername",
-      data: that.data.name
-    })
-    //console.log('open')
-    WebIM.conn.open(options)
-
   },
-  // 开启长连接
+   hxLogin:function(){
+     var that = this
+     // 聊天登录接口
+     var options = {
+       apiUrl: WebIM.config.apiURL,
+       user: that.data.name,
+       pwd: that.data.psd,
+       grant_type: that.data.grant_type,
+       appKey: WebIM.config.appkey
+     }
+     wx.setStorage({
+       key: "myUsername",
+       data: that.data.name
+     })
+     //console.log('open')
+     WebIM.conn.open(options)
+    
+   },
+  // 下拉刷新
   onPullDownRefresh: function () {
      wx.stopPullDownRefresh()
-     this.data.loadData()
-     wx.showLoading({
-       title: '刷新中',
-     })
+     
+
+
   },
-  loadData:function(){
-   var that = this
-   var scrollImageUrl = config.scrollImageUrl
-   var guideUrl = config.guideUrl
+  onReachBottom:function(){
+     console.log('上拉加载更多')
+
+
+  },
+  loadScrollImageData:function(){
+    var that = this
+    var scrollImageUrl = config.scrollImageUrl
     wx.request({
       url: scrollImageUrl,
-      success:function(res){
-        if (res.data.promotions){
+      success: function (res) {
+        // debugger
+        if (res.data.promotions) {
           that.setData({
             scrollImgUrls: res.data.promotions
           })
         }
       }
     })
-   
+  },
+  // 热点推荐
+  loadRecomendData:function(data){
+   var that = this
+   var guideUrl = config.guideUrl
+    var data = {
+                'popular':true,
+                'location': that.data.citySelected
+              }
     wx.request({
       url: guideUrl,
+      data:data,
+      header:{
+        'Content-Type':"application/text",
+      },
       success: function (res) {
         if (res.data.guides) {
-          // 停止刷新
-          wx.stopPullDownRefresh()
-          wx.hideLoading()
           that.setData({
             // recommendlist: res.data.guides
           })
@@ -257,8 +314,69 @@ Page({
       }
     })
   },
+  
+  loadGuideData:function(data){
+    var that = this
+    var guideUrl = config.guideUrl
+    wx.request({
+      url: guideUrl,
+      data: data,
+      header: {
+        'Content-Type': "application/text",
+      },
+      success: function (res) {
+        if (res.data.guides) {
+          that.setData({
+            // recommendlist: res.data.guides
+          })
+        }
+      }
+    })
+  },
+
   onShow: function () {
-    
+    // 是否有未读消息
+    var messageUrl = wx.getStorageSync("messagenoti")
+    this.setData({
+      messageUrl:messageUrl
+    })
+
+  },
+  onReady:function(){
+    var that =this
+    wx.getSetting({
+      success(res) {
+        // debugger
+        if (!res.authSetting['scope.userLocation']) {
+          wx.authorize({
+            scope: 'scope.userLocation',
+            success() {
+              // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
+              // wx.startRecord()
+              that.locationAndWeather()
+            },
+            fail() {
+              wx.showModal({
+                title: '温馨提示',
+                content: '便于更好的用户体验，请开启定位功能',
+                showCancel: false,
+                success: function (res) {
+                  wx.openSetting({
+                    success: (res) => {
+                       console.log("成功")
+                       that.locationAndWeather()
+                    }
+                   
+                  })
+                }
+              });
+            }
+          })
+        }else{
+          that.locationAndWeather()
+        }
+      }
+    })
   },
 //  处理好友请求
   handleFriendMsg: function (message) {
@@ -361,31 +479,33 @@ Page({
       if(index == 0){
         this.setData({
           isSexHidden: true,
-          isMoneyHidden:false
+          isMoneyHidden:false,
+          isOnlineHidden:false
+        })
+      }else if(index == 1)
+      {
+        this.setData({
+          isSexHidden: false,
+          isMoneyHidden: true,
+          isOnlineHidden: false
         })
       }else
       {
         this.setData({
           isSexHidden: false,
-          isMoneyHidden: true
+          isMoneyHidden: false,
+          isOnlineHidden: true
         })
+        
       }
       
     } else {
       newSubMenuDisplay[index] = 'hidden';
-      if (index == 0) {
-
-        this.setData({
-          isSexHidden: false,
-          isMoneyHidden: false
-        })
-        
-      } else {
-        this.setData({
-          isSexHidden: false,
-          isMoneyHidden: false
-        })
-      }
+      this.setData({
+        isSexHidden: false,
+        isMoneyHidden: false,
+        isOnlineHidden: false
+      })
       // 设置动画
       this.hideModal();
     }
@@ -423,7 +543,7 @@ Page({
          }) 
        }
 
-    }else{
+    } else if (indexArray[0] == '1'){
       if (indexArray[1] == '0') {
         this.setData({
           moneySift: '金额'
@@ -438,6 +558,20 @@ Page({
         })
       }
 
+    } else{
+      if (indexArray[1] == '0') {
+        this.setData({
+          onlineSift: '全部'
+        })
+      } else if (indexArray[1] == '1') {
+        this.setData({
+          onlineSift: '在线'
+        })
+      } else {
+        this.setData({
+          onlineSift: '线下'
+        })
+      }
     }
 
     // 初始化状态
@@ -489,15 +623,43 @@ Page({
 
   tab_message: function () {
     wx.redirectTo({
-      url: '../chat/chat',
+      url: '../chat/chat', 
     })
+  
   },
   tab_my: function () {
     wx.redirectTo({
       url: '../my/my',
     })
+    this.setData({
+      name:'d1'
+    }) 
+    console.log(this.data.name)
+  },
 
-  }
 
 })
 
+// 观察者对象
+function observerIndex(that) {
+  
+  this.update = function (observable, obj) {
+   
+    that.setData({
+      messageUrl: "../../images/message_noti.png"
+    })
+    // debugger
+    wx.setStorage({
+      key: 'messagenoti',
+      data: that.data.messageUrl,
+    })
+    //  debugger
+    for (var i = 0, len = obj.length; i < len; i++) {
+      console.log(obj[i]);
+      that.setData({
+
+      })
+    }
+    observable.callback();
+  }
+}

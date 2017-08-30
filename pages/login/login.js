@@ -293,6 +293,11 @@ Page({
   },
   formSubmit:function(e){
     
+  },
+  toUserrgstagrenment:function(){
+    wx.navigateTo({
+      url: '../userrgstagreenment/userrgstagreenment'
+    })
   }
   
   

@@ -1,0 +1,8 @@
+/* userrgstagreenment.wxss *//* serviceAgreement.wxss */
+/* .backgroundView{
+  background-color: white;
+} */
+.image{
+  width: 100%;
+  height: 11984rpx;
+}

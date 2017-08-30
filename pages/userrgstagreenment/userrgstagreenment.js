@@ -1,4 +1,4 @@
-var config = require('../../config.js')
+// userrgstagreenment.js
 Page({
 
   /**
@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+  
   },
 
   /**
@@ -62,36 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  switchChange:function(e){
-
-    wx.request({
-      url: config.postLYOrderSetting,
-      method: 'POST',
-      data: {
-        online_status: e.detail.value
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-
-        if (res.data.status === "success") {
-
-          // var user = res.data.user;
-          // that.setData({
-          //   wallet_balance: user.wallet_balance
-          // })
-        }
-        else {
-
-        }
-        // if(res.data.)
-        // console.log(res.data)
-      },
-      fail: function () {
-
-      }
-    });
   }
 })

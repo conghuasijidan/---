@@ -46,7 +46,7 @@
 }
 
 .txt_bottom{
-  margin-bottom: 130rpx;
+  margin-bottom: 140rpx;
 }
 
 .mask{

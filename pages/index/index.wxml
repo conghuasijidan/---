@@ -30,12 +30,12 @@
       </view> -->
   </view> 
   <view class=""  id="block1" wx:if="{{selectedTag==1}}">
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper" circular="{{circular}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{currentIndicatorColor}}">
-      <block wx:for="{{scrollImgUrls}}">
+    <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1000" class="swiper" circular="true" indicator-color="#ffffff" indicator-active-color="#52A3FA">
+       <block wx:for="{{scrollImgUrls}}"> 
         <swiper-item>
-              <image src="{{item.photo}}" class="scrollImage"></image>
+              <image src="../../images/scroll_image.png" class="scrollImage"></image>
         </swiper-item>
-      </block>   
+       </block>    
     </swiper>
   
     <view class="recomendView">
@@ -60,17 +60,21 @@
       </view>
     </view>
   </view>
- <!--城市体验  -->
+ <!--城市体验 -->
   <view class="block2View" id="block2" wx:if="{{selectedTag==2}}">
      <view class="selectBackView">
       <view class="selectMenu">
-          <view class="backView" catchtap="sexOrderTap">
+          <view class="backView" catchtap="sexSiftTap">
               <label class="selectLabel">{{sexSift}}</label>
               <image src="../../images/selectdown_image.png" class="selectImage" ></image>
               
           </view>
-          <view class="backView" catchtap="moneyOrderTap">
+          <view class="backView" catchtap="moneySiftTap">
             <label class="selectLabel">{{moneySift}}</label>
+            <image src="../../images/selectdown_image.png" class="selectImage"></image>
+          </view>
+          <view class="backView" catchtap="onlineSiftTap">
+            <label class="selectLabel">{{onlineSift}}</label>
             <image src="../../images/selectdown_image.png" class="selectImage"></image>
           </view>
       </view>
@@ -89,6 +93,18 @@
       </view>   
     </view> 
   </view> 
+  <view class="chatRoom_tab">
+    <view class="homeView">
+        <image src="../../images/choose_selected.png"></image>
+    </view>
+    <view class="messageView" bindtap="tab_message">
+        <image src="{{messageUrl}}" ></image>
+    </view>
+    <view class="myView" bindtap="tab_my">
+        <image src="../../images/my_normal.png"></image>
+    </view>
+  </view> 
+
 </view>
 
 <!-- </scroll-view> -->
@@ -127,18 +143,24 @@
               <li class="{{subMenuHighLight[1][2]}}" data-index="1-2" bindtap="tapSubMenu">从小到大</li>
           </ul>
       </dd>
+      <dt data-index="2" bindtap="tapMainMenu">
+            <view  class="siftBgView">
+              <label class="selectLabel" wx:if="{{isOnlineHidden == false}}">全部</label>
+              <label class="selectLabel" style="color:#52a3fa" wx:else>全部</label>
+              <image src="../../images/selectdown_image.png" class="selectImage" wx:if="{{isOnlineHidden == false }}"></image>
+              <image src="../../images/selectdowm_image_selected.png" class="selectImage" wx:else></image>
+            </view>
+      </dt>
+      <dd class="{{subMenuDisplay[2]}}" animation="{{animationData[2]}}">
+          <ul>
+              <li class="{{subMenuHighLight[2][0]}}" data-index="2-0" bindtap="tapSubMenu">全部</li>
+              <li class="{{subMenuHighLight[2][1]}}" data-index="2-1" bindtap="tapSubMenu">在线</li>
+              <li class="{{subMenuHighLight[2][2]}}" data-index="2-2" bindtap="tapSubMenu">下线</li>
+          </ul>
+      </dd>
     </dl>
+   
 </view>
  <!-- </scroll-view>  -->
-
- <view class="chatRoom_tab">
-    <view class="homeView">
-        <image src="../../images/choose_selected.png"></image>
-    </view>
-    <view class="messageView" bindtap="tab_message">
-        <image src="../../images/message_normal.png" ></image>
-    </view>
-    <view class="myView" bindtap="tab_my">
-        <image src="../../images/my_normal.png"></image>
-    </view>
-  </view>  
+ 
+ 

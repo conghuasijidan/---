@@ -1,9 +1,18 @@
 <view class="container">
-  <view class="classname">
-    <checkbox-group bindchange="checkboxChange">
-      <label class="checkbox" wx:for="{{items}}">
-        <checkbox value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
-      </label>
-    </checkbox-group>
+  <checkbox-group bindchange="checkboxChange">
+    <label class="checkbox" wx:for="{{complainreasons}}">
+      <view class="container_row_vcenter_between_withouthw complainreason border_bottom_F5_2 padding_lr_30">
+        <text class="font_32 font_color_333">{{item.name}}</text>
+        <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+      </view>
+    </label>
+  </checkbox-group>
+  <view class="padding_30">
+    <text class="font_24 font_color_666">如遇紧急事项，请联系客服：</text>
+    <text class="font_24 font_color_52A">0571-89715260</text>
   </view>
+  <form report-submit="true" bindsubmit="formSubmit" class="form_style">
+    <button class="button_bot_52a margin_rl30" formType="submit"  bindtap="">提交</button>
+  </form>  
+
 </view>

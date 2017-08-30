@@ -46,6 +46,7 @@ Page({
         console.log(myName)
         var options = JSON.parse(options.username)
         var num = wx.getStorageSync(options.your + myName).length - 1
+        // debugger 
         if (num > 0) {
             setTimeout(function () {
                 that.setData({
@@ -59,10 +60,30 @@ Page({
             inputMessage: '',
             chatMsg: wx.getStorageSync(options.your + myName) || []
         })
+        // debugger
         console.log(that.data.chatMsg)
         wx.setNavigationBarTitle({
             title: that.data.yourname
         })
+      // 判断是否在线 如果不在线的话，就登录
+        console.log(WebIM.conn.context.status)
+        // debugger 
+        
+        if (WebIM.conn.context.status != '403' && parseInt(WebIM.conn.context.status)>=400)
+        {
+          // debugger
+          // WebIM
+          var options = {
+            apiUrl: WebIM.config.apiURL,
+            user: that.data.myName,
+            pwd: '123',
+            grant_type: 'password',
+            appKey: WebIM.config.appkey
+          }
+          WebIM.conn.open(options)
+        }
+
+
     },
     onShow: function () {
         var that = this
@@ -286,7 +307,45 @@ Page({
         })
     },
     //***************** 录音 end ***************************
+
+// **************** 消息处理**********************8888888888888888888888888888888888888888888*****
+    handleMessage: function () {
+      // var that = this
+      var yourArr = []
+      // var isSameKey = false
+      var temp = wx.getStorageSync('fromName')
+      if(temp!="")
+      {
+        yourArr = temp
+      }
+
+      var isExist = yourArr.indexOf(this.data.yourname)
+      if (isExist == -1) {
+        // 加好友功能无法实现
+        // debugger
+        yourArr.push(this.data.yourname)
+        // yourArr.push()
+        wx.setStorage({
+          key: 'fromName',
+          data: yourArr,
+        })
+      }
+    },
+    // ----------发送消息---------------------------------
     sendMessage: function () {
+       
+      this.handleMessage()
+      
+      if (WebIM.conn.context.status != '403' && parseInt(WebIM.conn.context.status) >= 400) {
+        var options = {
+          apiUrl: WebIM.config.apiURL,
+          user: this.data.myName,
+          pwd: '123',
+          grant_type: 'password',
+          appKey: WebIM.config.appkey
+        }
+        WebIM.conn.open(options)
+      }
 
         if (!this.data.userMessage.trim()) return;
 
